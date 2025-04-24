@@ -5,43 +5,71 @@ const config = require('./config');
 
 const app = express();
 
-// CORS
+// Configuración CORS
 app.use(cors({
   origin: config.corsOrigin
 }));
 
-// Middleware para llenar el fill por defecto si no viene
+// Middleware para parsear rutas y extraer los parámetros
 app.use((req, res, next) => {
-  req.query.fill = req.query.fill || config.defaultFill;
+  req.params.fill = req.params.fill || config.defaultFill; // Asignar valor de color predeterminado si no se pasa
   next();
 });
 
-// Función para procesar fill y reemplazarlo en el SVG
-function applyFillToSvg(svg, fill) {
-  if (!fill) return svg;
+// Ruta principal para obtener iconos con variante y color en la URL
+app.get('/:iconName/:variant/:fill', async (req, res) => {
+  try {
+    const { iconName, variant, fill } = req.params;
 
-  // Agregar "#" si es color hexadecimal válido
-  if (/^([0-9a-f]{3}|[0-9a-f]{6})$/i.test(fill)) {
-    fill = `#${fill}`;
+    // Normalizar fill si es hexadecimal (ej. "ff0000" => "#ff0000")
+    let color = fill;
+    if (color && /^([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color)) {
+      color = `#${color}`;
+    }
+
+    // Obtener icono desde el cache
+    const iconSvg = getIcon(iconName, variant);
+
+    if (!iconSvg) {
+      return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
+    }
+
+    let svgToSend = iconSvg;
+
+    // Reemplazar todos los fills si se pasa el color
+    if (color) {
+      svgToSend = iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$3`);
+    }
+
+    // Configurar headers y enviar respuesta
+    res.setHeader('Content-Type', 'image/svg+xml');
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    res.send(svgToSend);
+
+  } catch (error) {
+    console.error('Error al procesar icono:', error);
+    res.status(500).send('Error interno del servidor');
   }
+});
 
-  return svg.replace(/(\bfill=["'])([^"']*)(["'])/gi, `$1${fill}$3`);
-}
-
-// Ruta principal con variante
+// Ruta alternativa para mantener compatibilidad con la versión anterior
 app.get('/:iconName/:variant', async (req, res) => {
   try {
     const { iconName, variant } = req.params;
-    let { fill } = req.query;
-
-    fill = (fill || '').toString().replace(/["']/g, '');
+    const fill = config.defaultFill; // Usar color predeterminado en la ruta alternativa
 
     const iconSvg = getIcon(iconName, variant);
+
     if (!iconSvg) {
       return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
     }
 
-    const svgToSend = applyFillToSvg(iconSvg, fill);
+    let svgToSend = iconSvg;
+
+    // Reemplazar todos los fills si se pasa el color
+    if (fill) {
+      svgToSend = iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${fill}$3`);
+    }
 
     res.setHeader('Content-Type', 'image/svg+xml');
     res.setHeader('Cache-Control', 'public, max-age=86400');
@@ -53,39 +81,15 @@ app.get('/:iconName/:variant', async (req, res) => {
   }
 });
 
-// Ruta alternativa sin variante explícita
-app.get('/:iconName', async (req, res) => {
-  try {
-    const iconName = req.params.iconName;
-    const variant = config.defaultVariant;
-    let { fill } = req.query;
-
-    fill = (fill || '').toString().replace(/["']/g, '');
-
-    const iconSvg = getIcon(iconName, variant);
-    if (!iconSvg) {
-      return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
-    }
-
-    const svgToSend = applyFillToSvg(iconSvg, fill);
-
-    res.setHeader('Content-Type', 'image/svg+xml');
-    res.setHeader('Cache-Control', 'public, max-age=86400');
-    res.send(svgToSend);
-
-  } catch (error) {
-    console.error('Error al procesar icono:', error);
-    res.status(500).send('Error interno del servidor');
-  }
-});
-
-// Arrancar servidor
+// Iniciar servidor
 async function startServer() {
   try {
     await loadIcons();
+
     app.listen(config.port, () => {
-      console.log(`🚀 Servidor de iconos en http://localhost:${config.port}`);
+      console.log(`🚀 Servidor de iconos funcionando en http://localhost:${config.port}`);
     });
+
   } catch (error) {
     console.error('❌ No se pudo iniciar el servidor:', error);
     process.exit(1);
