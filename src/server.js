@@ -5,6 +5,17 @@ const config = require('./config');
 
 const app = express();
 
+// Colores preestablecidos
+const colorMap = {
+  "body-bg": "#F0F2F5",
+  "dark": "#1F2937",
+  "muted": "#6B7280",
+  "border": "#C7CED2",
+  "primary": "#ADFA1D",
+  "primary-alt": "#577D0F",
+  "text": "#4C545F"
+};
+
 // Configuración CORS
 app.use(cors({
   origin: config.corsOrigin
@@ -21,8 +32,10 @@ app.get('/:iconName/:variant/:fill', async (req, res) => {
   try {
     const { iconName, variant, fill } = req.params;
 
+    // Si el color proporcionado es uno de los colores preestablecidos, lo asignamos
+    let color = colorMap[fill] || fill;  // Si el color está en colorMap, usamos ese valor
+
     // Normalizar fill si es hexadecimal (ej. "ff0000" => "#ff0000")
-    let color = fill;
     if (color && /^([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color)) {
       color = `#${color}`;
     }
