@@ -1,5 +1,3 @@
-// src/server.js adaptado como /api/index.js
-
 const express = require('express');
 const serverless = require('serverless-http');  // IMPORTANTE para Vercel
 const cors = require('cors');
@@ -24,11 +22,11 @@ app.use(cors({
   origin: config.corsOrigin
 }));
 
-// Middleware (aunque realmente este no hacía nada útil aquí)
-app.use((req, res, next) => {
-  req.params.fill = req.params.fill || config.defaultFill;
-  next();
-});
+// Middleware innecesario, podrías eliminarlo si quieres
+// app.use((req, res, next) => {
+//   req.params.fill = req.params.fill || config.defaultFill;
+//   next();
+// });
 
 app.get('/', (req, res) => {
   res.send('Hola desde Express en Vercel!');
@@ -93,11 +91,10 @@ app.get('/:iconName/:variant', async (req, res) => {
   }
 });
 
-
 app.get('/:iconName', async (req, res) => {
   try {
     const { iconName } = req.params;
-    const variant = "regular"
+    const variant = "regular";
     const fill = config.defaultFill;
 
     const iconSvg = getIcon(iconName, variant);
@@ -122,12 +119,10 @@ app.get('/:iconName', async (req, res) => {
   }
 });
 
-// 👇 Esto cambia: no listen(), sino exportamos handler
-// Cargamos iconos antes de exponer el handler
-async function prepareServer() {
+// Cargamos íconos antes de exponer el handler
+(async () => {
   await loadIcons();
-}
+})();
 
-prepareServer();
-
+// 🚀 Esta es la exportación correcta para Vercel
 module.exports.handler = serverless(app);
