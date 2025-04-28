@@ -130,4 +130,4 @@ async function prepareServer() {
 
 prepareServer();
 
-module.exports = serverless(app);
+module.exports.handler = serverless(app);
