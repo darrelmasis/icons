@@ -30,6 +30,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/', (req, res) => {
+  res.send('Hola desde Express en Vercel!');
+});
+
 // Rutas
 app.get('/:iconName/:variant/:fill', async (req, res) => {
   try {
@@ -65,6 +69,35 @@ app.get('/:iconName/:variant/:fill', async (req, res) => {
 app.get('/:iconName/:variant', async (req, res) => {
   try {
     const { iconName, variant } = req.params;
+    const fill = config.defaultFill;
+
+    const iconSvg = getIcon(iconName, variant);
+
+    if (!iconSvg) {
+      return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
+    }
+
+    let svgToSend = iconSvg;
+
+    if (fill) {
+      svgToSend = iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${fill}$3`);
+    }
+
+    res.setHeader('Content-Type', 'image/svg+xml');
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    res.send(svgToSend);
+
+  } catch (error) {
+    console.error('Error al procesar icono:', error);
+    res.status(500).send('Error interno del servidor');
+  }
+});
+
+
+app.get('/:iconName', async (req, res) => {
+  try {
+    const { iconName } = req.params;
+    const variant = "regular"
     const fill = config.defaultFill;
 
     const iconSvg = getIcon(iconName, variant);

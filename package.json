@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "build": "echo El proyecto no necesita un proceso de construcción"
+    "build": "echo 'El proyecto no necesita un proceso de construcción'",
+    "test": "node api/index.js"
   },
   "keywords": [],
   "author": "",
