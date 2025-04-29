@@ -7,7 +7,7 @@ const app = express();
 
 // Colores preestablecidos
 const colorMap = {
-  "body-bg": "#F0F2F5",
+  "bodybg": "#F0F2F5",
   "dark": "#1F2937",
   "muted": "#6B7280",
   "border": "#C7CED2",
@@ -32,6 +32,47 @@ app.get('/:iconName/:variant/:fillHash', async (req, res) => {
   try {
     const { iconName, variant, fillHash } = req.params;
 
+    // Extraer el color real (antes del guión)
+    const [fill] = fillHash.split('-');
+
+    // Asignar color del mapa o usar directamente el fill recibido
+    let color = colorMap[fill] || fill;
+
+    // Normalizar fill si es hexadecimal (ej. "ff0000" => "#ff0000")
+    if (color && /^([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color)) {
+      color = `#${color}`;
+    }
+
+    // Obtener icono desde el cache
+    const iconSvg = getIcon(iconName, variant);
+
+    if (!iconSvg) {
+      return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
+    }
+
+    let svgToSend = iconSvg;
+
+    // Reemplazar todos los fills si se pasa el color
+    if (color) {
+      svgToSend = iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$3`);
+    }
+
+    // Configurar headers y enviar respuesta
+    res.setHeader('Content-Type', 'image/svg+xml');
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    res.send(svgToSend);
+
+  } catch (error) {
+    console.error('Error al procesar icono:', error);
+    res.status(500).send('Error interno del servidor');
+  }
+});
+
+// Ruta principal para obtener iconos con variante y color en la URL
+app.get('/:iconName/:fillHash', async (req, res) => {
+  try {
+    const { iconName, fillHash } = req.params;
+    const variant = "regular"
     // Extraer el color real (antes del guión)
     const [fill] = fillHash.split('-');
 
