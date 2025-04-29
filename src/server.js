@@ -28,12 +28,15 @@ app.use((req, res, next) => {
 });
 
 // Ruta principal para obtener iconos con variante y color en la URL
-app.get('/:iconName/:variant/:fill', async (req, res) => {
+app.get('/:iconName/:variant/:fillHash', async (req, res) => {
   try {
-    const { iconName, variant, fill } = req.params;
+    const { iconName, variant, fillHash } = req.params;
 
-    // Si el color proporcionado es uno de los colores preestablecidos, lo asignamos
-    let color = colorMap[fill] || fill;  // Si el color está en colorMap, usamos ese valor
+    // Extraer el color real (antes del guión)
+    const [fill] = fillHash.split('-');
+
+    // Asignar color del mapa o usar directamente el fill recibido
+    let color = colorMap[fill] || fill;
 
     // Normalizar fill si es hexadecimal (ej. "ff0000" => "#ff0000")
     if (color && /^([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color)) {
