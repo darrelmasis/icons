@@ -52,13 +52,11 @@ app.get('/convert/:iconName/:fillHash', async (req, res) => {
     const coloredSvg = iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$3`);
 
     const pngBuffer = await sharp(Buffer.from(coloredSvg))
-      .resize(64, 64)
+      .resize(128, 128) // Puedes ajustar el tamaño
       .png()
       .toBuffer();
 
-    // Estas cabeceras fuerzan la descarga
     res.setHeader('Content-Type', 'image/png');
-    res.setHeader('Content-Disposition', `attachment; filename="${iconName}-${fill}.png"`);
     res.setHeader('Cache-Control', 'public, max-age=86400');
     res.send(pngBuffer);
 
@@ -67,6 +65,7 @@ app.get('/convert/:iconName/:fillHash', async (req, res) => {
     res.status(500).send('Error al convertir a PNG');
   }
 });
+
 
 
 // Ruta principal para obtener iconos con variante y color en la URL
