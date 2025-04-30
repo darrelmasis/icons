@@ -39,11 +39,21 @@ const cssColors = new Set([
 ]);
 
 function resolveColor(fill) {
-  const color = colorMap[fill] || fill;
+  if (!fill) return null;
+
+  // Extraer parte antes del guion
+  const baseColor = fill.split('-')[0];
+
+  const color = colorMap[baseColor] || baseColor;
+
   if (cssColors.has(color.toLowerCase())) return color;
   if (/^([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color)) return `#${color}`;
+  if (/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color)) return color;
+
   return null;
 }
+
+
 
 //---------------- CONVERT (PNG) CON TAMAÑO ----------------
 // icono + variante + color + tamaño
@@ -119,7 +129,6 @@ async function serveSvg(req, res, iconName, variant, fill) {
     const iconSvg = getIcon(iconName, variant);
     if (!iconSvg) return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
     const color = fill ? resolveColor(fill) : null;
-
     const svg = color
       ? iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$3`)
       : iconSvg;
