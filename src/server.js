@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 app.get('/convert/:iconName/:fillHash', async (req, res) => {
   try {
     const { iconName, fillHash } = req.params;
-    const variant = "regular"; // o hazlo dinámico si lo necesitas
+    const variant = "regular";
 
     const [fill] = fillHash.split('-');
     let color = colorMap[fill] || fill;
@@ -49,16 +49,16 @@ app.get('/convert/:iconName/:fillHash', async (req, res) => {
       return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
     }
 
-    // Aplicar el color al SVG
     const coloredSvg = iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$3`);
 
-    // Convertir a PNG con sharp
     const pngBuffer = await sharp(Buffer.from(coloredSvg))
-      .resize(128, 128) // puedes cambiar el tamaño aquí
+      .resize(64, 64)
       .png()
       .toBuffer();
 
+    // Estas cabeceras fuerzan la descarga
     res.setHeader('Content-Type', 'image/png');
+    res.setHeader('Content-Disposition', `attachment; filename="${iconName}-${fill}.png"`);
     res.setHeader('Cache-Control', 'public, max-age=86400');
     res.send(pngBuffer);
 
