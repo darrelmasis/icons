@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { loadIcons, getIcon } = require('./iconLoader');
 const config = require('./config');
+const sharp = require('sharp');
 
 const app = express();
 
@@ -26,6 +27,47 @@ app.use((req, res, next) => {
   req.params.fill = req.params.fill || config.defaultFill; // Asignar valor de color predeterminado si no se pasa
   next();
 });
+
+
+
+// Ruta para convertir SVG a PNG con color aplicado
+app.get('/convert/:iconName/:fillHash', async (req, res) => {
+  try {
+    const { iconName, fillHash } = req.params;
+    const variant = "regular"; // o hazlo dinámico si lo necesitas
+
+    const [fill] = fillHash.split('-');
+    let color = colorMap[fill] || fill;
+
+    if (color && /^([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color)) {
+      color = `#${color}`;
+    }
+
+    const iconSvg = getIcon(iconName, variant);
+
+    if (!iconSvg) {
+      return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
+    }
+
+    // Aplicar el color al SVG
+    const coloredSvg = iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$3`);
+
+    // Convertir a PNG con sharp
+    const pngBuffer = await sharp(Buffer.from(coloredSvg))
+      .resize(128, 128) // puedes cambiar el tamaño aquí
+      .png()
+      .toBuffer();
+
+    res.setHeader('Content-Type', 'image/png');
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    res.send(pngBuffer);
+
+  } catch (error) {
+    console.error('Error al convertir icono a PNG:', error);
+    res.status(500).send('Error al convertir a PNG');
+  }
+});
+
 
 // Ruta principal para obtener iconos con variante y color en la URL
 app.get('/:iconName/:variant/:fillHash', async (req, res) => {
@@ -137,6 +179,8 @@ app.get('/:iconName/:variant', async (req, res) => {
     res.status(500).send('Error interno del servidor');
   }
 });
+
+
 
 // Iniciar servidor
 async function startServer() {
