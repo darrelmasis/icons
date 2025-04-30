@@ -1,198 +1,172 @@
 const express = require('express');
 const cors = require('cors');
+const sharp = require('sharp');
 const { loadIcons, getIcon } = require('./iconLoader');
 const config = require('./config');
-const sharp = require('sharp');
 
 const app = express();
 
-// Colores preestablecidos
 const colorMap = {
-  "bodybg": "#F0F2F5",
-  "dark": "#1F2937",
-  "muted": "#6B7280",
-  "border": "#C7CED2",
-  "primary": "#ADFA1D",
-  "primary-alt": "#577D0F",
-  "text": "#4C545F"
+  dark: "#1F2937", light: "#F0F2F5", muted: "#6B7280", border: "#C7CED2",
+  primary: "#ADFA1D", primaryalt: "#577D0F", text: "#4C545F"
 };
 
-// Configuración CORS
-app.use(cors({
-  origin: config.corsOrigin
-}));
+const cssColors = new Set([
+  "aliceblue", "antiquewhite", "aqua", "aquamarine", "azure", "beige", "bisque",
+  "black", "blanchedalmond", "blue", "blueviolet", "brown", "burlywood", "cadetblue",
+  "chartreuse", "chocolate", "coral", "cornflowerblue", "cornsilk", "crimson", "cyan",
+  "darkblue", "darkcyan", "darkgoldenrod", "darkgray", "darkgreen", "darkgrey",
+  "darkkhaki", "darkmagenta", "darkolivegreen", "darkorange", "darkorchid", "darkred",
+  "darksalmon", "darkseagreen", "darkslateblue", "darkslategray", "darkslategrey",
+  "darkturquoise", "darkviolet", "deeppink", "deepskyblue", "dimgray", "dimgrey",
+  "dodgerblue", "firebrick", "floralwhite", "forestgreen", "fuchsia", "gainsboro",
+  "ghostwhite", "gold", "goldenrod", "gray", "green", "greenyellow", "grey",
+  "honeydew", "hotpink", "indianred", "indigo", "ivory", "khaki", "lavender",
+  "lavenderblush", "lawngreen", "lemonchiffon", "lightblue", "lightcoral", "lightcyan",
+  "lightgoldenrodyellow", "lightgray", "lightgreen", "lightgrey", "lightpink",
+  "lightsalmon", "lightseagreen", "lightskyblue", "lightslategray", "lightslategrey",
+  "lightsteelblue", "lightyellow", "lime", "limegreen", "linen", "magenta", "maroon",
+  "mediumaquamarine", "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen",
+  "mediumslateblue", "mediumspringgreen", "mediumturquoise", "mediumvioletred",
+  "midnightblue", "mintcream", "mistyrose", "moccasin", "navajowhite", "navy",
+  "oldlace", "olive", "olivedrab", "orange", "orangered", "orchid", "palegoldenrod",
+  "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff", "peru",
+  "pink", "plum", "powderblue", "purple", "rebeccapurple", "red", "rosybrown",
+  "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen", "seashell", "sienna",
+  "silver", "skyblue", "slateblue", "slategray", "slategrey", "snow", "springgreen",
+  "steelblue", "tan", "teal", "thistle", "tomato", "turquoise", "violet", "wheat",
+  "white", "whitesmoke", "yellow", "yellowgreen"
+]);
 
-// Middleware para parsear rutas y extraer los parámetros
-app.use((req, res, next) => {
-  req.params.fill = req.params.fill || config.defaultFill; // Asignar valor de color predeterminado si no se pasa
-  next();
+function resolveColor(fill) {
+  const color = colorMap[fill] || fill;
+  if (cssColors.has(color.toLowerCase())) return color;
+  if (/^([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color)) return `#${color}`;
+  return null;
+}
+
+//---------------- CONVERT (PNG) CON TAMAÑO ----------------
+// icono + variante + color + tamaño
+app.get('/convert/:iconName/:variant/:fill/size/:size', async (req, res) => {
+  await servePng(req, res, req.params.iconName, req.params.variant, req.params.fill, req.params.size);
+});
+
+// icono + color + tamaño
+app.get('/convert/:iconName/:fill/size/:size', async (req, res) => {
+  await servePng(req, res, req.params.iconName, 'regular', req.params.fill, req.params.size);
+});
+
+// icono + variante + tamaño
+app.get('/convert/:iconName/:variant/size/:size', async (req, res) => {
+  await servePng(req, res, req.params.iconName, req.params.variant, null, req.params.size);
+});
+
+// icono + tamaño
+app.get('/convert/:iconName/size/:size', async (req, res) => {
+  await servePng(req, res, req.params.iconName, 'regular', null, req.params.size);
+});
+
+// ---------------- CONVERT (PNG) ----------------
+
+// icono + variante + color
+app.get('/convert/:iconName/:variant/:fill', async (req, res) => {
+  await servePng(req, res, req.params.iconName, req.params.variant, req.params.fill);
+});
+
+// icono + color
+app.get('/convert/:iconName/:fill', async (req, res) => {
+  await servePng(req, res, req.params.iconName, 'regular', req.params.fill);
+});
+
+// icono + variante
+app.get('/convert/:iconName/:variant', async (req, res) => {
+  await servePng(req, res, req.params.iconName, req.params.variant, null);
+});
+
+// solo icono
+app.get('/convert/:iconName', async (req, res) => {
+  await servePng(req, res, req.params.iconName, 'regular', null);
 });
 
 
 
-// Ruta para convertir SVG a PNG con color aplicado
-app.get('/convert/:iconName/:fillHash', async (req, res) => {
+
+// ---------------- SVG ----------------
+
+// icono + variante + color
+app.get('/:iconName/:variant/:fill', async (req, res) => {
+  await serveSvg(req, res, req.params.iconName, req.params.variant, req.params.fill);
+});
+
+// icono + color
+app.get('/:iconName/:fill', async (req, res) => {
+  await serveSvg(req, res, req.params.iconName, 'regular', req.params.fill);
+});
+
+// icono + variante
+app.get('/:iconName/:variant', async (req, res) => {
+  await serveSvg(req, res, req.params.iconName, req.params.variant, null);
+});
+
+// solo icono
+app.get('/:iconName', async (req, res) => {
+  await serveSvg(req, res, req.params.iconName, 'regular', null);
+});
+
+// ---------- Handlers ----------
+async function serveSvg(req, res, iconName, variant, fill) {
   try {
-    const { iconName, fillHash } = req.params;
-    const variant = "regular";
-
-    const [fill] = fillHash.split('-');
-    let color = colorMap[fill] || fill;
-
-    if (color && /^([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color)) {
-      color = `#${color}`;
-    }
-
     const iconSvg = getIcon(iconName, variant);
+    if (!iconSvg) return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
+    const color = fill ? resolveColor(fill) : null;
 
-    if (!iconSvg) {
-      return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
-    }
+    const svg = color
+      ? iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$3`)
+      : iconSvg;
 
-    const coloredSvg = iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$3`);
+    res.setHeader('Content-Type', 'image/svg+xml');
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    res.send(svg);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error al procesar SVG');
+  }
+}
 
-    const pngBuffer = await sharp(Buffer.from(coloredSvg))
-    .resize(128, 128, { fit: 'inside' }) // Mantiene proporciones dentro del tamaño dado
-    .png()
-    .toBuffer();
-  
+async function servePng(req, res, iconName, variant, fill, size = 128) {
+  try {
+    const iconSvg = getIcon(iconName, variant);
+    if (!iconSvg) return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
+
+    const color = fill ? resolveColor(fill) : null;
+    const svg = color
+      ? iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$3`)
+      : iconSvg;
+
+    const png = await sharp(Buffer.from(svg))
+      .resize(Number(size), Number(size), { fit: 'inside' })
+      .png()
+      .toBuffer();
 
     res.setHeader('Content-Type', 'image/png');
     res.setHeader('Cache-Control', 'public, max-age=86400');
-    res.send(pngBuffer);
-
-  } catch (error) {
-    console.error('Error al convertir icono a PNG:', error);
+    res.send(png);
+  } catch (err) {
+    console.error(err);
     res.status(500).send('Error al convertir a PNG');
   }
-});
+}
 
 
-
-// Ruta principal para obtener iconos con variante y color en la URL
-app.get('/:iconName/:variant/:fillHash', async (req, res) => {
-  try {
-    const { iconName, variant, fillHash } = req.params;
-
-    // Extraer el color real (antes del guión)
-    const [fill] = fillHash.split('-');
-
-    // Asignar color del mapa o usar directamente el fill recibido
-    let color = colorMap[fill] || fill;
-
-    // Normalizar fill si es hexadecimal (ej. "ff0000" => "#ff0000")
-    if (color && /^([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color)) {
-      color = `#${color}`;
-    }
-
-    // Obtener icono desde el cache
-    const iconSvg = getIcon(iconName, variant);
-
-    if (!iconSvg) {
-      return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
-    }
-
-    let svgToSend = iconSvg;
-
-    // Reemplazar todos los fills si se pasa el color
-    if (color) {
-      svgToSend = iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$3`);
-    }
-
-    // Configurar headers y enviar respuesta
-    res.setHeader('Content-Type', 'image/svg+xml');
-    res.setHeader('Cache-Control', 'public, max-age=86400');
-    res.send(svgToSend);
-
-  } catch (error) {
-    console.error('Error al procesar icono:', error);
-    res.status(500).send('Error interno del servidor');
-  }
-});
-
-// Ruta principal para obtener iconos con variante y color en la URL
-app.get('/:iconName/:fillHash', async (req, res) => {
-  try {
-    const { iconName, fillHash } = req.params;
-    const variant = "regular"
-    // Extraer el color real (antes del guión)
-    const [fill] = fillHash.split('-');
-
-    // Asignar color del mapa o usar directamente el fill recibido
-    let color = colorMap[fill] || fill;
-
-    // Normalizar fill si es hexadecimal (ej. "ff0000" => "#ff0000")
-    if (color && /^([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color)) {
-      color = `#${color}`;
-    }
-
-    // Obtener icono desde el cache
-    const iconSvg = getIcon(iconName, variant);
-
-    if (!iconSvg) {
-      return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
-    }
-
-    let svgToSend = iconSvg;
-
-    // Reemplazar todos los fills si se pasa el color
-    if (color) {
-      svgToSend = iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$3`);
-    }
-
-    // Configurar headers y enviar respuesta
-    res.setHeader('Content-Type', 'image/svg+xml');
-    res.setHeader('Cache-Control', 'public, max-age=86400');
-    res.send(svgToSend);
-
-  } catch (error) {
-    console.error('Error al procesar icono:', error);
-    res.status(500).send('Error interno del servidor');
-  }
-});
-
-// Ruta alternativa para mantener compatibilidad con la versión anterior
-app.get('/:iconName/:variant', async (req, res) => {
-  try {
-    const { iconName, variant } = req.params;
-    const fill = config.defaultFill; // Usar color predeterminado en la ruta alternativa
-
-    const iconSvg = getIcon(iconName, variant);
-
-    if (!iconSvg) {
-      return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
-    }
-
-    let svgToSend = iconSvg;
-
-    // Reemplazar todos los fills si se pasa el color
-    if (fill) {
-      svgToSend = iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${fill}$3`);
-    }
-
-    res.setHeader('Content-Type', 'image/svg+xml');
-    res.setHeader('Cache-Control', 'public, max-age=86400');
-    res.send(svgToSend);
-
-  } catch (error) {
-    console.error('Error al procesar icono:', error);
-    res.status(500).send('Error interno del servidor');
-  }
-});
-
-
-
-// Iniciar servidor
+// ---------- Start Server ----------
 async function startServer() {
   try {
     await loadIcons();
-
     app.listen(config.port, () => {
-      console.log(`🚀 Servidor de iconos funcionando en http://localhost:${config.port}`);
+      console.log(`🚀 Servidor escuchando en http://localhost:${config.port}`);
     });
-
-  } catch (error) {
-    console.error('❌ No se pudo iniciar el servidor:', error);
+  } catch (err) {
+    console.error('No se pudo iniciar el servidor:', err);
     process.exit(1);
   }
 }
