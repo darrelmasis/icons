@@ -5,6 +5,8 @@ const { loadIcons, getIcon } = require('../src/iconLoader');
 const config = require('../src/config');
 
 const app = express();
+
+
 app.use(cors())
 
 const colorMap = {
