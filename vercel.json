@@ -8,15 +8,15 @@
   ],
   "routes": [
     {
-      "src": "/api/png/(.*)",
+      "src": "/png/(.*)",
       "dest": "api/index.js"
     },
     {
-      "src": "/api/svg/(.*)",
+      "src": "/svg/(.*)",
       "dest": "api/index.js"
     },
     {
-      "src": "/api/(.*)",
+      "src": "/(.*)",
       "dest": "api/index.js"
     }
   ]
