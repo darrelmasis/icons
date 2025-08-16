@@ -1,128 +1,171 @@
 const express = require('express');
-const serverless = require('serverless-http');  // IMPORTANTE para Vercel
 const cors = require('cors');
-const { loadIcons, getIcon } = require('../src/iconLoader');
-const config = require('../src/config');
+const sharp = require('sharp');
+const { loadIcons, getIcon } = require('./iconLoader');
+const config = require('./config');
 
 const app = express();
+app.use(cors())
 
-// Colores preestablecidos
 const colorMap = {
-  "body-bg": "#F0F2F5",
-  "dark": "#1F2937",
-  "muted": "#6B7280",
-  "border": "#C7CED2",
-  "primary": "#ADFA1D",
-  "primary-alt": "#577D0F",
-  "text": "#4C545F"
+  dark: "#1F2937", light: "#F0F2F5", muted: "#6B7280", border: "#C7CED2",
+  primary: "#ADFA1D", primaryalt: "#577D0F", text: "#4C545F"
 };
 
-// CORS
-app.use(cors({
-  origin: config.corsOrigin
-}));
+const cssColors = new Set([
+  "aliceblue", "antiquewhite", "aqua", "aquamarine", "azure", "beige", "bisque",
+  "black", "blanchedalmond", "blue", "blueviolet", "brown", "burlywood", "cadetblue",
+  "chartreuse", "chocolate", "coral", "cornflowerblue", "cornsilk", "crimson", "cyan",
+  "darkblue", "darkcyan", "darkgoldenrod", "darkgray", "darkgreen", "darkgrey",
+  "darkkhaki", "darkmagenta", "darkolivegreen", "darkorange", "darkorchid", "darkred",
+  "darksalmon", "darkseagreen", "darkslateblue", "darkslategray", "darkslategrey",
+  "darkturquoise", "darkviolet", "deeppink", "deepskyblue", "dimgray", "dimgrey",
+  "dodgerblue", "firebrick", "floralwhite", "forestgreen", "fuchsia", "gainsboro",
+  "ghostwhite", "gold", "goldenrod", "gray", "green", "greenyellow", "grey",
+  "honeydew", "hotpink", "indianred", "indigo", "ivory", "khaki", "lavender",
+  "lavenderblush", "lawngreen", "lemonchiffon", "lightblue", "lightcoral", "lightcyan",
+  "lightgoldenrodyellow", "lightgray", "lightgreen", "lightgrey", "lightpink",
+  "lightsalmon", "lightseagreen", "lightskyblue", "lightslategray", "lightslategrey",
+  "lightsteelblue", "lightyellow", "lime", "limegreen", "linen", "magenta", "maroon",
+  "mediumaquamarine", "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen",
+  "mediumslateblue", "mediumspringgreen", "mediumturquoise", "mediumvioletred",
+  "midnightblue", "mintcream", "mistyrose", "moccasin", "navajowhite", "navy",
+  "oldlace", "olive", "olivedrab", "orange", "orangered", "orchid", "palegoldenrod",
+  "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff", "peru",
+  "pink", "plum", "powderblue", "purple", "rebeccapurple", "red", "rosybrown",
+  "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen", "seashell", "sienna",
+  "silver", "skyblue", "slateblue", "slategray", "slategrey", "snow", "springgreen",
+  "steelblue", "tan", "teal", "thistle", "tomato", "turquoise", "violet", "wheat",
+  "white", "whitesmoke", "yellow", "yellowgreen"
+]);
 
-// Middleware innecesario, podrías eliminarlo si quieres
-// app.use((req, res, next) => {
-//   req.params.fill = req.params.fill || config.defaultFill;
-//   next();
-// });
 
-app.get('/', (req, res) => {
-  res.send('Hola desde Express en Vercel!');
+let defaultVariant = config.defaultVariant
+let defaultSize = config.defaultSize
+
+function resolveColor(fill) {
+  if (!fill) return null;
+
+  // Extraer parte antes del guion
+  const baseColor = fill.split('-')[0];
+
+  const color = colorMap[baseColor] || baseColor;
+
+  if (cssColors.has(color.toLowerCase())) return color;
+  if (/^([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color)) return `#${color}`;
+  if (/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color)) return color;
+
+  return null;
+}
+
+
+
+//---------------- CONVERT (PNG) CON TAMAÑO ----------------
+// variante + icono + relleno + tamaño
+app.get(['/png/var/:variant/:iconName/:fill/size/:size','/png/var/:variant/:iconName/:fill'], async (req, res) => {
+  await servePng(req, res, req.params.iconName, req.params.variant, req.params.fill, req.params.size || defaultSize);
 });
 
-// Rutas
-app.get('/:iconName/:variant/:fill', async (req, res) => {
+// variante + icono + tamaño
+app.get(['/png/var/:variant/:iconName/size/:size','/png/var/:variant/:iconName'], async (req, res) => {
+  await servePng(req, res, req.params.iconName, req.params.variant, null, req.params.size || defaultSize);
+});
+
+// icono + relleno + tamaño
+app.get(['/png/:iconName/:fill/size/:size','/png/:iconName/:fill'], async (req, res) => {
+  await servePng(req, res, req.params.iconName, defaultVariant, req.params.fill, req.params.size || defaultSize);
+});
+
+// icono + tamaño
+app.get(['/png/:iconName/size/:size','/png/:iconName'], async (req, res) => {
+  await servePng(req, res, req.params.iconName, defaultVariant, null, req.params.size || defaultSize);
+});
+
+
+// ---------------- SVG ----------------
+
+// variante + icono + relleno
+app.get('/svg/var/:variant/:iconName/:fill', async (req, res) => {
+  await serveSvg(req, res, req.params.iconName, req.params.variant, req.params.fill);
+});
+
+// variante + icono
+app.get('/svg/var/:variant/:iconName', async (req, res) => {
+  await serveSvg(req, res, req.params.iconName, req.params.variant, null);
+});
+
+// icono + relleno
+app.get('/svg/:iconName/:fill', async (req, res) => {
+  await serveSvg(req, res, req.params.iconName, defaultVariant, req.params.fill);
+});
+
+// icono
+app.get('/svg/:iconName', async (req, res) => {
+  await serveSvg(req, res, req.params.iconName, defaultVariant, null);
+});
+
+// ---------- Handlers ----------
+async function serveSvg(req, res, iconName, variant, fill) {
   try {
-    const { iconName, variant, fill } = req.params;
-    let color = colorMap[fill] || fill;
-
-    if (color && /^([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color)) {
-      color = `#${color}`;
-    }
-
     const iconSvg = getIcon(iconName, variant);
-
-    if (!iconSvg) {
-      return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
-    }
-
-    let svgToSend = iconSvg;
-
-    if (color) {
-      svgToSend = iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$3`);
-    }
+    if (!iconSvg) return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
+    const color = fill ? resolveColor(fill) : null;
+    const svg = color
+    ? iconSvg
+        .replace(/fill="currentColor"/gi, `fill="${color}"`)
+        .replace(/(<(path|circle|rect|polygon|ellipse|line)[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$4`)
+    : iconSvg;
 
     res.setHeader('Content-Type', 'image/svg+xml');
     res.setHeader('Cache-Control', 'public, max-age=86400');
-    res.send(svgToSend);
-
-  } catch (error) {
-    console.error('Error al procesar icono:', error);
-    res.status(500).send('Error interno del servidor');
+    res.send(svg);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error al procesar SVG');
   }
-});
+}
 
-app.get('/:iconName/:variant', async (req, res) => {
+async function servePng(req, res, iconName, variant, fill, size = config.defaultSize) {
   try {
-    const { iconName, variant } = req.params;
-    const fill = config.defaultFill;
-
     const iconSvg = getIcon(iconName, variant);
+    if (!iconSvg) return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
 
-    if (!iconSvg) {
-      return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
+    const color = fill ? resolveColor(fill) : null;
+    const svg = color
+    ? iconSvg
+        .replace(/fill="currentColor"/gi, `fill="${color}"`)
+        .replace(/(<(path|circle|rect|polygon|ellipse|line)[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$4`)
+    : iconSvg;
+
+    let finalSize = parseInt(size, 10);
+    if (isNaN(finalSize) || finalSize <= 0 || finalSize > 1024) {
+      finalSize = config.defaultSize;
     }
 
-    let svgToSend = iconSvg;
+    const png = await sharp(Buffer.from(svg))
+      .resize(finalSize, finalSize, { fit: 'inside' })
+      .png()
+      .toBuffer();
 
-    if (fill) {
-      svgToSend = iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${fill}$3`);
-    }
-
-    res.setHeader('Content-Type', 'image/svg+xml');
+    res.setHeader('Content-Type', 'image/png');
     res.setHeader('Cache-Control', 'public, max-age=86400');
-    res.send(svgToSend);
-
-  } catch (error) {
-    console.error('Error al procesar icono:', error);
-    res.status(500).send('Error interno del servidor');
+    res.send(png);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error al convertir a PNG');
   }
-});
+}
 
-app.get('/:iconName', async (req, res) => {
-  try {
-    const { iconName } = req.params;
-    const variant = "regular";
-    const fill = config.defaultFill;
 
-    const iconSvg = getIcon(iconName, variant);
-
-    if (!iconSvg) {
-      return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
-    }
-
-    let svgToSend = iconSvg;
-
-    if (fill) {
-      svgToSend = iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${fill}$3`);
-    }
-
-    res.setHeader('Content-Type', 'image/svg+xml');
-    res.setHeader('Cache-Control', 'public, max-age=86400');
-    res.send(svgToSend);
-
-  } catch (error) {
-    console.error('Error al procesar icono:', error);
-    res.status(500).send('Error interno del servidor');
-  }
-});
-
-// Cargamos íconos antes de exponer el handler
+// ---------- Start Server ----------
 (async () => {
-  await loadIcons();
+  try {
+    await loadIcons();
+  } catch (err) {
+    console.error('No se pudo cargar los íconos:', err);
+    process.exit(1);
+  }
 })();
 
-// 🚀 Esta es la exportación correcta para Vercel
-module.exports.handler = serverless(app);
+const serverless = require('serverless-http');
+module.exports = serverless(app);
