@@ -8,7 +8,7 @@ let iconCache = {};
 function loadIcons() {
   return new Promise((resolve, reject) => {
     const icons = {};
-    const csvPath = path.resolve(__dirname, config.iconsPath); // ruta absoluta
+    const csvPath = path.resolve(__dirname, '../data/icons.csv'); // ruta absoluta
 
     if (!fs.existsSync(csvPath)) {
       return reject(new Error(`Archivo CSV no encontrado en ${csvPath}`));
