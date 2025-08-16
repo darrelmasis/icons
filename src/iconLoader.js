@@ -1,14 +1,9 @@
 const fs = require('fs');
 const csv = require('csv-parser');
 const path = require('path');
-
 const config = require('./config');
 
 let iconCache = {};
-
-
-
-
 
 function loadIcons() {
   return new Promise((resolve, reject) => {
@@ -35,17 +30,12 @@ function loadIcons() {
         console.log(`✅ ${Object.keys(icons).length} iconos cargados desde CSV`);
         resolve(icons);
       })
-
       .on('error', reject);
   });
 }
 
 function getIcon(iconName, variant = config.defaultVariant) {
   return iconCache[iconName]?.[variant];
-
-
-
-
 }
 
 module.exports = { loadIcons, getIcon };
