@@ -5,8 +5,8 @@ const sharp = require('sharp');
 const serverless = require('serverless-http');
 
 // IMPORT CORRECTO desde src (NO cambiar nombres)
-const { loadIcons, getIcon } = require('../src/iconLoader');
-const config = require('../src/config');
+const { loadIcons, getIcon } = require('./iconLoader');
+const config = require('./config');
 
 const app = express();
 app.use(cors({ origin: config.corsOrigin || '*' }));
