@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const serverless = require('serverless-http');
 const config = require('../src/config');
-const { servePng, serveSvg } = require('../src/serveIcon'); // tu función de servir iconos
+const { servePng, serveSvg } = require('../src/iconLoader'); // tu función de servir iconos
 
 const app = express();
 app.use(cors({ origin: config.corsOrigin }));
