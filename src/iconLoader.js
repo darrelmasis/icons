@@ -1,39 +1,83 @@
+// src/iconLoader.js
 const fs = require('fs');
 const csv = require('csv-parser');
 const path = require('path');
 const config = require('./config');
 
-let iconCache = {};
+let iconCache = {}; // { iconName: { variant: svgString } }
+let iconsLoaded = false;
+
+function _normalizeRow(row) {
+  // Aceptamos varias formas de columnas para ser tolerantes
+  return {
+    name: row.name || row.iconName || row.icon || row['icon-name'] || row['icons-html-content-name'],
+    variant: row.variant || row.style || row.variantName || config.defaultVariant,
+    svg: row.svg || row.svgContent || row['icons-html-content'] || row.content || row.svg_data
+  };
+}
 
 function loadIcons() {
   return new Promise((resolve, reject) => {
     const icons = {};
-    const csvPath = path.resolve(__dirname, '../data/icons.csv'); // ruta absoluta
+    // Resolución absoluta basada en la ruta relativa declarada en config.iconsPath
+    const csvPath = path.resolve(__dirname, config.iconsPath);
+
+    console.log('iconLoader: intentando leer CSV en:', csvPath);
 
     if (!fs.existsSync(csvPath)) {
-      return reject(new Error(`Archivo CSV no encontrado en ${csvPath}`));
+      console.warn(`iconLoader: archivo CSV no encontrado en ${csvPath}. Se cargará cache vacío.`);
+      // no rechazamos para que la función serverless no caiga en deploy; resolvemos con cache vacío
+      iconCache = {};
+      iconsLoaded = true;
+      return resolve(iconCache);
     }
 
-    fs.createReadStream(csvPath)
-      .pipe(csv())
-      .on('data', (row) => {
-        const iconName = row.name;
-        const variant = row.variant || config.defaultVariant;
+    const stream = fs.createReadStream(csvPath)
+      .pipe(csv());
+
+    stream.on('data', (row) => {
+      try {
+        const r = _normalizeRow(row);
+        if (!r.name || !r.svg) {
+          // fila incompleta, la ignoramos pero no rompemos todo
+          return;
+        }
+        const iconName = r.name;
+        const variant = r.variant || config.defaultVariant;
 
         if (!icons[iconName]) icons[iconName] = {};
-        icons[iconName][variant] = row.svg;
-      })
-      .on('end', () => {
-        iconCache = icons;
-        console.log(`✅ ${Object.keys(icons).length} iconos cargados desde CSV`);
-        resolve(icons);
-      })
-      .on('error', reject);
+        icons[iconName][variant] = r.svg;
+      } catch (err) {
+        // no terror: registramos y seguimos
+        console.warn('iconLoader: fila CSV inválida, se ignora', err);
+      }
+    });
+
+    stream.on('end', () => {
+      iconCache = icons;
+      iconsLoaded = true;
+      console.log(`✅ iconLoader: ${Object.keys(icons).length} iconos cargados desde CSV`);
+      resolve(iconCache);
+    });
+
+    stream.on('error', (err) => {
+      console.error('iconLoader: error leyendo CSV', err);
+      reject(err);
+    });
   });
 }
 
-function getIcon(iconName, variant = config.defaultVariant) {
-  return iconCache[iconName]?.[variant];
+async function getIcon(iconName, variant = config.defaultVariant) {
+  try {
+    // Si aún no cargamos iconos, lo hacemos (on-demand para serverless)
+    if (!iconsLoaded) {
+      await loadIcons();
+    }
+    return iconCache[iconName]?.[variant] || null;
+  } catch (err) {
+    console.error('iconLoader.getIcon error:', err);
+    return null;
+  }
 }
 
 module.exports = { loadIcons, getIcon };
