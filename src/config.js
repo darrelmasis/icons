@@ -5,5 +5,6 @@ module.exports = {
   iconsPath: process.env.ICONS_CSV_PATH,
   defaultFill: process.env.DEFAULT_FILL,
   defaultVariant: process.env.DEFAULT_VARIANT,
-  corsOrigin: process.env.CORS_ORIGIN
+  corsOrigin: process.env.CORS_ORIGIN,
+  defaultSize: process.env.DEFAULT_ICON_SIZE
 };

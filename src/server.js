@@ -5,6 +5,7 @@ const { loadIcons, getIcon } = require('./iconLoader');
 const config = require('./config');
 
 const app = express();
+app.use(cors())
 
 const colorMap = {
   dark: "#1F2937", light: "#F0F2F5", muted: "#6B7280", border: "#C7CED2",
@@ -38,6 +39,10 @@ const cssColors = new Set([
   "white", "whitesmoke", "yellow", "yellowgreen"
 ]);
 
+
+let defaultVariant = config.defaultVariant
+let defaultSize = config.defaultSize
+
 function resolveColor(fill) {
   if (!fill) return null;
 
@@ -56,71 +61,47 @@ function resolveColor(fill) {
 
 
 //---------------- CONVERT (PNG) CON TAMAÑO ----------------
-// icono + variante + color + tamaño
-app.get('/convert/:iconName/:variant/:fill/size/:size', async (req, res) => {
-  await servePng(req, res, req.params.iconName, req.params.variant, req.params.fill, req.params.size);
+// variante + icono + relleno + tamaño
+app.get(['/png/var/:variant/:iconName/:fill/size/:size','/png/var/:variant/:iconName/:fill'], async (req, res) => {
+  await servePng(req, res, req.params.iconName, req.params.variant, req.params.fill, req.params.size || defaultSize);
 });
 
-// icono + color + tamaño
-app.get('/convert/:iconName/:fill/size/:size', async (req, res) => {
-  await servePng(req, res, req.params.iconName, 'regular', req.params.fill, req.params.size);
+// variante + icono + tamaño
+app.get(['/png/var/:variant/:iconName/size/:size','/png/var/:variant/:iconName'], async (req, res) => {
+  await servePng(req, res, req.params.iconName, req.params.variant, null, req.params.size || defaultSize);
 });
 
-// icono + variante + tamaño
-app.get('/convert/:iconName/:variant/size/:size', async (req, res) => {
-  await servePng(req, res, req.params.iconName, req.params.variant, null, req.params.size);
+// icono + relleno + tamaño
+app.get(['/png/:iconName/:fill/size/:size','/png/:iconName/:fill'], async (req, res) => {
+  await servePng(req, res, req.params.iconName, defaultVariant, req.params.fill, req.params.size || defaultSize);
 });
 
 // icono + tamaño
-app.get('/convert/:iconName/size/:size', async (req, res) => {
-  await servePng(req, res, req.params.iconName, 'regular', null, req.params.size);
+app.get(['/png/:iconName/size/:size','/png/:iconName'], async (req, res) => {
+  await servePng(req, res, req.params.iconName, defaultVariant, null, req.params.size || defaultSize);
 });
-
-// ---------------- CONVERT (PNG) ----------------
-
-// icono + variante + color
-app.get('/convert/:iconName/:variant/:fill', async (req, res) => {
-  await servePng(req, res, req.params.iconName, req.params.variant, req.params.fill);
-});
-
-// icono + color
-app.get('/convert/:iconName/:fill', async (req, res) => {
-  await servePng(req, res, req.params.iconName, 'regular', req.params.fill);
-});
-
-// icono + variante
-app.get('/convert/:iconName/:variant', async (req, res) => {
-  await servePng(req, res, req.params.iconName, req.params.variant, null);
-});
-
-// solo icono
-app.get('/convert/:iconName', async (req, res) => {
-  await servePng(req, res, req.params.iconName, 'regular', null);
-});
-
-
 
 
 // ---------------- SVG ----------------
 
-// icono + variante + color
-app.get('/:iconName/:variant/:fill', async (req, res) => {
+// variante + icono + relleno
+app.get('/svg/var/:variant/:iconName/:fill', async (req, res) => {
   await serveSvg(req, res, req.params.iconName, req.params.variant, req.params.fill);
 });
 
-// icono + color
-app.get('/:iconName/:fill', async (req, res) => {
-  await serveSvg(req, res, req.params.iconName, 'regular', req.params.fill);
-});
-
-// icono + variante
-app.get('/:iconName/:variant', async (req, res) => {
+// variante + icono
+app.get('/svg/var/:variant/:iconName', async (req, res) => {
   await serveSvg(req, res, req.params.iconName, req.params.variant, null);
 });
 
-// solo icono
-app.get('/:iconName', async (req, res) => {
-  await serveSvg(req, res, req.params.iconName, 'regular', null);
+// icono + relleno
+app.get('/svg/:iconName/:fill', async (req, res) => {
+  await serveSvg(req, res, req.params.iconName, defaultVariant, req.params.fill);
+});
+
+// icono
+app.get('/svg/:iconName', async (req, res) => {
+  await serveSvg(req, res, req.params.iconName, defaultVariant, null);
 });
 
 // ---------- Handlers ----------
@@ -130,8 +111,10 @@ async function serveSvg(req, res, iconName, variant, fill) {
     if (!iconSvg) return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
     const color = fill ? resolveColor(fill) : null;
     const svg = color
-      ? iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$3`)
-      : iconSvg;
+    ? iconSvg
+        .replace(/fill="currentColor"/gi, `fill="${color}"`)
+        .replace(/(<(path|circle|rect|polygon|ellipse|line)[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$4`)
+    : iconSvg;
 
     res.setHeader('Content-Type', 'image/svg+xml');
     res.setHeader('Cache-Control', 'public, max-age=86400');
@@ -142,18 +125,25 @@ async function serveSvg(req, res, iconName, variant, fill) {
   }
 }
 
-async function servePng(req, res, iconName, variant, fill, size = 128) {
+async function servePng(req, res, iconName, variant, fill, size = config.defaultSize) {
   try {
     const iconSvg = getIcon(iconName, variant);
     if (!iconSvg) return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
 
     const color = fill ? resolveColor(fill) : null;
     const svg = color
-      ? iconSvg.replace(/(<path[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$3`)
-      : iconSvg;
+    ? iconSvg
+        .replace(/fill="currentColor"/gi, `fill="${color}"`)
+        .replace(/(<(path|circle|rect|polygon|ellipse|line)[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$4`)
+    : iconSvg;
+
+    let finalSize = parseInt(size, 10);
+    if (isNaN(finalSize) || finalSize <= 0 || finalSize > 1024) {
+      finalSize = config.defaultSize;
+    }
 
     const png = await sharp(Buffer.from(svg))
-      .resize(Number(size), Number(size), { fit: 'inside' })
+      .resize(finalSize, finalSize, { fit: 'inside' })
       .png()
       .toBuffer();
 
