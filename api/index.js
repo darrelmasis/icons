@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const sharp = require('sharp');
-const { loadIcons, getIcon } = require('./iconLoader');
-const config = require('./config');
+const { loadIcons, getIcon } = require('../src/iconLoader');
+const config = require('../src/config');
 
 const app = express();
 app.use(cors())
