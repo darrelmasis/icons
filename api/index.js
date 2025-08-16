@@ -84,11 +84,10 @@ app.get('/svg/:iconName', async (req, res) => {
 });
 
 // ---------------- HANDLERS ----------------
-async function servePng(req, res, iconName, variant, fill, size = config.defaultSize) {
+async function serveSvg(req, res, iconName, variant, fill) {
   try {
     const iconSvg = getIcon(iconName, variant);
     if (!iconSvg) return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
-
     const color = fill ? resolveColor(fill) : null;
     const svg = color
     ? iconSvg
@@ -96,22 +95,12 @@ async function servePng(req, res, iconName, variant, fill, size = config.default
         .replace(/(<(path|circle|rect|polygon|ellipse|line)[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$4`)
     : iconSvg;
 
-    let finalSize = parseInt(size, 10);
-    if (isNaN(finalSize) || finalSize <= 0 || finalSize > 1024) {
-      finalSize = config.defaultSize;
-    }
-
-    const png = await sharp(Buffer.from(svg))
-      .resize(finalSize, finalSize, { fit: 'inside' })
-      .png()
-      .toBuffer();
-
-    res.setHeader('Content-Type', 'image/png');
+    res.setHeader('Content-Type', 'image/svg+xml');
     res.setHeader('Cache-Control', 'public, max-age=86400');
-    res.send(png);
+    res.send(svg);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Error al convertir a PNG');
+    res.status(500).send('Error al procesar SVG');
   }
 }
 
