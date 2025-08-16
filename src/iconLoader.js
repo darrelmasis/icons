@@ -8,21 +8,19 @@ let iconCache = {};
 function loadIcons() {
   return new Promise((resolve, reject) => {
     const icons = {};
-    
-    if (!fs.existsSync(config.iconsPath)) {
-      return reject(new Error(`Archivo CSV no encontrado en ${config.iconsPath}`));
+    const csvPath = path.resolve(__dirname, config.iconsPath); // ruta absoluta
+
+    if (!fs.existsSync(csvPath)) {
+      return reject(new Error(`Archivo CSV no encontrado en ${csvPath}`));
     }
 
-    fs.createReadStream(config.iconsPath)
+    fs.createReadStream(csvPath)
       .pipe(csv())
       .on('data', (row) => {
         const iconName = row.name;
         const variant = row.variant || config.defaultVariant;
-        
-        if (!icons[iconName]) {
-          icons[iconName] = {};
-        }
-        
+
+        if (!icons[iconName]) icons[iconName] = {};
         icons[iconName][variant] = row.svg;
       })
       .on('end', () => {
