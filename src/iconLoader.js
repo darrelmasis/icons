@@ -1,41 +1,38 @@
 const fs = require('fs');
-const csv = require('csv-parser');
 const path = require('path');
+const csv = require('csv-parser');
 const config = require('./config');
 
-let iconCache = {};
+const iconCache = {};
 
-function loadIcons() {
+// Carga los iconos desde el CSV
+async function loadIcons() {
+  const filePath = path.resolve(config.iconsPath);
+
   return new Promise((resolve, reject) => {
-    const icons = {};
-    
-    if (!fs.existsSync(config.iconsPath)) {
-      return reject(new Error(`Archivo CSV no encontrado en ${config.iconsPath}`));
-    }
+    if (!fs.existsSync(filePath)) return resolve();
 
-    fs.createReadStream(config.iconsPath)
+    fs.createReadStream(filePath)
       .pipe(csv())
       .on('data', (row) => {
-        const iconName = row.name;
-        const variant = row.variant || config.defaultVariant;
-        
-        if (!icons[iconName]) {
-          icons[iconName] = {};
-        }
-        
-        icons[iconName][variant] = row.svg;
+        const { iconName, variant, svgContent } = row;
+        if (!iconCache[iconName]) iconCache[iconName] = {};
+        iconCache[iconName][variant || config.defaultVariant] = svgContent;
       })
-      .on('end', () => {
-        iconCache = icons;
-        console.log(`✅ ${Object.keys(icons).length} iconos cargados desde CSV`);
-        resolve(icons);
-      })
+      .on('end', resolve)
       .on('error', reject);
   });
 }
 
-function getIcon(iconName, variant = config.defaultVariant) {
-  return iconCache[iconName]?.[variant];
+// Devuelve un icono cargando la caché si es necesario
+async function getIcon(iconName, variant) {
+  if (!Object.keys(iconCache).length) {
+    await loadIcons();
+  }
+  return iconCache[iconName]?.[variant || config.defaultVariant] || null;
 }
 
-module.exports = { loadIcons, getIcon };
+module.exports = {
+  loadIcons,
+  getIcon
+};
