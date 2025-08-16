@@ -1,12 +1,15 @@
+// api/index.js
 const express = require('express');
 const cors = require('cors');
 const sharp = require('sharp');
+const serverless = require('serverless-http');
+
+// IMPORT CORRECTO desde src (NO cambiar nombres)
 const { loadIcons, getIcon } = require('../src/iconLoader');
 const config = require('../src/config');
 
-const serverless = require('serverless-http');
 const app = express();
-app.use(cors());
+app.use(cors({ origin: config.corsOrigin || '*' }));
 
 const colorMap = {
   dark: "#1F2937", light: "#F0F2F5", muted: "#6B7280", border: "#C7CED2",
@@ -14,32 +17,30 @@ const colorMap = {
 };
 
 const cssColors = new Set([
-  "aliceblue", "antiquewhite", "aqua", "aquamarine", "azure", "beige", "bisque",
-  "black", "blanchedalmond", "blue", "blueviolet", "brown", "burlywood", "cadetblue",
-  "chartreuse", "chocolate", "coral", "cornflowerblue", "cornsilk", "crimson", "cyan",
-  "darkblue", "darkcyan", "darkgoldenrod", "darkgray", "darkgreen", "darkgrey",
-  "darkkhaki", "darkmagenta", "darkolivegreen", "darkorange", "darkorchid", "darkred",
-  "darksalmon", "darkseagreen", "darkslateblue", "darkslategray", "darkslategrey",
-  "darkturquoise", "darkviolet", "deeppink", "deepskyblue", "dimgray", "dimgrey",
-  "dodgerblue", "firebrick", "floralwhite", "forestgreen", "fuchsia", "gainsboro",
-  "ghostwhite", "gold", "goldenrod", "gray", "green", "greenyellow", "grey",
-  "honeydew", "hotpink", "indianred", "indigo", "ivory", "khaki", "lavender",
-  "lavenderblush", "lawngreen", "lemonchiffon", "lightblue", "lightcoral", "lightcyan",
-  "lightgoldenrodyellow", "lightgray", "lightgreen", "lightgrey", "lightpink",
-  "lightsalmon", "lightseagreen", "lightskyblue", "lightslategray", "lightslategrey",
-  "lightsteelblue", "lightyellow", "lime", "limegreen", "linen", "magenta", "maroon",
-  "mediumaquamarine", "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen",
-  "mediumslateblue", "mediumspringgreen", "mediumturquoise", "mediumvioletred",
-  "midnightblue", "mintcream", "mistyrose", "moccasin", "navajowhite", "navy",
-  "oldlace", "olive", "olivedrab", "orange", "orangered", "orchid", "palegoldenrod",
-  "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff", "peru",
-  "pink", "plum", "powderblue", "purple", "rebeccapurple", "red", "rosybrown",
-  "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen", "seashell", "sienna",
-  "silver", "skyblue", "slateblue", "slategray", "slategrey", "snow", "springgreen",
-  "steelblue", "tan", "teal", "thistle", "tomato", "turquoise", "violet", "wheat",
-  "white", "whitesmoke", "yellow", "yellowgreen"
+  "aliceblue","antiquewhite","aqua","aquamarine","azure","beige","bisque","black",
+  "blanchedalmond","blue","blueviolet","brown","burlywood","cadetblue","chartreuse",
+  "chocolate","coral","cornflowerblue","cornsilk","crimson","cyan","darkblue",
+  "darkcyan","darkgoldenrod","darkgray","darkgreen","darkgrey","darkkhaki",
+  "darkmagenta","darkolivegreen","darkorange","darkorchid","darkred","darksalmon",
+  "darkseagreen","darkslateblue","darkslategray","darkslategrey","darkturquoise",
+  "darkviolet","deeppink","deepskyblue","dimgray","dimgrey","dodgerblue","firebrick",
+  "floralwhite","forestgreen","fuchsia","gainsboro","ghostwhite","gold","goldenrod",
+  "gray","green","greenyellow","grey","honeydew","hotpink","indianred","indigo",
+  "ivory","khaki","lavender","lavenderblush","lawngreen","lemonchiffon","lightblue",
+  "lightcoral","lightcyan","lightgoldenrodyellow","lightgray","lightgreen","lightgrey",
+  "lightpink","lightsalmon","lightseagreen","lightskyblue","lightslategray",
+  "lightslategrey","lightsteelblue","lightyellow","lime","limegreen","linen",
+  "magenta","maroon","mediumaquamarine","mediumblue","mediumorchid","mediumpurple",
+  "mediumseagreen","mediumslateblue","mediumspringgreen","mediumturquoise",
+  "mediumvioletred","midnightblue","mintcream","mistyrose","moccasin","navajowhite",
+  "navy","oldlace","olive","olivedrab","orange","orangered","orchid","palegoldenrod",
+  "palegreen","paleturquoise","palevioletred","papayawhip","peachpuff","peru","pink",
+  "plum","powderblue","purple","rebeccapurple","red","rosybrown","royalblue",
+  "saddlebrown","salmon","sandybrown","seagreen","seashell","sienna","silver",
+  "skyblue","slateblue","slategray","slategrey","snow","springgreen","steelblue",
+  "tan","teal","thistle","tomato","turquoise","violet","wheat","white","whitesmoke",
+  "yellow","yellowgreen"
 ]);
-
 
 let defaultVariant = config.defaultVariant;
 let defaultSize = config.defaultSize;
@@ -54,22 +55,28 @@ function resolveColor(fill) {
   return null;
 }
 
-// ---------------- RUTAS ----------------
-// PNG
+//---------------- CONVERT (PNG) CON TAMAÑO ----------------
+// variante + icono + relleno + tamaño
 app.get(['/png/var/:variant/:iconName/:fill/size/:size','/png/var/:variant/:iconName/:fill'], async (req, res) => {
   await servePng(req, res, req.params.iconName, req.params.variant, req.params.fill, req.params.size || defaultSize);
 });
+
+// variante + icono + tamaño
 app.get(['/png/var/:variant/:iconName/size/:size','/png/var/:variant/:iconName'], async (req, res) => {
   await servePng(req, res, req.params.iconName, req.params.variant, null, req.params.size || defaultSize);
 });
+
+// icono + relleno + tamaño
 app.get(['/png/:iconName/:fill/size/:size','/png/:iconName/:fill'], async (req, res) => {
   await servePng(req, res, req.params.iconName, defaultVariant, req.params.fill, req.params.size || defaultSize);
 });
+
+// icono + tamaño
 app.get(['/png/:iconName/size/:size','/png/:iconName'], async (req, res) => {
   await servePng(req, res, req.params.iconName, defaultVariant, null, req.params.size || defaultSize);
 });
 
-// SVG
+// ---------------- SVG ----------------
 app.get('/svg/var/:variant/:iconName/:fill', async (req, res) => {
   await serveSvg(req, res, req.params.iconName, req.params.variant, req.params.fill);
 });
@@ -83,30 +90,10 @@ app.get('/svg/:iconName', async (req, res) => {
   await serveSvg(req, res, req.params.iconName, defaultVariant, null);
 });
 
-// ---------------- HANDLERS ----------------
+// ---------- Handlers ----------
 async function serveSvg(req, res, iconName, variant, fill) {
   try {
-    const iconSvg = getIcon(iconName, variant);
-    if (!iconSvg) return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
-    const color = fill ? resolveColor(fill) : null;
-    const svg = color
-    ? iconSvg
-        .replace(/fill="currentColor"/gi, `fill="${color}"`)
-        .replace(/(<(path|circle|rect|polygon|ellipse|line)[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$4`)
-    : iconSvg;
-
-    res.setHeader('Content-Type', 'image/svg+xml');
-    res.setHeader('Cache-Control', 'public, max-age=86400');
-    res.send(svg);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Error al procesar SVG');
-  }
-}
-
-async function servePng(req, res, iconName, variant, fill, size = config.defaultSize) {
-  try {
-    const iconSvg = getIcon(iconName, variant);
+    const iconSvg = await getIcon(iconName, variant);
     if (!iconSvg) return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
     const color = fill ? resolveColor(fill) : null;
     const svg = color
@@ -114,28 +101,56 @@ async function servePng(req, res, iconName, variant, fill, size = config.default
           .replace(/fill="currentColor"/gi, `fill="${color}"`)
           .replace(/(<(path|circle|rect|polygon|ellipse|line)[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$4`)
       : iconSvg;
+
+    res.setHeader('Content-Type', 'image/svg+xml');
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    res.send(svg);
+  } catch (err) {
+    console.error('serveSvg error:', err);
+    res.status(500).send('Error al procesar SVG');
+  }
+}
+
+async function servePng(req, res, iconName, variant, fill, size = config.defaultSize) {
+  try {
+    const iconSvg = await getIcon(iconName, variant);
+    if (!iconSvg) return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
+
+    const color = fill ? resolveColor(fill) : null;
+    const svg = color
+      ? iconSvg
+          .replace(/fill="currentColor"/gi, `fill="${color}"`)
+          .replace(/(<(path|circle|rect|polygon|ellipse|line)[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$4`)
+      : iconSvg;
+
     let finalSize = parseInt(size, 10);
-    if (isNaN(finalSize) || finalSize <= 0 || finalSize > 1024) finalSize = config.defaultSize;
-    const png = await sharp(Buffer.from(svg))
+    if (isNaN(finalSize) || finalSize <= 0 || finalSize > 1024) {
+      finalSize = config.defaultSize;
+    }
+
+    // Buffer con encoding explícito (previene problemas con UTF-8 en serverless)
+    const png = await sharp(Buffer.from(svg, 'utf8'))
       .resize(finalSize, finalSize, { fit: 'inside' })
       .png()
       .toBuffer();
+
     res.setHeader('Content-Type', 'image/png');
     res.setHeader('Cache-Control', 'public, max-age=86400');
     res.send(png);
   } catch (err) {
-    console.error(err);
+    console.error('servePng error:', err);
     res.status(500).send('Error al convertir a PNG');
   }
 }
 
-// ---------------- CARGA ICONOS ----------------
+// ---------- Start: carga inicial de iconos (no hace app.listen en serverless) ----------
 (async () => {
   try {
     await loadIcons();
     console.log('Íconos cargados correctamente.');
   } catch (err) {
-    console.error('No se pudieron cargar los íconos:', err);
+    console.error('No se pudieron cargar los íconos (solo log):', err);
+    // NO process.exit en serverless
   }
 })();
 
