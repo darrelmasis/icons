@@ -7,17 +7,20 @@
     }
   ],
   "routes": [
-    {
-      "src": "/png/(.*)",
-      "dest": "api/index.js"
-    },
-    {
-      "src": "/svg/(.*)",
-      "dest": "api/index.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "api/index.js"
-    }
+
+    { "src": "/png/var/([^/]+)/([^/]+)/([^/]+)/size/([^/]+)", "dest": "api/index.js" },
+    { "src": "/png/var/([^/]+)/([^/]+)/([^/]+)", "dest": "api/index.js" },
+    { "src": "/png/var/([^/]+)/([^/]+)/size/([^/]+)", "dest": "api/index.js" },
+    { "src": "/png/var/([^/]+)/([^/]+)", "dest": "api/index.js" },
+    { "src": "/png/([^/]+)/([^/]+)/size/([^/]+)", "dest": "api/index.js" },
+    { "src": "/png/([^/]+)/([^/]+)", "dest": "api/index.js" },
+    { "src": "/png/([^/]+)/size/([^/]+)", "dest": "api/index.js" },
+    { "src": "/png/([^/]+)", "dest": "api/index.js" },
+
+
+    { "src": "/svg/var/([^/]+)/([^/]+)/([^/]+)", "dest": "api/index.js" },
+    { "src": "/svg/var/([^/]+)/([^/]+)", "dest": "api/index.js" },
+    { "src": "/svg/([^/]+)/([^/]+)", "dest": "api/index.js" },
+    { "src": "/svg/([^/]+)", "dest": "api/index.js" }
   ]
 }
