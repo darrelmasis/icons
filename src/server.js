@@ -123,7 +123,7 @@ async function serveSvg(req, res, iconName, variant, fill) {
     console.error('serveSvg error:', err);
     res.status(500).send('Error al procesar SVG');
   }
-}}
+}
 
 async function servePng(req, res, iconName, variant, fill, size = config.defaultSize) {
   try {
