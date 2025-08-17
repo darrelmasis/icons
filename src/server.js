@@ -107,23 +107,23 @@ app.get('/svg/:iconName', async (req, res) => {
 // ---------- Handlers ----------
 async function serveSvg(req, res, iconName, variant, fill) {
   try {
-    const iconSvg = getIcon(iconName, variant);
+    const iconSvg = await getIcon(iconName, variant);
     if (!iconSvg) return res.status(404).send(`Icono "${iconName}" con variante "${variant}" no encontrado`);
     const color = fill ? resolveColor(fill) : null;
     const svg = color
-    ? iconSvg
-        .replace(/fill="currentColor"/gi, `fill="${color}"`)
-        .replace(/(<(path|circle|rect|polygon|ellipse|line)[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$4`)
-    : iconSvg;
+      ? iconSvg
+          .replace(/fill="currentColor"/gi, `fill="${color}"`)
+          .replace(/(<(path|circle|rect|polygon|ellipse|line)[^>]*fill=["'])([^"']*)(["'])/gi, `$1${color}$4`)
+      : iconSvg;
 
     res.setHeader('Content-Type', 'image/svg+xml');
     res.setHeader('Cache-Control', 'public, max-age=86400');
     res.send(svg);
   } catch (err) {
-    console.error(err);
+    console.error('serveSvg error:', err);
     res.status(500).send('Error al procesar SVG');
   }
-}
+}}
 
 async function servePng(req, res, iconName, variant, fill, size = config.defaultSize) {
   try {
