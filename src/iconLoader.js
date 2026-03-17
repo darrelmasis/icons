@@ -1,120 +1,98 @@
 // src/iconLoader.js
-const fs = require("fs");
-const csv = require("csv-parser");
-const path = require("path");
-const config = require("./config");
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import config from "./config.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 let iconCache = {}; // { iconName: { variant: svgString } }
+let tagCache = {};  // { iconName: [tags] }
+let mtimeCache = {}; // { filePath: lastModifiedTime }
 let iconsLoaded = false;
 
-function _normalizeRow(row) {
-  // Aceptamos varias formas de columnas para ser tolerantes
-  return {
-    name:
-      row.name ||
-      row.iconName ||
-      row.icon ||
-      row["icon-name"] ||
-      row["icons-html-content-name"],
-    variant:
-      row.variant || row.style || row.variantName || config.defaultVariant,
-    svg:
-      row.svg ||
-      row.svgContent ||
-      row["icons-html-content"] ||
-      row.content ||
-      row.svg_data,
-  };
-}
+async function loadIcons() {
+  const rootDir = path.resolve(__dirname, "..", config.iconsDir);
+  console.log("iconLoader: Escaneando iconos en:", rootDir);
 
-function loadIcons() {
-  return new Promise((resolve, reject) => {
-    const icons = {};
-    // Resolución absoluta basada en la ruta relativa declarada en config.iconsPath
-    const csvPath = path.resolve(__dirname, config.iconsPath);
+  if (!fs.existsSync(rootDir)) {
+    console.warn(`iconLoader: Directorio no encontrado: ${rootDir}`);
+    return {};
+  }
 
-    console.log("iconLoader: intentando leer CSV en:", csvPath);
-
-    if (!fs.existsSync(csvPath)) {
-      console.warn(
-        `iconLoader: archivo CSV no encontrado en ${csvPath}. Se cargará cache vacío.`
-      );
-      // no rechazamos para que la función serverless no caiga en deploy; resolvemos con cache vacío
-      iconCache = {};
-      iconsLoaded = true;
-      return resolve(iconCache);
+  // Cargar etiquetas si existen
+  const tagsPath = path.join(rootDir, "tags.json");
+  if (fs.existsSync(tagsPath)) {
+    try {
+      tagCache = JSON.parse(fs.readFileSync(tagsPath, "utf-8"));
+      console.log(`✅ iconLoader: Cargadas etiquetas para ${Object.keys(tagCache).length} iconos.`);
+    } catch (err) {
+      console.warn("iconLoader: Error cargando tags.json:", err);
     }
+  }
 
-    const stream = fs.createReadStream(csvPath).pipe(csv());
+  const icons = {};
 
-    stream.on("data", (row) => {
+  for (const targetPath of config.targetPaths) {
+    const dirPath = path.join(rootDir, targetPath);
+    if (!fs.existsSync(dirPath)) continue;
+
+    const files = fs.readdirSync(dirPath).filter(f => f.endsWith(".svg"));
+    
+    // Identificar la variante basándose en la ruta completa
+    let variant = path.basename(targetPath); // fallback default
+    if (targetPath.includes('flat')) variant = 'flat';
+    else if (targetPath.includes('color')) variant = 'color';
+    else if (targetPath.includes('world')) variant = 'world';
+    else if (targetPath.includes('local')) variant = 'local';
+    else if (targetPath.includes('thin')) variant = 'thin';
+    else if (targetPath.includes('light')) variant = 'light';
+    else if (targetPath.includes('regular')) variant = 'regular';
+    else if (targetPath.includes('solid')) variant = 'solid';
+
+    for (const file of files) {
+      const iconName = file.replace(".svg", "").toLowerCase();
+      const filePath = path.join(dirPath, file);
+      
       try {
-        const r = _normalizeRow(row);
-        if (!r.name || !r.svg) {
-          // fila incompleta, la ignoramos pero no rompemos todo
-          return;
-        }
-        // Normalizar: trim y lowercase para búsquedas consistentes
-        const iconName = String(r.name).trim().toLowerCase();
-        const variant = String(r.variant || config.defaultVariant)
-          .trim()
-          .toLowerCase();
-
-        // Limpiar SVG simple: corregir comillas duplicadas comunes en CSV exportados
-        let svgContent = String(r.svg).replace(/""/g, '"');
-        svgContent = svgContent.replace(
-          /xmlns=\"http:\/\/www.w3.org\/2000\/svg\"/gi,
-          'xmlns="http://www.w3.org/2000/svg"'
-        );
-
+        let svgContent = fs.readFileSync(filePath, "utf-8");
+        // Limpiamos un poco el SVG si es necesario
+        svgContent = svgContent.replace(/""/g, '"');
+        
         if (!icons[iconName]) icons[iconName] = {};
         icons[iconName][variant] = svgContent;
       } catch (err) {
-        // no terror: registramos y seguimos
-        console.warn("iconLoader: fila CSV inválida, se ignora", err);
+        console.warn(`Error leyendo icono ${file}:`, err);
       }
-    });
-
-    stream.on("end", () => {
-      iconCache = icons;
-      iconsLoaded = true;
-      console.log(
-        `✅ iconLoader: ${Object.keys(icons).length} iconos cargados desde CSV`
-      );
-      resolve(iconCache);
-    });
-
-    stream.on("error", (err) => {
-      console.error("iconLoader: error leyendo CSV", err);
-      reject(err);
-    });
-  });
-}
-
-async function getIcon(iconName, variant = config.defaultVariant) {
-  try {
-    // Si aún no cargamos iconos, lo hacemos (on-demand para serverless)
-    if (!iconsLoaded) {
-      await loadIcons();
     }
-    return iconCache[iconName]?.[variant] || null;
-  } catch (err) {
-    console.error("iconLoader.getIcon error:", err);
-    return null;
   }
+
+  iconCache = icons;
+  iconsLoaded = true;
+  console.log(`✅ iconLoader: ${Object.keys(icons).length} iconos cargados.`);
+  return iconCache;
 }
 
-async function getFirstIconName() {
-  try {
-    if (!iconsLoaded) {
-      await loadIcons();
-    }
-    const keys = Object.keys(iconCache || {});
-    return keys.length ? keys[0] : null;
-  } catch (err) {
-    console.error("iconLoader.getFirstIconName error:", err);
-    return null;
-  }
+export async function getIcon(iconName, variant = config.defaultVariant) {
+  if (!iconsLoaded) await loadIcons();
+  return iconCache[iconName]?.[variant] || null;
 }
 
-module.exports = { loadIcons, getIcon, getFirstIconName };
+export async function getFirstIconName() {
+  if (!iconsLoaded) await loadIcons();
+  const keys = Object.keys(iconCache);
+  return keys.length ? keys[0] : null;
+}
+
+export async function getAllIcons() {
+  if (!iconsLoaded) await loadIcons();
+  return Object.keys(iconCache)
+    .sort()
+    .map(name => ({
+      name,
+      variants: Object.keys(iconCache[name]),
+      tags: tagCache[name] || []
+    }));
+}
+
+export { loadIcons };

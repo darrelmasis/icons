@@ -1,16 +1,13 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "src/index.js",
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "includeFiles": ["src/icons.csv"]
-      }
-    }
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/server.js" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
-  "routes": [
-    { "src": "/(.*)", "dest": "src/index.js" }
-  ]
+  "functions": {
+    "api/server.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  }
 }

@@ -2,26 +2,40 @@
   "name": "svg-icon-server",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
-    "build": "echo 'El proyecto no necesita un proceso de construcción'",
-    "test": "node src/index.js",
-    "vercel-build": "echo 'El proyecto no necesita un proceso de construcción para Vercel'"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "api:dev": "node api/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@tailwindcss/vite": "^4.2.1",
     "cors": "^2.8.5",
-    "csv-parser": "^3.2.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "serverless-http": "^3.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "sharp": "^0.34.1"
   },
   "devDependencies": {
-      "nodemon": "^3.1.10"
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.27",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "globals": "^15.9.0",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.1",
+    "vite": "^5.4.1",
+    "vite-plugin-svgr": "^4.5.0"
   }
 }
