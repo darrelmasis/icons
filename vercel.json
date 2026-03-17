@@ -2,7 +2,9 @@
   "version": 2,
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/server.js" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/svg/(.*)", "destination": "/api/server.js" },
+    { "source": "/png/(.*)", "destination": "/api/server.js" },
+    { "source": "/((?!api/|svg/|png/|assets/|.*\\..*).*)", "destination": "/index.html" }
   ],
   "functions": {
     "api/server.js": {
