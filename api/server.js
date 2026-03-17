@@ -11,6 +11,23 @@ const app = express();
 
 app.use(cors());
 
+// Vercel rewrites pueden mapear /api/* -> /api/server.js.
+// Para no perder la ruta original, `vercel.json` envía `?path=...` y aquí la restauramos.
+app.use((req, _res, next) => {
+  const original = req.query?.path;
+  if (typeof original === "string" && original.length > 0) {
+    const normalizedPath = `/${original.replace(/^\/+/, "")}`;
+
+    // Preservamos cualquier query param adicional (ej: size=64) removiendo solo `path`.
+    const full = new URL(req.url, "http://localhost");
+    full.searchParams.delete("path");
+    const remainingQuery = full.searchParams.toString();
+
+    req.url = remainingQuery ? `${normalizedPath}?${remainingQuery}` : normalizedPath;
+  }
+  next();
+});
+
 const colorMap = {
   navy: "#1e293b",
   slate: "#64748b",
