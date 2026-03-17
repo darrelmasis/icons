@@ -17,6 +17,7 @@ function App() {
   const [hexInput, setHexInput] = useState('#1e293b');
   const [svgDownloading, setSvgDownloading] = useState(false);
   const [pngCopied, setPngCopied] = useState(false);
+  const [modalImgLoading, setModalImgLoading] = useState(false);
   const ICONS_PER_PAGE = 50;
 
   const variantGroups = [
@@ -183,6 +184,7 @@ function App() {
     setModalVariant(variantToSet);
     setModalColor('#1e293b');
     setHexInput('#1e293b');
+    setModalImgLoading(true);
     document.body.style.overflow = 'hidden';
   };
 
@@ -190,6 +192,11 @@ function App() {
     setSelectedIcon(null);
     document.body.style.overflow = 'auto';
   };
+
+  useEffect(() => {
+    if (!selectedIcon) return;
+    setModalImgLoading(true);
+  }, [selectedIcon, modalVariant, modalColor]);
 
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
@@ -367,16 +374,23 @@ function App() {
             {/* Preview del icono */}
             <div className="px-8 pb-5">
               <div 
-                className="w-full h-44 flex items-center justify-center rounded-2xl border-2 border-dashed border-border/40 transition-colors"
+                className="w-full h-44 flex items-center justify-center rounded-2xl border-2 border-dashed border-border/40 transition-colors relative overflow-hidden"
                 style={{ backgroundColor: `${modalColor}10` }}
               >
+                {modalImgLoading && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-28 h-28 rounded-2xl skeleton-shimmer opacity-60"></div>
+                  </div>
+                )}
                 <img
                   src={modalVariant === 'world' || modalVariant === 'color' 
                     ? `${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}`
                     : `${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}/${encodeURIComponent(modalColor.replace('#',''))}`
                   }
                   alt={selectedIcon.name}
-                  className="w-24 h-24 object-contain"
+                  className={`w-24 h-24 object-contain transition-opacity duration-200 ${modalImgLoading ? 'opacity-0' : 'opacity-100'}`}
+                  onLoad={() => setModalImgLoading(false)}
+                  onError={() => setModalImgLoading(false)}
                 />
               </div>
             </div>
