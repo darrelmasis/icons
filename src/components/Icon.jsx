@@ -19,6 +19,27 @@ const variantFolderMap = {
   color:   'brands/local/color',
 }
 
+const preloadCache = new Map()
+
+export function preloadIcon(name, variant = 'regular') {
+  if (!name) return Promise.resolve(false)
+
+  const folder = variantFolderMap[variant] ?? `classics/${variant}`
+  const key = `../assets/icons/${folder}/${name}.svg`
+  const loader = iconsGlob[key]
+  if (!loader) return Promise.resolve(false)
+
+  const cached = preloadCache.get(key)
+  if (cached) return cached
+
+  const promise = loader()
+    .then(() => true)
+    .catch(() => false)
+
+  preloadCache.set(key, promise)
+  return promise
+}
+
 // Tamaños predefinidos (Tailwind)
 const sizeMap = {
   xxxs: 'w-2 h-2',
@@ -29,6 +50,7 @@ const sizeMap = {
   lg:   'w-6 h-6',
   xl:   'w-7 h-7',
   '2xl': 'w-8 h-8',
+  '3xl': 'w-9 h-9',
 }
 
 const Icon = forwardRef(
@@ -41,6 +63,7 @@ const Icon = forwardRef(
       animation= '',        // ej: "animate-spin"
       className= '',
       title    = '',
+      forceColor = false,
       ...props
     },
     ref
@@ -71,7 +94,7 @@ const Icon = forwardRef(
     )
 
     const isMultiColor = ['world', 'color', 'flat'].includes(variant)
-    const svgClasses   = classNames('w-full h-full', { 'fill-current': !isMultiColor })
+    const svgClasses   = classNames('w-full h-full', { 'fill-current': !isMultiColor || forceColor })
 
     return (
       <span ref={ref} className={classes} title={title} data-icon={name} {...props}>

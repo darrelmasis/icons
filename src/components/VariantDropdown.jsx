@@ -1,8 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Icon from './Icon';
 
 const VariantDropdown = ({ variants, currentVariant, onChange, className = "" }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   // Búsqueda profunda de la variante seleccionada (incluyendo grupos)
   const selectedVariant = variants.reduce((found, item) => {
@@ -13,7 +29,7 @@ const VariantDropdown = ({ variants, currentVariant, onChange, className = "" })
   }, null) || variants[0];
 
   return (
-    <div className={`relative ${className}`}>
+    <div ref={dropdownRef} className={`relative ${className}`}>
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 bg-[#f8fafc] hover:bg-[#f1f5f9] text-[#1e293b] text-sm font-bold py-2 px-4 rounded-full border border-[#e2e8f0] transition-colors cursor-pointer"
@@ -36,8 +52,7 @@ const VariantDropdown = ({ variants, currentVariant, onChange, className = "" })
       
       {isOpen && (
         <>
-          <div className="fixed inset-0 z-10" onClick={() => setIsOpen(false)}></div>
-          <div className="absolute left-0 top-full mt-2 w-48 bg-white rounded-2xl shadow-xl border border-border/50 overflow-hidden z-20 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="absolute left-0 lg:-left-12 top-full mt-2 w-48 bg-white rounded-2xl shadow-xl border border-border/50 overflow-hidden z-[110] py-2 animate-in fade-in slide-in-from-top-2 duration-200">
             {/* Si existen grupos en la lista */}
             {variants.some(v => v.items) ? (
               variants.map((item, index) => {
