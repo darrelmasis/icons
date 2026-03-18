@@ -1,48 +1,95 @@
 {
   "360-degrees": [
     "360",
-    "degrees"
+    "degrees",
+    "grados",
+    "angulo",
+    "giro",
+    "vuelta",
+    "rotacion"
   ],
   "abacus": [
     "abacus",
     "abaco",
-    "calculadora"
+    "calculadora",
+    "matematicas",
+    "contar",
+    "numeros"
   ],
   "accent-grave": [
     "accent",
-    "grave"
+    "grave",
+    "acento",
+    "tildes",
+    "ortografia"
   ],
   "acorn": [
-    "acorn"
+    "acorn",
+    "bellota",
+    "ardilla",
+    "roble",
+    "semilla",
+    "arbol"
   ],
   "address-book": [
     "address",
-    "book"
+    "book",
+    "contactos",
+    "agenda",
+    "directorio",
+    "libreta",
+    "telefonos",
+    "personas"
   ],
   "address-card": [
     "tarjeta",
     "pago",
     "credito",
     "address",
-    "card"
+    "card",
+    "contacto",
+    "perfil",
+    "identificacion",
+    "usuario",
+    "presentacion"
   ],
   "air-conditioner": [
     "air",
-    "conditioner"
+    "conditioner",
+    "aire",
+    "acondicionado",
+    "clima",
+    "frio",
+    "ventilacion",
+    "hvac"
   ],
   "airplay": [
-    "airplay"
+    "airplay",
+    "streaming",
+    "pantalla",
+    "compartir",
+    "inalambrico",
+    "apple",
+    "mirroring"
   ],
   "alarm-clock": [
     "reloj",
     "tiempo",
     "hora",
     "alarm",
-    "clock"
+    "clock",
+    "despertador",
+    "alarma",
+    "recordatorio",
+    "temporizador"
   ],
   "alarm-exclamation": [
     "alarm",
-    "exclamation"
+    "exclamation",
+    "alarma",
+    "urgencia",
+    "peligro",
+    "alerta"
   ],
   "alarm-plus": [
     "mas",
@@ -50,11 +97,18 @@
     "agregar",
     "nuevo",
     "alarm",
-    "plus"
+    "plus",
+    "alarma",
+    "recordatorio"
   ],
   "alarm-snooze": [
     "alarm",
-    "snooze"
+    "snooze",
+    "alarma",
+    "posponer",
+    "dormitar",
+    "recordatorio",
+    "mas tarde"
   ],
   "album-circle-plus": [
     "mas",
@@ -63,7 +117,11 @@
     "nuevo",
     "album",
     "circle",
-    "plus"
+    "plus",
+    "disco",
+    "musica",
+    "coleccion",
+    "agregar album"
   ],
   "album-circle-user": [
     "usuario",
@@ -72,7 +130,11 @@
     "cliente",
     "album",
     "circle",
-    "user"
+    "user",
+    "disco",
+    "musica",
+    "artista",
+    "perfil musica"
   ],
   "album-collection-circle-plus": [
     "mas",
@@ -82,7 +144,10 @@
     "album",
     "collection",
     "circle",
-    "plus"
+    "plus",
+    "discografia",
+    "coleccion",
+    "agregar coleccion"
   ],
   "album-collection-circle-user": [
     "usuario",
@@ -92,62 +157,131 @@
     "album",
     "collection",
     "circle",
-    "user"
+    "user",
+    "discografia",
+    "coleccion",
+    "artista"
   ],
   "album-collection": [
     "album",
-    "collection"
+    "collection",
+    "discografia",
+    "coleccion",
+    "musica",
+    "discos",
+    "catalogo"
   ],
   "album": [
-    "album"
+    "album",
+    "disco",
+    "musica",
+    "canciones",
+    "lp",
+    "sencillo"
   ],
   "alicorn": [
-    "alicorn"
+    "alicorn",
+    "unicornio",
+    "mitologia",
+    "caballo",
+    "cuerno",
+    "fantasia",
+    "animal"
   ],
   "alien-8bit": [
     "extraterrestre",
     "espacio",
     "alien",
-    "8bit"
+    "8bit",
+    "pixel",
+    "videojuego",
+    "ovni",
+    "marciano"
   ],
   "alien": [
     "extraterrestre",
     "espacio",
-    "alien"
+    "alien",
+    "ovni",
+    "marciano",
+    "monstruo",
+    "sci-fi"
   ],
   "align-center": [
     "align",
-    "center"
+    "center",
+    "alinear",
+    "centro",
+    "texto",
+    "parrafo",
+    "edicion",
+    "formato"
   ],
   "align-justify": [
     "align",
-    "justify"
+    "justify",
+    "alinear",
+    "justificar",
+    "texto",
+    "parrafo",
+    "edicion",
+    "formato"
   ],
   "align-left": [
     "izquierda",
     "atras",
     "align",
-    "left"
+    "left",
+    "alinear",
+    "texto",
+    "parrafo",
+    "edicion",
+    "formato"
   ],
   "align-right": [
     "derecha",
     "siguiente",
     "align",
-    "right"
+    "right",
+    "alinear",
+    "texto",
+    "parrafo",
+    "edicion",
+    "formato"
   ],
   "align-slash": [
     "align",
-    "slash"
+    "slash",
+    "alinear",
+    "cancelar",
+    "desactivar",
+    "formato",
+    "texto"
   ],
   "alt": [
-    "alt"
+    "alt",
+    "tecla",
+    "alternativo",
+    "accesibilidad",
+    "texto alternativo"
   ],
   "amp-guitar": [
     "amp",
-    "guitar"
+    "guitar",
+    "amplificador",
+    "guitarra",
+    "musica",
+    "sonido",
+    "rock",
+    "instrumento"
   ],
   "ampersand": [
-    "ampersand"
+    "ampersand",
+    "y",
+    "signo",
+    "tipografia",
+    "caracter",
+    "et"
   ],
   "anchor-circle-check": [
     "ok",
@@ -156,77 +290,137 @@
     "bien",
     "anchor",
     "circle",
-    "check"
+    "check",
+    "ancla",
+    "barco",
+    "exito",
+    "validado"
   ],
   "anchor-circle-exclamation": [
     "anchor",
     "circle",
-    "exclamation"
+    "exclamation",
+    "ancla",
+    "alerta",
+    "error",
+    "problema",
+    "barco"
   ],
   "anchor-circle-xmark": [
     "anchor",
     "circle",
-    "xmark"
+    "xmark",
+    "ancla",
+    "cancelar",
+    "eliminar",
+    "error",
+    "barco"
   ],
   "anchor-lock": [
     "candado",
     "seguridad",
     "cerrar",
     "anchor",
-    "lock"
+    "lock",
+    "ancla",
+    "bloqueado",
+    "seguro",
+    "barco"
   ],
   "anchor": [
-    "anchor"
+    "anchor",
+    "ancla",
+    "barco",
+    "mar",
+    "navegacion",
+    "puerto",
+    "amarrar"
   ],
   "angel": [
-    "angel"
+    "angel",
+    "navidad",
+    "religion",
+    "espiritu",
+    "fantasia",
+    "halo",
+    "alas"
   ],
   "angle-90": [
-    "angle"
+    "angle",
+    "angulo",
+    "90",
+    "noventa",
+    "grados",
+    "geometria"
   ],
   "angle-down": [
     "abajo",
     "bajar",
     "angle",
-    "down"
+    "down",
+    "flecha",
+    "desplegar",
+    "expandir",
+    "chevron"
   ],
   "angle-left": [
     "izquierda",
     "atras",
     "angle",
-    "left"
+    "left",
+    "flecha",
+    "anterior",
+    "chevron"
   ],
   "angle-right": [
     "derecha",
     "siguiente",
     "angle",
-    "right"
+    "right",
+    "flecha",
+    "siguiente",
+    "chevron"
   ],
   "angle-up": [
     "arriba",
     "subir",
-    "angle"
+    "angle",
+    "chevron",
+    "flecha",
+    "contraer"
   ],
   "angle": [
-    "angle"
+    "angle",
+    "angulo",
+    "geometria",
+    "escuadra"
   ],
   "angles-down": [
     "abajo",
     "bajar",
     "angles",
-    "down"
+    "down",
+    "dobles",
+    "chevron",
+    "desplegar"
   ],
   "angles-left": [
     "izquierda",
     "atras",
     "angles",
-    "left"
+    "left",
+    "dobles",
+    "chevron",
+    "retroceder"
   ],
   "angles-right": [
     "derecha",
     "siguiente",
     "angles",
-    "right"
+    "right",
+    "dobles",
+    "chevron",
+    "avanzar"
   ],
   "angles-up-down": [
     "arriba",
@@ -234,44 +428,81 @@
     "abajo",
     "bajar",
     "angles",
-    "down"
+    "down",
+    "ordenar",
+    "clasificar"
   ],
   "angles-up": [
     "arriba",
     "subir",
-    "angles"
+    "angles",
+    "chevron",
+    "dobles"
   ],
   "ankh": [
-    "ankh"
+    "ankh",
+    "egipto",
+    "cruz",
+    "vida",
+    "simbolo",
+    "religion"
   ],
   "ant": [
-    "ant"
+    "ant",
+    "hormiga",
+    "insecto",
+    "bicho",
+    "animal"
   ],
   "apartment": [
-    "apartment"
+    "apartment",
+    "apartamento",
+    "edificio",
+    "vivienda",
+    "hogar",
+    "departamento",
+    "condominio"
   ],
   "aperture": [
-    "aperture"
+    "aperture",
+    "camara",
+    "fotografia",
+    "lente",
+    "diafragma",
+    "exposicion"
   ],
   "apostrophe": [
-    "apostrophe"
+    "apostrophe",
+    "apostrofo",
+    "ortografia",
+    "puntuacion",
+    "texto"
   ],
   "apple-core": [
     "manzana",
     "mac",
     "iphone",
     "apple",
-    "core"
+    "core",
+    "fruta",
+    "logo",
+    "mordida"
   ],
   "apple-whole": [
     "manzana",
     "mac",
     "iphone",
     "apple",
-    "whole"
+    "whole",
+    "fruta",
+    "logo"
   ],
   "archway": [
-    "archway"
+    "archway",
+    "arco",
+    "arquitectura",
+    "monumento",
+    "puerta"
   ],
   "arrow-down-1-9": [
     "flecha",
@@ -280,7 +511,10 @@
     "abajo",
     "bajar",
     "arrow",
-    "down"
+    "down",
+    "numeros",
+    "ordenar",
+    "clasificar"
   ],
   "arrow-down-9-1": [
     "flecha",
@@ -289,7 +523,10 @@
     "abajo",
     "bajar",
     "arrow",
-    "down"
+    "down",
+    "numeros",
+    "ordenar",
+    "clasificar"
   ],
   "arrow-down-a-z": [
     "flecha",
@@ -298,7 +535,10 @@
     "abajo",
     "bajar",
     "arrow",
-    "down"
+    "down",
+    "alfabeto",
+    "ordenar",
+    "clasificar"
   ],
   "arrow-down-arrow-up": [
     "flecha",
@@ -309,7 +549,9 @@
     "abajo",
     "bajar",
     "arrow",
-    "down"
+    "down",
+    "ordenar",
+    "ascendente descendente"
   ],
   "arrow-down-big-small": [
     "flecha",
@@ -320,7 +562,10 @@
     "arrow",
     "down",
     "big",
-    "small"
+    "small",
+    "grande",
+    "pequeño",
+    "tamaño"
   ],
   "arrow-down-from-arc": [
     "flecha",
@@ -331,7 +576,8 @@
     "arrow",
     "down",
     "from",
-    "arc"
+    "arc",
+    "desde"
   ],
   "arrow-down-from-bracket": [
     "flecha",
@@ -342,7 +588,9 @@
     "arrow",
     "down",
     "from",
-    "bracket"
+    "bracket",
+    "extraer",
+    "descargar"
   ],
   "arrow-down-from-dotted-line": [
     "flecha",
@@ -396,7 +644,8 @@
     "atras",
     "arrow",
     "down",
-    "left"
+    "left",
+    "sur oeste"
   ],
   "arrow-down-long": [
     "flecha",
@@ -406,7 +655,8 @@
     "bajar",
     "arrow",
     "down",
-    "long"
+    "long",
+    "larga"
   ],
   "arrow-down-right": [
     "flecha",
@@ -418,7 +668,8 @@
     "siguiente",
     "arrow",
     "down",
-    "right"
+    "right",
+    "sur este"
   ],
   "arrow-down-short-wide": [
     "flecha",
@@ -429,7 +680,8 @@
     "arrow",
     "down",
     "short",
-    "wide"
+    "wide",
+    "ancho"
   ],
   "arrow-down-small-big": [
     "flecha",
@@ -440,7 +692,8 @@
     "arrow",
     "down",
     "small",
-    "big"
+    "big",
+    "tamaño"
   ],
   "arrow-down-square-triangle": [
     "flecha",
@@ -451,7 +704,8 @@
     "arrow",
     "down",
     "square",
-    "triangle"
+    "triangle",
+    "formas"
   ],
   "arrow-down-to-arc": [
     "flecha",
@@ -461,7 +715,8 @@
     "bajar",
     "arrow",
     "down",
-    "arc"
+    "arc",
+    "hasta"
   ],
   "arrow-down-to-bracket": [
     "flecha",
@@ -471,7 +726,9 @@
     "bajar",
     "arrow",
     "down",
-    "bracket"
+    "bracket",
+    "guardar",
+    "importar"
   ],
   "arrow-down-to-dotted-line": [
     "flecha",
@@ -502,7 +759,9 @@
     "bajar",
     "arrow",
     "down",
-    "square"
+    "square",
+    "descargar",
+    "guardar"
   ],
   "arrow-down-triangle-square": [
     "flecha",
@@ -513,7 +772,8 @@
     "arrow",
     "down",
     "triangle",
-    "square"
+    "square",
+    "formas"
   ],
   "arrow-down-up-across-line": [
     "flecha",
@@ -552,7 +812,9 @@
     "arrow",
     "down",
     "wide",
-    "short"
+    "short",
+    "ancho",
+    "ordenar"
   ],
   "arrow-down-z-a": [
     "flecha",
@@ -561,7 +823,10 @@
     "abajo",
     "bajar",
     "arrow",
-    "down"
+    "down",
+    "alfabeto",
+    "ordenar",
+    "clasificar"
   ],
   "arrow-down": [
     "flecha",
@@ -592,7 +857,9 @@
     "arrow",
     "left",
     "from",
-    "bracket"
+    "bracket",
+    "salir",
+    "cerrar sesion"
   ],
   "arrow-left-from-line": [
     "flecha",
@@ -644,7 +911,9 @@
     "atras",
     "arrow",
     "left",
-    "bracket"
+    "bracket",
+    "entrar",
+    "iniciar sesion"
   ],
   "arrow-left-to-line": [
     "flecha",
@@ -670,14 +939,19 @@
     "direccion",
     "indicador",
     "arrow",
-    "pointer"
+    "pointer",
+    "cursor",
+    "seleccionar",
+    "hacer clic"
   ],
   "arrow-progress": [
     "flecha",
     "direccion",
     "indicador",
     "arrow",
-    "progress"
+    "progress",
+    "progreso",
+    "cargando"
   ],
   "arrow-right-arrow-left": [
     "flecha",
@@ -689,7 +963,8 @@
     "siguiente",
     "arrow",
     "right",
-    "left"
+    "left",
+    "intercambiar"
   ],
   "arrow-right-from-arc": [
     "flecha",
@@ -711,7 +986,9 @@
     "arrow",
     "right",
     "from",
-    "bracket"
+    "bracket",
+    "salir",
+    "cerrar sesion"
   ],
   "arrow-right-from-line": [
     "flecha",
@@ -763,7 +1040,9 @@
     "siguiente",
     "arrow",
     "right",
-    "bracket"
+    "bracket",
+    "entrar",
+    "iniciar sesion"
   ],
   "arrow-right-to-city": [
     "flecha",
@@ -773,7 +1052,9 @@
     "siguiente",
     "arrow",
     "right",
-    "city"
+    "city",
+    "ciudad",
+    "urbanizacion"
   ],
   "arrow-right-to-line": [
     "flecha",
@@ -802,7 +1083,9 @@
     "atras",
     "arrow",
     "rotate",
-    "left"
+    "left",
+    "rotar",
+    "deshacer"
   ],
   "arrow-rotate-right": [
     "flecha",
@@ -812,7 +1095,9 @@
     "siguiente",
     "arrow",
     "rotate",
-    "right"
+    "right",
+    "rotar",
+    "rehacer"
   ],
   "arrow-trend-down": [
     "flecha",
@@ -822,7 +1107,10 @@
     "bajar",
     "arrow",
     "trend",
-    "down"
+    "down",
+    "tendencia",
+    "grafico",
+    "decreciente"
   ],
   "arrow-trend-up": [
     "flecha",
@@ -831,7 +1119,10 @@
     "arriba",
     "subir",
     "arrow",
-    "trend"
+    "trend",
+    "tendencia",
+    "grafico",
+    "creciente"
   ],
   "arrow-turn-down-left": [
     "flecha",
@@ -867,7 +1158,8 @@
     "bajar",
     "arrow",
     "turn",
-    "down"
+    "down",
+    "girar"
   ],
   "arrow-turn-left-down": [
     "flecha",
@@ -902,7 +1194,8 @@
     "atras",
     "arrow",
     "turn",
-    "left"
+    "left",
+    "girar"
   ],
   "arrow-turn-right": [
     "flecha",
@@ -912,7 +1205,8 @@
     "siguiente",
     "arrow",
     "turn",
-    "right"
+    "right",
+    "girar"
   ],
   "arrow-turn-up": [
     "flecha",
@@ -921,7 +1215,8 @@
     "arriba",
     "subir",
     "arrow",
-    "turn"
+    "turn",
+    "girar"
   ],
   "arrow-up-1-9": [
     "flecha",
@@ -929,7 +1224,9 @@
     "indicador",
     "arriba",
     "subir",
-    "arrow"
+    "arrow",
+    "numeros",
+    "ordenar"
   ],
   "arrow-up-9-1": [
     "flecha",
@@ -937,7 +1234,9 @@
     "indicador",
     "arriba",
     "subir",
-    "arrow"
+    "arrow",
+    "numeros",
+    "ordenar"
   ],
   "arrow-up-a-z": [
     "flecha",
@@ -945,7 +1244,9 @@
     "indicador",
     "arriba",
     "subir",
-    "arrow"
+    "arrow",
+    "alfabeto",
+    "ordenar"
   ],
   "arrow-up-arrow-down": [
     "flecha",
@@ -956,7 +1257,8 @@
     "abajo",
     "bajar",
     "arrow",
-    "down"
+    "down",
+    "ordenar"
   ],
   "arrow-up-big-small": [
     "flecha",
@@ -966,7 +1268,8 @@
     "subir",
     "arrow",
     "big",
-    "small"
+    "small",
+    "tamaño"
   ],
   "arrow-up-from-arc": [
     "flecha",
@@ -986,7 +1289,9 @@
     "subir",
     "arrow",
     "from",
-    "bracket"
+    "bracket",
+    "subir",
+    "cargar"
   ],
   "arrow-up-from-dotted-line": [
     "flecha",
@@ -1008,7 +1313,9 @@
     "arrow",
     "from",
     "ground",
-    "water"
+    "water",
+    "agua",
+    "tierra"
   ],
   "arrow-up-from-line": [
     "flecha",
@@ -1028,7 +1335,8 @@
     "subir",
     "arrow",
     "from",
-    "square"
+    "square",
+    "extraer"
   ],
   "arrow-up-from-water-pump": [
     "flecha",
@@ -1039,7 +1347,9 @@
     "arrow",
     "from",
     "water",
-    "pump"
+    "pump",
+    "bomba",
+    "agua"
   ],
   "arrow-up-left-from-circle": [
     "flecha",
@@ -1063,7 +1373,8 @@
     "izquierda",
     "atras",
     "arrow",
-    "left"
+    "left",
+    "noroeste"
   ],
   "arrow-up-long": [
     "flecha",
@@ -1104,7 +1415,8 @@
     "siguiente",
     "arrow",
     "right",
-    "dots"
+    "dots",
+    "enlace"
   ],
   "arrow-up-right-from-square": [
     "flecha",
@@ -1117,7 +1429,8 @@
     "arrow",
     "right",
     "from",
-    "square"
+    "square",
+    "enlace externo"
   ],
   "arrow-up-right": [
     "flecha",
@@ -1128,7 +1441,8 @@
     "derecha",
     "siguiente",
     "arrow",
-    "right"
+    "right",
+    "noreste"
   ],
   "arrow-up-short-wide": [
     "flecha",
@@ -1176,7 +1490,8 @@
     "arriba",
     "subir",
     "arrow",
-    "bracket"
+    "bracket",
+    "cargar"
   ],
   "arrow-up-to-dotted-line": [
     "flecha",
@@ -1223,7 +1538,9 @@
     "indicador",
     "arriba",
     "subir",
-    "arrow"
+    "arrow",
+    "alfabeto",
+    "ordenar"
   ],
   "arrow-up": [
     "flecha",
@@ -1235,21 +1552,27 @@
   ],
   "arrows-cross": [
     "arrows",
-    "cross"
+    "cross",
+    "flechas",
+    "cruzar",
+    "interseccion"
   ],
   "arrows-down-to-line": [
     "abajo",
     "bajar",
     "arrows",
     "down",
-    "line"
+    "line",
+    "alinear"
   ],
   "arrows-down-to-people": [
     "abajo",
     "bajar",
     "arrows",
     "down",
-    "people"
+    "people",
+    "personas",
+    "unir"
   ],
   "arrows-from-dotted-line": [
     "arrows",
@@ -1279,40 +1602,61 @@
     "siguiente",
     "arrows",
     "left",
-    "right"
+    "right",
+    "horizontal"
   ],
   "arrows-maximize": [
     "arrows",
-    "maximize"
+    "maximize",
+    "maximizar",
+    "expandir",
+    "pantalla completa"
   ],
   "arrows-minimize": [
     "arrows",
-    "minimize"
+    "minimize",
+    "minimizar",
+    "contraer"
   ],
   "arrows-repeat-1": [
     "arrows",
-    "repeat"
+    "repeat",
+    "repetir",
+    "ciclo",
+    "una vez"
   ],
   "arrows-repeat": [
     "arrows",
-    "repeat"
+    "repeat",
+    "repetir",
+    "ciclo",
+    "bucle"
   ],
   "arrows-retweet": [
     "arrows",
-    "retweet"
+    "retweet",
+    "compartir",
+    "red social"
   ],
   "arrows-rotate-reverse": [
     "arrows",
     "rotate",
-    "reverse"
+    "reverse",
+    "rotar",
+    "inverso"
   ],
   "arrows-rotate": [
     "arrows",
-    "rotate"
+    "rotate",
+    "rotar",
+    "sincronizar",
+    "actualizar"
   ],
   "arrows-spin": [
     "arrows",
-    "spin"
+    "spin",
+    "girar",
+    "cargando"
   ],
   "arrows-split-up-and-left": [
     "arriba",
@@ -1322,15 +1666,20 @@
     "arrows",
     "split",
     "and",
-    "left"
+    "left",
+    "dividir"
   ],
   "arrows-to-circle": [
     "arrows",
-    "circle"
+    "circle",
+    "centrar",
+    "converger"
   ],
   "arrows-to-dot": [
     "arrows",
-    "dot"
+    "dot",
+    "centrar",
+    "punto"
   ],
   "arrows-to-dotted-line": [
     "arrows",
@@ -1343,7 +1692,8 @@
     "vista",
     "visualizar",
     "arrows",
-    "eye"
+    "eye",
+    "enfocar"
   ],
   "arrows-to-line": [
     "arrows",
@@ -1373,7 +1723,9 @@
     "arrows",
     "down",
     "left",
-    "right"
+    "right",
+    "mover",
+    "desplazar"
   ],
   "arrows-up-down": [
     "arriba",
@@ -1381,7 +1733,8 @@
     "abajo",
     "bajar",
     "arrows",
-    "down"
+    "down",
+    "vertical"
   ],
   "arrows-up-to-line": [
     "arriba",
@@ -1390,74 +1743,143 @@
     "line"
   ],
   "asterisk": [
-    "asterisk"
+    "asterisk",
+    "asterisco",
+    "estrella",
+    "importante",
+    "requerido"
   ],
   "atom-simple": [
     "atom",
-    "simple"
+    "simple",
+    "atomo",
+    "ciencia",
+    "nuclear"
   ],
   "atom": [
-    "atom"
+    "atom",
+    "atomo",
+    "ciencia",
+    "fisica",
+    "electron"
   ],
   "audio-description-slash": [
     "audio",
     "description",
-    "slash"
+    "slash",
+    "descripcion",
+    "accesibilidad",
+    "desactivado"
   ],
   "audio-description": [
     "audio",
-    "description"
+    "description",
+    "descripcion",
+    "accesibilidad"
   ],
   "austral-sign": [
     "austral",
-    "sign"
+    "sign",
+    "moneda",
+    "peso"
   ],
   "avocado": [
-    "avocado"
+    "avocado",
+    "aguacate",
+    "palta",
+    "fruta",
+    "comida"
   ],
   "award-simple": [
     "award",
+    "simple",
+    "premio",
+    "galardon",
     "simple"
   ],
   "award": [
-    "award"
+    "award",
+    "premio",
+    "galardon",
+    "trofeo",
+    "logro"
   ],
   "axe-battle": [
     "axe",
-    "battle"
+    "battle",
+    "hacha",
+    "batalla",
+    "guerra",
+    "arma"
   ],
   "axe": [
-    "axe"
+    "axe",
+    "hacha",
+    "herramienta",
+    "leñador",
+    "cortar"
   ],
   "baby-carriage": [
     "baby",
-    "carriage"
+    "carriage",
+    "bebe",
+    "carrito",
+    "cochecito",
+    "infante"
   ],
   "baby": [
-    "baby"
+    "baby",
+    "bebe",
+    "infante",
+    "nino",
+    "pequeno"
   ],
   "backpack": [
-    "backpack"
+    "backpack",
+    "mochila",
+    "escuela",
+    "viaje",
+    "equipaje"
   ],
   "backward-fast": [
     "backward",
-    "fast"
+    "fast",
+    "retroceder",
+    "rapido",
+    "anterior",
+    "principio"
   ],
   "backward-step": [
     "backward",
-    "step"
+    "step",
+    "retroceder",
+    "paso",
+    "anterior"
   ],
   "backward": [
-    "backward"
+    "backward",
+    "retroceder",
+    "atras",
+    "anterior"
   ],
   "bacon": [
-    "bacon"
+    "bacon",
+    "tocino",
+    "panceta",
+    "carne",
+    "desayuno"
   ],
   "bacteria": [
-    "bacteria"
+    "bacteria",
+    "virus",
+    "microbio",
+    "infeccion",
+    "ciencia"
   ],
   "bacterium": [
-    "bacterium"
+    "bacterium",
+    "bacteria",
+    "virus"
   ],
   "badge-check": [
     "ok",
@@ -1465,39 +1887,65 @@
     "verificado",
     "bien",
     "badge",
-    "check"
+    "check",
+    "insignia",
+    "certificado",
+    "aprobado"
   ],
   "badge-dollar": [
     "dolar",
     "dinero",
     "precio",
     "badge",
-    "dollar"
+    "dollar",
+    "insignia",
+    "moneda",
+    "venta"
   ],
   "badge-percent": [
     "badge",
-    "percent"
+    "percent",
+    "insignia",
+    "porcentaje",
+    "descuento",
+    "oferta"
   ],
   "badge-sheriff": [
     "badge",
-    "sheriff"
+    "sheriff",
+    "insignia",
+    "policia",
+    "comisario",
+    "oeste"
   ],
   "badge": [
-    "badge"
+    "badge",
+    "insignia",
+    "distintivo",
+    "credencial"
   ],
   "badger-honey": [
     "badger",
-    "honey"
+    "honey",
+    "tejon",
+    "miel",
+    "animal"
   ],
   "badminton": [
-    "badminton"
+    "badminton",
+    "deporte",
+    "raqueta",
+    "volante"
   ],
   "bag-seedling": [
     "bolsa",
     "compra",
     "maleta",
     "bag",
-    "seedling"
+    "seedling",
+    "planta",
+    "semilla",
+    "jardineria"
   ],
   "bag-shopping-minus": [
     "menos",
@@ -1511,7 +1959,8 @@
     "maleta",
     "bag",
     "shopping",
-    "minus"
+    "minus",
+    "eliminar del carrito"
   ],
   "bag-shopping-plus": [
     "mas",
@@ -1526,7 +1975,8 @@
     "maleta",
     "bag",
     "shopping",
-    "plus"
+    "plus",
+    "agregar al carrito"
   ],
   "bag-shopping": [
     "carrito",
@@ -1536,37 +1986,58 @@
     "compra",
     "maleta",
     "bag",
-    "shopping"
+    "shopping",
+    "carrito de compras"
   ],
   "bagel": [
-    "bagel"
+    "bagel",
+    "pan",
+    "comida",
+    "desayuno"
   ],
   "bags-shopping": [
     "carrito",
     "compras",
     "tienda",
     "bags",
-    "shopping"
+    "shopping",
+    "bolsas",
+    "compras"
   ],
   "baguette": [
-    "baguette"
+    "baguette",
+    "pan",
+    "francia",
+    "comida"
   ],
   "bahai": [
-    "bahai"
+    "bahai",
+    "religion",
+    "fe"
   ],
   "baht-sign": [
     "baht",
-    "sign"
+    "sign",
+    "moneda",
+    "tailandia"
   ],
   "ball-pile": [
     "ball",
-    "pile"
+    "pile",
+    "bola",
+    "pelota",
+    "monton"
   ],
   "balloon": [
-    "balloon"
+    "balloon",
+    "globo",
+    "fiesta",
+    "aire"
   ],
   "balloons": [
-    "balloons"
+    "balloons",
+    "globos",
+    "fiesta"
   ],
   "ballot-check": [
     "ok",
@@ -1574,83 +2045,134 @@
     "verificado",
     "bien",
     "ballot",
-    "check"
+    "check",
+    "voto",
+    "eleccion",
+    "verificado"
   ],
   "ballot": [
-    "ballot"
+    "ballot",
+    "voto",
+    "eleccion",
+    "papeleta",
+    "votacion"
   ],
   "ban-bug": [
     "error",
     "bicho",
     "insecto",
     "ban",
-    "bug"
+    "bug",
+    "prohibido",
+    "depuracion"
   ],
   "ban-parking": [
     "ban",
-    "parking"
+    "parking",
+    "prohibido",
+    "estacionamiento",
+    "no aparcar"
   ],
   "ban-smoking": [
     "ban",
-    "smoking"
+    "smoking",
+    "prohibido",
+    "no fumar"
   ],
   "ban": [
-    "ban"
+    "ban",
+    "prohibido",
+    "cancelar",
+    "no"
   ],
   "banana": [
-    "banana"
+    "banana",
+    "platano",
+    "fruta",
+    "comida"
   ],
   "bandage": [
-    "bandage"
+    "bandage",
+    "venda",
+    "curita",
+    "curacion",
+    "herida"
   ],
   "bangladeshi-taka-sign": [
     "bangladeshi",
     "taka",
-    "sign"
+    "sign",
+    "moneda"
   ],
   "banjo": [
-    "banjo"
+    "banjo",
+    "instrumento",
+    "musica"
   ],
   "barcode-read": [
     "barcode",
-    "read"
+    "read",
+    "codigo de barras",
+    "leer",
+    "escanear"
   ],
   "barcode-scan": [
     "barcode",
-    "scan"
+    "scan",
+    "codigo de barras",
+    "escanear"
   ],
   "barcode": [
-    "barcode"
+    "barcode",
+    "codigo de barras",
+    "producto",
+    "tienda"
   ],
   "bars-filter": [
     "filtro",
     "embudo",
     "ordenar",
     "bars",
-    "filter"
+    "filter",
+    "filtrar lista"
   ],
   "bars-progress": [
     "bars",
-    "progress"
+    "progress",
+    "progreso",
+    "barra"
   ],
   "bars-sort": [
     "bars",
-    "sort"
+    "sort",
+    "ordenar",
+    "lista"
   ],
   "bars-staggered": [
     "bars",
-    "staggered"
+    "staggered",
+    "menu",
+    "lista",
+    "escalonado"
   ],
   "bars": [
-    "bars"
+    "bars",
+    "menu",
+    "lista",
+    "hamburguesa"
   ],
   "baseball-bat-ball": [
     "baseball",
     "bat",
-    "ball"
+    "ball",
+    "beisbol",
+    "bate",
+    "pelota"
   ],
   "baseball": [
-    "baseball"
+    "baseball",
+    "beisbol",
+    "pelota"
   ],
   "basket-shopping-minus": [
     "menos",
@@ -1661,7 +2183,9 @@
     "tienda",
     "basket",
     "shopping",
-    "minus"
+    "minus",
+    "cesta",
+    "eliminar"
   ],
   "basket-shopping-plus": [
     "mas",
@@ -1673,7 +2197,9 @@
     "tienda",
     "basket",
     "shopping",
-    "plus"
+    "plus",
+    "cesta",
+    "agregar"
   ],
   "basket-shopping-simple": [
     "carrito",
@@ -1681,27 +2207,41 @@
     "tienda",
     "basket",
     "shopping",
-    "simple"
+    "simple",
+    "cesta"
   ],
   "basket-shopping": [
     "carrito",
     "compras",
     "tienda",
     "basket",
-    "shopping"
+    "shopping",
+    "cesta"
   ],
   "basketball-hoop": [
     "basketball",
-    "hoop"
+    "hoop",
+    "baloncesto",
+    "canasta",
+    "aro"
   ],
   "basketball": [
-    "basketball"
+    "basketball",
+    "baloncesto",
+    "pelota"
   ],
   "bat": [
-    "bat"
+    "bat",
+    "murcielago",
+    "animal",
+    "beisbol"
   ],
   "bath": [
-    "bath"
+    "bath",
+    "bano",
+    "banera",
+    "ducha",
+    "higiene"
   ],
   "battery-bolt": [
     "bateria",
@@ -1710,56 +2250,66 @@
     "rayo",
     "rapido",
     "battery",
-    "bolt"
+    "bolt",
+    "carga rapida"
   ],
   "battery-empty": [
     "bateria",
     "pila",
     "energia",
     "battery",
-    "empty"
+    "empty",
+    "baja",
+    "sin carga"
   ],
   "battery-exclamation": [
     "bateria",
     "pila",
     "energia",
     "battery",
-    "exclamation"
+    "exclamation",
+    "alerta"
   ],
   "battery-full": [
     "bateria",
     "pila",
     "energia",
     "battery",
-    "full"
+    "full",
+    "llena",
+    "cargada"
   ],
   "battery-half": [
     "bateria",
     "pila",
     "energia",
     "battery",
-    "half"
+    "half",
+    "media"
   ],
   "battery-low": [
     "bateria",
     "pila",
     "energia",
     "battery",
-    "low"
+    "low",
+    "baja"
   ],
   "battery-quarter": [
     "bateria",
     "pila",
     "energia",
     "battery",
-    "quarter"
+    "quarter",
+    "cuarto"
   ],
   "battery-slash": [
     "bateria",
     "pila",
     "energia",
     "battery",
-    "slash"
+    "slash",
+    "no bateria"
   ],
   "battery-three-quarters": [
     "bateria",
@@ -1767,58 +2317,84 @@
     "energia",
     "battery",
     "three",
-    "quarters"
+    "quarters",
+    "tres cuartos"
   ],
   "bed-bunk": [
     "bed",
-    "bunk"
+    "bunk",
+    "cama",
+    "litera",
+    "dormitorio"
   ],
   "bed-empty": [
     "bed",
-    "empty"
+    "empty",
+    "cama",
+    "vacia"
   ],
   "bed-front": [
     "bed",
-    "front"
+    "front",
+    "cama",
+    "frente"
   ],
   "bed-pulse": [
     "bed",
-    "pulse"
+    "pulse",
+    "cama",
+    "pulso",
+    "paciente"
   ],
   "bed": [
-    "bed"
+    "bed",
+    "cama",
+    "dormir",
+    "hotel"
   ],
   "bee": [
-    "bee"
+    "bee",
+    "abeja",
+    "insecto",
+    "miel"
   ],
   "beer-mug-empty": [
     "beer",
     "mug",
-    "empty"
+    "empty",
+    "cerveza",
+    "jarra",
+    "vacía"
   ],
   "beer-mug": [
     "beer",
-    "mug"
+    "mug",
+    "cerveza",
+    "jarra"
   ],
   "bell-concierge": [
     "campana",
     "notificacion",
     "alerta",
     "bell",
-    "concierge"
+    "concierge",
+    "hotel",
+    "servicio"
   ],
   "bell-exclamation": [
     "campana",
     "notificacion",
     "alerta",
     "bell",
-    "exclamation"
+    "exclamation",
+    "urgente"
   ],
   "bell-on": [
     "campana",
     "notificacion",
     "alerta",
-    "bell"
+    "bell",
+    "activa"
   ],
   "bell-plus": [
     "mas",
@@ -1829,14 +2405,16 @@
     "notificacion",
     "alerta",
     "bell",
-    "plus"
+    "plus",
+    "agregar notificacion"
   ],
   "bell-ring": [
     "campana",
     "notificacion",
     "alerta",
     "bell",
-    "ring"
+    "ring",
+    "sonando"
   ],
   "bell-school-slash": [
     "campana",
@@ -1844,21 +2422,26 @@
     "alerta",
     "bell",
     "school",
-    "slash"
+    "slash",
+    "escuela",
+    "cancelado"
   ],
   "bell-school": [
     "campana",
     "notificacion",
     "alerta",
     "bell",
-    "school"
+    "school",
+    "escuela"
   ],
   "bell-slash": [
     "campana",
     "notificacion",
     "alerta",
     "bell",
-    "slash"
+    "slash",
+    "silenciar",
+    "no molestar"
   ],
   "bell": [
     "campana",
@@ -1867,18 +2450,24 @@
     "bell"
   ],
   "bells": [
-    "bells"
+    "bells",
+    "campanas"
   ],
   "bench-tree": [
     "arbol",
     "bosque",
     "naturaleza",
     "bench",
-    "tree"
+    "tree",
+    "banco",
+    "parque"
   ],
   "bezier-curve": [
     "bezier",
-    "curve"
+    "curve",
+    "curva",
+    "dibujo",
+    "vector"
   ],
   "bicycle": [
     "bici",
@@ -1887,20 +2476,27 @@
     "bicycle"
   ],
   "billboard": [
-    "billboard"
+    "billboard",
+    "valla",
+    "publicidad",
+    "anuncio"
   ],
   "bin-bottles-recycle": [
     "bin",
     "bottles",
-    "recycle"
+    "recycle",
+    "reciclar",
+    "botellas"
   ],
   "bin-bottles": [
     "bin",
-    "bottles"
+    "bottles",
+    "botellas"
   ],
   "bin-recycle": [
     "bin",
-    "recycle"
+    "recycle",
+    "reciclar"
   ],
   "binary-circle-check": [
     "ok",
@@ -1909,65 +2505,95 @@
     "bien",
     "binary",
     "circle",
-    "check"
+    "check",
+    "codigo binario",
+    "aprobado"
   ],
   "binary-lock": [
     "candado",
     "seguridad",
     "cerrar",
     "binary",
-    "lock"
+    "lock",
+    "seguridad binaria"
   ],
   "binary-slash": [
     "binary",
-    "slash"
+    "slash",
+    "no binario"
   ],
   "binary": [
-    "binary"
+    "binary",
+    "binario",
+    "codigo",
+    "programacion"
   ],
   "binoculars": [
-    "binoculars"
+    "binoculars",
+    "binoculares",
+    "ver",
+    "observar"
   ],
   "biohazard": [
-    "biohazard"
+    "biohazard",
+    "peligro",
+    "biologico",
+    "residuo"
   ],
   "bird": [
-    "bird"
+    "bird",
+    "pajaro",
+    "ave",
+    "animal"
   ],
   "bitcoin-sign": [
     "bitcoin",
-    "sign"
+    "sign",
+    "criptomoneda",
+    "btc"
   ],
   "blanket-fire": [
     "fuego",
     "calor",
     "quemar",
     "blanket",
-    "fire"
+    "fire",
+    "manta",
+    "incendio"
   ],
   "blanket": [
-    "blanket"
+    "blanket",
+    "manta",
+    "cobija"
   ],
   "blender-phone": [
     "telefono",
     "llamar",
     "contacto",
     "blender",
-    "phone"
+    "phone",
+    "licuadora"
   ],
   "blender": [
-    "blender"
+    "blender",
+    "licuadora",
+    "electrodomestico"
   ],
   "blinds-open": [
     "blinds",
-    "open"
+    "open",
+    "persianas",
+    "abiertas"
   ],
   "blinds-raised": [
     "blinds",
-    "raised"
+    "raised",
+    "persianas",
+    "subidas"
   ],
   "blinds": [
-    "blinds"
+    "blinds",
+    "persianas"
   ],
   "block-brick-fire": [
     "fuego",
@@ -1975,55 +2601,72 @@
     "quemar",
     "block",
     "brick",
-    "fire"
+    "fire",
+    "ladrillo"
   ],
   "block-brick": [
     "block",
-    "brick"
+    "brick",
+    "ladrillo"
   ],
   "block-question": [
     "block",
-    "question"
+    "question",
+    "bloque",
+    "pregunta"
   ],
   "block-quote": [
     "block",
-    "quote"
+    "quote",
+    "bloque",
+    "cita"
   ],
   "block": [
-    "block"
+    "block",
+    "bloquear"
   ],
   "blog": [
-    "blog"
+    "blog",
+    "bitacora",
+    "post"
   ],
   "blueberries": [
-    "blueberries"
+    "blueberries",
+    "arandanos",
+    "fruta"
   ],
   "bluetooth": [
-    "bluetooth"
+    "bluetooth",
+    "inalambrico"
   ],
   "bold": [
-    "bold"
+    "bold",
+    "negrita",
+    "texto"
   ],
   "bolt-auto": [
     "rayo",
     "energia",
     "rapido",
     "bolt",
-    "auto"
+    "auto",
+    "automatico"
   ],
   "bolt-lightning": [
     "rayo",
     "energia",
     "rapido",
     "bolt",
-    "lightning"
+    "lightning",
+    "relampago"
   ],
   "bolt-slash": [
     "rayo",
     "energia",
     "rapido",
     "bolt",
-    "slash"
+    "slash",
+    "sin rayo"
   ],
   "bolt": [
     "rayo",
@@ -2032,17 +2675,23 @@
     "bolt"
   ],
   "bomb": [
-    "bomb"
+    "bomb",
+    "bomba",
+    "explosivo"
   ],
   "bone-break": [
     "bone",
-    "break"
+    "break",
+    "hueso",
+    "roto"
   ],
   "bone": [
-    "bone"
+    "bone",
+    "hueso"
   ],
   "bong": [
-    "bong"
+    "bong",
+    "fumar"
   ],
   "book-arrow-right": [
     "flecha",
@@ -2052,7 +2701,9 @@
     "siguiente",
     "book",
     "arrow",
-    "right"
+    "right",
+    "libro",
+    "siguiente libro"
   ],
   "book-arrow-up": [
     "flecha",
@@ -2061,23 +2712,32 @@
     "arriba",
     "subir",
     "book",
-    "arrow"
+    "arrow",
+    "subir libro"
   ],
   "book-atlas": [
     "book",
-    "atlas"
+    "atlas",
+    "libro",
+    "atlas",
+    "mapas"
   ],
   "book-bible": [
     "book",
-    "bible"
+    "bible",
+    "biblia"
   ],
   "book-blank": [
     "book",
-    "blank"
+    "blank",
+    "libro",
+    "blanco"
   ],
   "book-bookmark": [
     "book",
-    "bookmark"
+    "bookmark",
+    "libro",
+    "marcador"
   ],
   "book-circle-arrow-right": [
     "flecha",
@@ -2104,11 +2764,14 @@
     "copiar",
     "duplicar",
     "book",
-    "copy"
+    "copy",
+    "copiar libro"
   ],
   "book-font": [
     "book",
-    "font"
+    "font",
+    "libro",
+    "fuente"
   ],
   "book-heart": [
     "corazon",
@@ -2116,53 +2779,69 @@
     "amor",
     "favorito",
     "book",
-    "heart"
+    "heart",
+    "libro favorito"
   ],
   "book-journal-whills": [
     "book",
     "journal",
-    "whills"
+    "whills",
+    "star wars"
   ],
   "book-medical": [
     "book",
-    "medical"
+    "medical",
+    "libro",
+    "medico"
   ],
   "book-open-cover": [
     "book",
     "open",
-    "cover"
+    "cover",
+    "libro",
+    "abierto",
+    "portada"
   ],
   "book-open-reader": [
     "book",
     "open",
-    "reader"
+    "reader",
+    "lector",
+    "leer"
   ],
   "book-open": [
     "book",
-    "open"
+    "open",
+    "libro abierto"
   ],
   "book-quran": [
     "book",
-    "quran"
+    "quran",
+    "coran"
   ],
   "book-section": [
     "book",
-    "section"
+    "section",
+    "seccion"
   ],
   "book-skull": [
     "calavera",
     "muerte",
     "peligro",
     "book",
-    "skull"
+    "skull",
+    "libro de muertos"
   ],
   "book-sparkles": [
     "book",
-    "sparkles"
+    "sparkles",
+    "libro",
+    "magia"
   ],
   "book-tanakh": [
     "book",
-    "tanakh"
+    "tanakh",
+    "torah"
   ],
   "book-user": [
     "usuario",
@@ -2170,178 +2849,239 @@
     "perfil",
     "cliente",
     "book",
-    "user"
+    "user",
+    "usuario libro"
   ],
   "book": [
-    "book"
+    "book",
+    "libro",
+    "leer"
   ],
   "bookmark-slash": [
     "bookmark",
-    "slash"
+    "slash",
+    "marcador",
+    "cancelado"
   ],
   "bookmark": [
-    "bookmark"
+    "bookmark",
+    "marcador",
+    "favorito",
+    "guardar"
   ],
   "books-medical": [
     "books",
-    "medical"
+    "medical",
+    "libros medicos"
   ],
   "books": [
-    "books"
+    "books",
+    "libros"
   ],
   "boombox": [
-    "boombox"
+    "boombox",
+    "radio",
+    "musica"
   ],
   "boot-heeled": [
     "boot",
-    "heeled"
+    "heeled",
+    "bota",
+    "tacon"
   ],
   "boot": [
-    "boot"
+    "boot",
+    "bota"
   ],
   "booth-curtain": [
     "booth",
-    "curtain"
+    "curtain",
+    "cabina",
+    "cortina"
   ],
   "border-all": [
     "border",
-    "all"
+    "all",
+    "borde",
+    "todo"
   ],
   "border-bottom-right": [
     "derecha",
     "siguiente",
     "border",
     "bottom",
-    "right"
+    "right",
+    "borde inferior derecho"
   ],
   "border-bottom": [
     "border",
-    "bottom"
+    "bottom",
+    "borde inferior"
   ],
   "border-center-h": [
     "border",
-    "center"
+    "center",
+    "borde",
+    "centro horizontal"
   ],
   "border-center-v": [
     "border",
-    "center"
+    "center",
+    "borde",
+    "centro vertical"
   ],
   "border-inner": [
     "border",
-    "inner"
+    "inner",
+    "borde interno"
   ],
   "border-left": [
     "izquierda",
     "atras",
     "border",
-    "left"
+    "left",
+    "borde izquierdo"
   ],
   "border-none": [
     "border",
-    "none"
+    "none",
+    "sin borde"
   ],
   "border-outer": [
     "border",
-    "outer"
+    "outer",
+    "borde externo"
   ],
   "border-right": [
     "derecha",
     "siguiente",
     "border",
-    "right"
+    "right",
+    "borde derecho"
   ],
   "border-top-left": [
     "izquierda",
     "atras",
     "border",
     "top",
-    "left"
+    "left",
+    "borde superior izquierdo"
   ],
   "border-top": [
     "border",
-    "top"
+    "top",
+    "borde superior"
   ],
   "bore-hole": [
     "bore",
-    "hole"
+    "hole",
+    "perforar",
+    "agujero"
   ],
   "bottle-baby": [
     "bottle",
-    "baby"
+    "baby",
+    "biberon",
+    "bebe"
   ],
   "bottle-droplet": [
     "bottle",
-    "droplet"
+    "droplet",
+    "botella",
+    "gota"
   ],
   "bottle-water": [
     "bottle",
-    "water"
+    "water",
+    "botella de agua"
   ],
   "bow-arrow": [
     "flecha",
     "direccion",
     "indicador",
     "bow",
-    "arrow"
+    "arrow",
+    "arco y flecha"
   ],
   "bowl-chopsticks-noodles": [
     "bowl",
     "chopsticks",
-    "noodles"
+    "noodles",
+    "cuenco",
+    "palillos",
+    "fideos"
   ],
   "bowl-chopsticks": [
     "bowl",
-    "chopsticks"
+    "chopsticks",
+    "cuenco",
+    "palillos"
   ],
   "bowl-food": [
     "bowl",
-    "food"
+    "food",
+    "cuenco",
+    "comida"
   ],
   "bowl-hot": [
     "bowl",
-    "hot"
+    "hot",
+    "cuenco caliente"
   ],
   "bowl-rice": [
     "bowl",
-    "rice"
+    "rice",
+    "cuenco de arroz"
   ],
   "bowl-scoop": [
     "bowl",
-    "scoop"
+    "scoop",
+    "cuchara"
   ],
   "bowl-scoops": [
     "bowl",
-    "scoops"
+    "scoops",
+    "cucharas"
   ],
   "bowl-soft-serve": [
     "bowl",
     "soft",
-    "serve"
+    "serve",
+    "helado suave"
   ],
   "bowl-spoon": [
     "bowl",
-    "spoon"
+    "spoon",
+    "cuchara"
   ],
   "bowling-ball-pin": [
     "bowling",
     "ball",
-    "pin"
+    "pin",
+    "bolos",
+    "bola"
   ],
   "bowling-ball": [
     "bowling",
-    "ball"
+    "ball",
+    "bola de bolos"
   ],
   "bowling-pins": [
     "bowling",
-    "pins"
+    "pins",
+    "pinos"
   ],
   "box-archive": [
     "box",
-    "archive"
+    "archive",
+    "caja",
+    "archivo"
   ],
   "box-ballot": [
     "box",
-    "ballot"
+    "ballot",
+    "caja",
+    "voto"
   ],
   "box-check": [
     "ok",
@@ -2349,7 +3089,8 @@
     "verificado",
     "bien",
     "box",
-    "check"
+    "check",
+    "caja verificada"
   ],
   "box-circle-check": [
     "ok",
@@ -2358,14 +3099,16 @@
     "bien",
     "box",
     "circle",
-    "check"
+    "check",
+    "caja aprobada"
   ],
   "box-dollar": [
     "dolar",
     "dinero",
     "precio",
     "box",
-    "dollar"
+    "dollar",
+    "caja de dinero"
   ],
   "box-heart": [
     "corazon",
@@ -2373,87 +3116,110 @@
     "amor",
     "favorito",
     "box",
-    "heart"
+    "heart",
+    "caja favorita"
   ],
   "box-open-full": [
     "box",
     "open",
-    "full"
+    "full",
+    "caja abierta llena"
   ],
   "box-open": [
     "box",
-    "open"
+    "open",
+    "caja abierta"
   ],
   "box-taped": [
     "box",
-    "taped"
+    "taped",
+    "caja sellada"
   ],
   "box-tissue": [
     "box",
-    "tissue"
+    "tissue",
+    "caja de pañuelos"
   ],
   "box": [
-    "box"
+    "box",
+    "caja",
+    "paquete"
   ],
   "boxes-packing": [
     "boxes",
-    "packing"
+    "packing",
+    "cajas",
+    "empaque"
   ],
   "boxes-stacked": [
     "boxes",
-    "stacked"
+    "stacked",
+    "cajas apiladas"
   ],
   "boxing-glove": [
     "boxing",
-    "glove"
+    "glove",
+    "boxeo",
+    "guante"
   ],
   "bracket-curly-right": [
     "derecha",
     "siguiente",
     "bracket",
     "curly",
-    "right"
+    "right",
+    "llave derecha"
   ],
   "bracket-curly": [
     "bracket",
-    "curly"
+    "curly",
+    "llave"
   ],
   "bracket-round-right": [
     "derecha",
     "siguiente",
     "bracket",
     "round",
-    "right"
+    "right",
+    "parentesis derecho"
   ],
   "bracket-round": [
     "bracket",
-    "round"
+    "round",
+    "parentesis"
   ],
   "bracket-square-right": [
     "derecha",
     "siguiente",
     "bracket",
     "square",
-    "right"
+    "right",
+    "corchete derecho"
   ],
   "bracket-square": [
     "bracket",
-    "square"
+    "square",
+    "corchete"
   ],
   "brackets-curly": [
     "brackets",
-    "curly"
+    "curly",
+    "llaves"
   ],
   "brackets-round": [
     "brackets",
-    "round"
+    "round",
+    "parentesis"
   ],
   "brackets-square": [
     "brackets",
-    "square"
+    "square",
+    "corchetes"
   ],
   "braille": [
-    "braille"
+    "braille",
+    "lectura",
+    "ciego"
   ],
   "brain-arrow-curved-right": [
     "flecha",
@@ -2464,36 +3230,49 @@
     "brain",
     "arrow",
     "curved",
-    "right"
+    "right",
+    "cerebro"
   ],
   "brain-circuit": [
     "brain",
-    "circuit"
+    "circuit",
+    "cerebro",
+    "circuito"
   ],
   "brain": [
-    "brain"
+    "brain",
+    "cerebro",
+    "mente"
   ],
   "brake-warning": [
     "brake",
-    "warning"
+    "warning",
+    "freno",
+    "advertencia"
   ],
   "brazilian-real-sign": [
     "brazilian",
     "real",
-    "sign"
+    "sign",
+    "moneda brasil"
   ],
   "bread-loaf": [
     "bread",
-    "loaf"
+    "loaf",
+    "pan",
+    "hogaza"
   ],
   "bread-slice-butter": [
     "bread",
     "slice",
-    "butter"
+    "butter",
+    "pan",
+    "mantequilla"
   ],
   "bread-slice": [
     "bread",
-    "slice"
+    "slice",
+    "rebanada de pan"
   ],
   "bridge-circle-check": [
     "ok",
@@ -2502,35 +3281,42 @@
     "bien",
     "bridge",
     "circle",
-    "check"
+    "check",
+    "puente verificado"
   ],
   "bridge-circle-exclamation": [
     "bridge",
     "circle",
-    "exclamation"
+    "exclamation",
+    "puente alerta"
   ],
   "bridge-circle-xmark": [
     "bridge",
     "circle",
-    "xmark"
+    "xmark",
+    "puente cancelado"
   ],
   "bridge-lock": [
     "candado",
     "seguridad",
     "cerrar",
     "bridge",
-    "lock"
+    "lock",
+    "puente bloqueado"
   ],
   "bridge-suspension": [
     "bridge",
-    "suspension"
+    "suspension",
+    "puente colgante"
   ],
   "bridge-water": [
     "bridge",
-    "water"
+    "water",
+    "puente sobre agua"
   ],
   "bridge": [
-    "bridge"
+    "bridge",
+    "puente"
   ],
   "briefcase-arrow-right": [
     "flecha",
@@ -2540,66 +3326,91 @@
     "siguiente",
     "briefcase",
     "arrow",
-    "right"
+    "right",
+    "maletin"
   ],
   "briefcase-blank": [
     "briefcase",
-    "blank"
+    "blank",
+    "maletin"
   ],
   "briefcase-medical": [
     "briefcase",
-    "medical"
+    "medical",
+    "maletin medico"
   ],
   "briefcase": [
-    "briefcase"
+    "briefcase",
+    "maletin",
+    "negocios",
+    "trabajo"
   ],
   "brightness-low": [
     "brightness",
-    "low"
+    "low",
+    "brillo",
+    "bajo"
   ],
   "brightness": [
-    "brightness"
+    "brightness",
+    "brillo"
   ],
   "bring-forward": [
     "bring",
-    "forward"
+    "forward",
+    "traer adelante"
   ],
   "bring-front": [
     "bring",
-    "front"
+    "front",
+    "traer al frente"
   ],
   "broccoli": [
-    "broccoli"
+    "broccoli",
+    "brocoli",
+    "verdura"
   ],
   "broom-ball": [
     "broom",
-    "ball"
+    "ball",
+    "escoba",
+    "pelota"
   ],
   "broom-wide": [
     "broom",
-    "wide"
+    "wide",
+    "escoba"
   ],
   "broom": [
-    "broom"
+    "broom",
+    "escoba"
   ],
   "browser": [
-    "browser"
+    "browser",
+    "navegador",
+    "internet"
   ],
   "browsers": [
-    "browsers"
+    "browsers",
+    "navegadores"
   ],
   "brush": [
-    "brush"
+    "brush",
+    "pincel",
+    "brocha"
   ],
   "bucket": [
-    "bucket"
+    "bucket",
+    "balde",
+    "cubo"
   ],
   "bug-slash": [
     "error",
     "bicho",
     "insecto",
     "bug",
-    "slash"
+    "slash",
+    "sin errores"
   ],
   "bug": [
     "error",
@@ -2608,7 +3419,8 @@
     "bug"
   ],
   "bugs": [
-    "bugs"
+    "bugs",
+    "errores"
   ],
   "building-circle-arrow-right": [
     "flecha",
@@ -2619,7 +3431,8 @@
     "building",
     "circle",
     "arrow",
-    "right"
+    "right",
+    "edificio"
   ],
   "building-circle-check": [
     "ok",
@@ -2628,32 +3441,40 @@
     "bien",
     "building",
     "circle",
-    "check"
+    "check",
+    "edificio verificado"
   ],
   "building-circle-exclamation": [
     "building",
     "circle",
-    "exclamation"
+    "exclamation",
+    "edificio alerta"
   ],
   "building-circle-xmark": [
     "building",
     "circle",
-    "xmark"
+    "xmark",
+    "edificio cancelado"
   ],
   "building-columns": [
     "building",
-    "columns"
+    "columns",
+    "edificio",
+    "columnas"
   ],
   "building-flag": [
     "building",
-    "flag"
+    "flag",
+    "edificio",
+    "bandera"
   ],
   "building-lock": [
     "candado",
     "seguridad",
     "cerrar",
     "building",
-    "lock"
+    "lock",
+    "edificio bloqueado"
   ],
   "building-magnifying-glass": [
     "vaso",
@@ -2661,25 +3482,31 @@
     "bebida",
     "building",
     "magnifying",
-    "glass"
+    "glass",
+    "buscar edificio"
   ],
   "building-memo": [
     "building",
+    "memo",
+    "edificio",
     "memo"
   ],
   "building-ngo": [
     "building",
-    "ngo"
+    "ngo",
+    "ong"
   ],
   "building-shield": [
     "escudo",
     "proteccion",
     "seguro",
     "building",
-    "shield"
+    "shield",
+    "edificio protegido"
   ],
   "building-un": [
-    "building"
+    "building",
+    "naciones unidas"
   ],
   "building-user": [
     "usuario",
@@ -2687,129 +3514,178 @@
     "perfil",
     "cliente",
     "building",
-    "user"
+    "user",
+    "usuario edificio"
   ],
   "building-wheat": [
     "building",
-    "wheat"
+    "wheat",
+    "edificio",
+    "trigo"
   ],
   "building": [
-    "building"
+    "building",
+    "edificio",
+    "construccion"
   ],
   "buildings": [
-    "buildings"
+    "buildings",
+    "edificios"
   ],
   "bulldozer": [
-    "bulldozer"
+    "bulldozer",
+    "topadora"
   ],
   "bullhorn": [
-    "bullhorn"
+    "bullhorn",
+    "megafono",
+    "anunciar"
   ],
   "bullseye-arrow": [
     "flecha",
     "direccion",
     "indicador",
     "bullseye",
-    "arrow"
+    "arrow",
+    "diana",
+    "blanco"
   ],
   "bullseye-pointer": [
     "bullseye",
-    "pointer"
+    "pointer",
+    "diana",
+    "puntero"
   ],
   "bullseye": [
-    "bullseye"
+    "bullseye",
+    "diana"
   ],
   "buoy-mooring": [
     "buoy",
-    "mooring"
+    "mooring",
+    "boya",
+    "amarra"
   ],
   "buoy": [
-    "buoy"
+    "buoy",
+    "boya"
   ],
   "burger-cheese": [
     "burger",
-    "cheese"
+    "cheese",
+    "hamburguesa",
+    "queso"
   ],
   "burger-fries": [
     "burger",
-    "fries"
+    "fries",
+    "hamburguesa",
+    "papas fritas"
   ],
   "burger-glass": [
     "vaso",
     "copa",
     "bebida",
     "burger",
-    "glass"
+    "glass",
+    "hamburguesa"
   ],
   "burger-lettuce": [
     "burger",
-    "lettuce"
+    "lettuce",
+    "hamburguesa",
+    "lechuga"
   ],
   "burger-soda": [
     "burger",
-    "soda"
+    "soda",
+    "hamburguesa",
+    "gaseosa"
   ],
   "burger": [
-    "burger"
+    "burger",
+    "hamburguesa",
+    "sandwich"
   ],
   "burrito": [
-    "burrito"
+    "burrito",
+    "comida mexicana"
   ],
   "burst": [
-    "burst"
+    "burst",
+    "explotar",
+    "estallido"
   ],
   "bus-school": [
     "bus",
-    "school"
+    "school",
+    "bus escolar"
   ],
   "bus-simple": [
     "bus",
-    "simple"
+    "simple",
+    "bus"
   ],
   "bus": [
-    "bus"
+    "bus",
+    "autobus"
   ],
   "business-time": [
     "business",
-    "time"
+    "time",
+    "negocios",
+    "tiempo"
   ],
   "butter": [
-    "butter"
+    "butter",
+    "mantequilla"
   ],
   "cabin": [
-    "cabin"
+    "cabin",
+    "cabina",
+    "cabaña"
   ],
   "cabinet-filing": [
     "cabinet",
-    "filing"
+    "filing",
+    "archivador"
   ],
   "cable-car": [
     "coche",
     "auto",
     "vehiculo",
     "cable",
-    "car"
+    "car",
+    "teleferico"
   ],
   "cactus": [
-    "cactus"
+    "cactus",
+    "planta"
   ],
   "caduceus": [
-    "caduceus"
+    "caduceus",
+    "medicina"
   ],
   "cake-candles": [
     "cake",
-    "candles"
+    "candles",
+    "pastel",
+    "velas"
   ],
   "cake-slice": [
     "cake",
-    "slice"
+    "slice",
+    "pastel",
+    "rebanada"
   ],
   "calculator-simple": [
     "calculator",
-    "simple"
+    "simple",
+    "calculadora"
   ],
   "calculator": [
-    "calculator"
+    "calculator",
+    "calculadora"
   ],
   "calendar-arrow-down": [
     "flecha",
@@ -2822,7 +3698,8 @@
     "dia",
     "calendar",
     "arrow",
-    "down"
+    "down",
+    "importar"
   ],
   "calendar-arrow-up": [
     "flecha",
@@ -2834,7 +3711,8 @@
     "fecha",
     "dia",
     "calendar",
-    "arrow"
+    "arrow",
+    "exportar"
   ],
   "calendar-check": [
     "ok",
@@ -2845,7 +3723,8 @@
     "fecha",
     "dia",
     "calendar",
-    "check"
+    "check",
+    "evento confirmado"
   ],
   "calendar-circle-exclamation": [
     "calendario",
@@ -2853,7 +3732,8 @@
     "dia",
     "calendar",
     "circle",
-    "exclamation"
+    "exclamation",
+    "evento con alerta"
   ],
   "calendar-circle-minus": [
     "menos",
@@ -2864,7 +3744,8 @@
     "dia",
     "calendar",
     "circle",
-    "minus"
+    "minus",
+    "eliminar evento"
   ],
   "calendar-circle-plus": [
     "mas",
@@ -2876,7 +3757,8 @@
     "dia",
     "calendar",
     "circle",
-    "plus"
+    "plus",
+    "agregar evento"
   ],
   "calendar-circle-user": [
     "usuario",
@@ -2888,7 +3770,8 @@
     "dia",
     "calendar",
     "circle",
-    "user"
+    "user",
+    "usuario evento"
   ],
   "calendar-clock": [
     "reloj",
@@ -2898,28 +3781,32 @@
     "fecha",
     "dia",
     "calendar",
-    "clock"
+    "clock",
+    "hora del evento"
   ],
   "calendar-day": [
     "calendario",
     "fecha",
     "dia",
     "calendar",
-    "day"
+    "day",
+    "dia"
   ],
   "calendar-days": [
     "calendario",
     "fecha",
     "dia",
     "calendar",
-    "days"
+    "days",
+    "dias"
   ],
   "calendar-exclamation": [
     "calendario",
     "fecha",
     "dia",
     "calendar",
-    "exclamation"
+    "exclamation",
+    "evento urgente"
   ],
   "calendar-heart": [
     "calendario",
@@ -2930,14 +3817,16 @@
     "amor",
     "favorito",
     "calendar",
-    "heart"
+    "heart",
+    "evento favorito"
   ],
   "calendar-image": [
     "calendario",
     "fecha",
     "dia",
     "calendar",
-    "image"
+    "image",
+    "imagen"
   ],
   "calendar-lines-pen": [
     "calendario",
@@ -2945,7 +3834,8 @@
     "dia",
     "calendar",
     "lines",
-    "pen"
+    "pen",
+    "editar evento"
   ],
   "calendar-lines": [
     "calendario",
@@ -2969,7 +3859,8 @@
     "fecha",
     "dia",
     "calendar",
-    "pen"
+    "pen",
+    "editar"
   ],
   "calendar-plus": [
     "mas",
@@ -2987,7 +3878,8 @@
     "fecha",
     "dia",
     "calendar",
-    "range"
+    "range",
+    "rango"
   ],
   "calendar-star": [
     "calendario",
@@ -2997,28 +3889,32 @@
     "favorito",
     "destacado",
     "calendar",
-    "star"
+    "star",
+    "evento destacado"
   ],
   "calendar-users": [
     "calendario",
     "fecha",
     "dia",
     "calendar",
-    "users"
+    "users",
+    "usuarios"
   ],
   "calendar-week": [
     "calendario",
     "fecha",
     "dia",
     "calendar",
-    "week"
+    "week",
+    "semana"
   ],
   "calendar-xmark": [
     "calendario",
     "fecha",
     "dia",
     "calendar",
-    "xmark"
+    "xmark",
+    "cancelar evento"
   ],
   "calendar": [
     "calendario",
@@ -3027,24 +3923,28 @@
     "calendar"
   ],
   "calendars": [
-    "calendars"
+    "calendars",
+    "calendarios"
   ],
   "camcorder": [
-    "camcorder"
+    "camcorder",
+    "videocamara"
   ],
   "camera-cctv": [
     "foto",
     "camara",
     "fotografia",
     "camera",
-    "cctv"
+    "cctv",
+    "seguridad"
   ],
   "camera-movie": [
     "foto",
     "camara",
     "fotografia",
     "camera",
-    "movie"
+    "movie",
+    "cine"
   ],
   "camera-polaroid": [
     "foto",
@@ -3072,7 +3972,8 @@
     "camara",
     "fotografia",
     "camera",
-    "security"
+    "security",
+    "seguridad"
   ],
   "camera-slash": [
     "foto",
@@ -3094,14 +3995,16 @@
     "fotografia",
     "camera",
     "web",
-    "slash"
+    "slash",
+    "camara web"
   ],
   "camera-web": [
     "foto",
     "camara",
     "fotografia",
     "camera",
-    "web"
+    "web",
+    "camara web"
   ],
   "camera": [
     "foto",
@@ -3110,42 +4013,55 @@
     "camera"
   ],
   "campfire": [
-    "campfire"
+    "campfire",
+    "fogata"
   ],
   "campground": [
-    "campground"
+    "campground",
+    "campamento"
   ],
   "can-food": [
     "can",
-    "food"
+    "food",
+    "lata",
+    "comida"
   ],
   "candle-holder": [
     "candle",
-    "holder"
+    "holder",
+    "vela",
+    "portavelas"
   ],
   "candy-bar": [
     "candy",
-    "bar"
+    "bar",
+    "barra de caramelo"
   ],
   "candy-cane": [
     "candy",
-    "cane"
+    "cane",
+    "baston de caramelo"
   ],
   "candy-corn": [
     "candy",
-    "corn"
+    "corn",
+    "caramelo maiz"
   ],
   "candy": [
-    "candy"
+    "candy",
+    "caramelo"
   ],
   "cannabis": [
-    "cannabis"
+    "cannabis",
+    "marihuana"
   ],
   "cannon": [
-    "cannon"
+    "cannon",
+    "cañon"
   ],
   "capsules": [
-    "capsules"
+    "capsules",
+    "capsulas"
   ],
   "car-battery": [
     "coche",
@@ -3155,7 +4071,8 @@
     "pila",
     "energia",
     "car",
-    "battery"
+    "battery",
+    "bateria de auto"
   ],
   "car-bolt": [
     "coche",
@@ -3179,7 +4096,8 @@
     "auto",
     "vehiculo",
     "car",
-    "bump"
+    "bump",
+    "golpe"
   ],
   "car-burst": [
     "coche",
@@ -3218,7 +4136,8 @@
     "auto",
     "vehiculo",
     "car",
-    "mirrors"
+    "mirrors",
+    "espejos"
   ],
   "car-on": [
     "coche",
@@ -3231,7 +4150,8 @@
     "auto",
     "vehiculo",
     "car",
-    "rear"
+    "rear",
+    "parte trasera"
   ],
   "car-side-bolt": [
     "coche",
@@ -3256,7 +4176,8 @@
     "auto",
     "vehiculo",
     "car",
-    "tilt"
+    "tilt",
+    "inclinado"
   ],
   "car-tunnel": [
     "coche",
@@ -3270,14 +4191,16 @@
     "auto",
     "vehiculo",
     "car",
-    "wash"
+    "wash",
+    "lavado"
   ],
   "car-wrench": [
     "coche",
     "auto",
     "vehiculo",
     "car",
-    "wrench"
+    "wrench",
+    "llave"
   ],
   "car": [
     "coche",
@@ -3297,14 +4220,16 @@
     "pago",
     "credito",
     "card",
-    "club"
+    "club",
+    "trebol"
   ],
   "card-diamond": [
     "tarjeta",
     "pago",
     "credito",
     "card",
-    "diamond"
+    "diamond",
+    "diamante"
   ],
   "card-heart": [
     "corazon",
@@ -3315,27 +4240,32 @@
     "pago",
     "credito",
     "card",
-    "heart"
+    "heart",
+    "corazon"
   ],
   "card-spade": [
     "tarjeta",
     "pago",
     "credito",
     "card",
-    "spade"
+    "spade",
+    "pica"
   ],
   "cards-blank": [
     "cards",
-    "blank"
+    "blank",
+    "cartas"
   ],
   "cards": [
-    "cards"
+    "cards",
+    "cartas"
   ],
   "caret-down": [
     "abajo",
     "bajar",
     "caret",
-    "down"
+    "down",
+    "desplegar"
   ],
   "caret-left": [
     "izquierda",
@@ -3355,13 +4285,16 @@
     "caret"
   ],
   "carpool": [
-    "carpool"
+    "carpool",
+    "compartir coche"
   ],
   "carrot": [
-    "carrot"
+    "carrot",
+    "zanahoria"
   ],
   "cars": [
-    "cars"
+    "cars",
+    "autos"
   ],
   "cart-arrow-down": [
     "flecha",
@@ -3374,7 +4307,8 @@
     "bolsa",
     "cart",
     "arrow",
-    "down"
+    "down",
+    "agregar al carrito"
   ],
   "cart-arrow-up": [
     "flecha",
@@ -3425,7 +4359,8 @@
     "bolsa",
     "cart",
     "circle",
-    "check"
+    "check",
+    "carrito aprobado"
   ],
   "cart-circle-exclamation": [
     "carrito",
@@ -3514,7 +4449,8 @@
     "bolsa",
     "cart",
     "shopping",
-    "fast"
+    "fast",
+    "compra rapida"
   ],
   "cart-shopping": [
     "carrito",
@@ -3533,7 +4469,8 @@
   ],
   "cash-register": [
     "cash",
-    "register"
+    "register",
+    "caja registradora"
   ],
   "cassette-betamax": [
     "cassette",
@@ -3541,24 +4478,28 @@
   ],
   "cassette-tape": [
     "cassette",
-    "tape"
+    "tape",
+    "casete"
   ],
   "cassette-vhs": [
     "cassette",
     "vhs"
   ],
   "castle": [
-    "castle"
+    "castle",
+    "castillo"
   ],
   "cat-space": [
     "cat",
     "space"
   ],
   "cat": [
-    "cat"
+    "cat",
+    "gato"
   ],
   "cauldron": [
-    "cauldron"
+    "cauldron",
+    "caldero"
   ],
   "cedi-sign": [
     "cedi",
@@ -3566,17 +4507,21 @@
   ],
   "cent-sign": [
     "cent",
-    "sign"
+    "sign",
+    "centavo"
   ],
   "certificate": [
-    "certificate"
+    "certificate",
+    "certificado"
   ],
   "chair-office": [
     "chair",
-    "office"
+    "office",
+    "silla de oficina"
   ],
   "chair": [
-    "chair"
+    "chair",
+    "silla"
   ],
   "chalkboard-user": [
     "usuario",
@@ -3584,39 +4529,46 @@
     "perfil",
     "cliente",
     "chalkboard",
-    "user"
+    "user",
+    "pizarra"
   ],
   "chalkboard": [
-    "chalkboard"
+    "chalkboard",
+    "pizarra"
   ],
   "champagne-glass": [
     "vaso",
     "copa",
     "bebida",
     "champagne",
-    "glass"
+    "glass",
+    "champan"
   ],
   "champagne-glasses": [
     "champagne",
-    "glasses"
+    "glasses",
+    "copas de champan"
   ],
   "charging-station": [
     "charging",
-    "station"
+    "station",
+    "estacion de carga"
   ],
   "chart-area": [
     "grafico",
     "estadistica",
     "analisis",
     "chart",
-    "area"
+    "area",
+    "grafico de area"
   ],
   "chart-bar": [
     "grafico",
     "estadistica",
     "analisis",
     "chart",
-    "bar"
+    "bar",
+    "grafico de barras"
   ],
   "chart-bullet": [
     "grafico",
@@ -3630,21 +4582,24 @@
     "estadistica",
     "analisis",
     "chart",
-    "candlestick"
+    "candlestick",
+    "velas"
   ],
   "chart-column": [
     "grafico",
     "estadistica",
     "analisis",
     "chart",
-    "column"
+    "column",
+    "grafico de columnas"
   ],
   "chart-diagram": [
     "grafico",
     "estadistica",
     "analisis",
     "chart",
-    "diagram"
+    "diagram",
+    "diagrama"
   ],
   "chart-fft": [
     "grafico",
@@ -3675,7 +4630,8 @@
     "analisis",
     "chart",
     "line",
-    "down"
+    "down",
+    "grafico lineal descendente"
   ],
   "chart-line-up-down": [
     "arriba",
@@ -3696,14 +4652,16 @@
     "estadistica",
     "analisis",
     "chart",
-    "line"
+    "line",
+    "grafico lineal ascendente"
   ],
   "chart-line": [
     "grafico",
     "estadistica",
     "analisis",
     "chart",
-    "line"
+    "line",
+    "grafico de lineas"
   ],
   "chart-mixed-up-circle-currency": [
     "arriba",
@@ -3735,14 +4693,16 @@
     "estadistica",
     "analisis",
     "chart",
-    "mixed"
+    "mixed",
+    "grafico mixto"
   ],
   "chart-network": [
     "grafico",
     "estadistica",
     "analisis",
     "chart",
-    "network"
+    "network",
+    "red"
   ],
   "chart-pie-simple-circle-currency": [
     "grafico",
@@ -3773,21 +4733,24 @@
     "analisis",
     "chart",
     "pie",
-    "simple"
+    "simple",
+    "grafico circular simple"
   ],
   "chart-pie": [
     "grafico",
     "estadistica",
     "analisis",
     "chart",
-    "pie"
+    "pie",
+    "grafico circular"
   ],
   "chart-pyramid": [
     "grafico",
     "estadistica",
     "analisis",
     "chart",
-    "pyramid"
+    "pyramid",
+    "piramide"
   ],
   "chart-radar": [
     "grafico",
@@ -3801,7 +4764,8 @@
     "estadistica",
     "analisis",
     "chart",
-    "scatter"
+    "scatter",
+    "dispersion"
   ],
   "chart-scatter-bubble": [
     "grafico",
@@ -3809,7 +4773,8 @@
     "analisis",
     "chart",
     "scatter",
-    "bubble"
+    "bubble",
+    "burbujas"
   ],
   "chart-scatter": [
     "grafico",
@@ -3831,7 +4796,8 @@
     "estadistica",
     "analisis",
     "chart",
-    "simple"
+    "simple",
+    "grafico simple"
   ],
   "chart-sine": [
     "grafico",
@@ -3849,7 +4815,8 @@
     "naturaleza",
     "chart",
     "tree",
-    "map"
+    "map",
+    "mapa de arbol"
   ],
   "chart-user": [
     "usuario",
@@ -3867,7 +4834,8 @@
     "estadistica",
     "analisis",
     "chart",
-    "waterfall"
+    "waterfall",
+    "cascada"
   ],
   "check-double": [
     "ok",
@@ -3875,7 +4843,8 @@
     "verificado",
     "bien",
     "check",
-    "double"
+    "double",
+    "doble check"
   ],
   "check-to-slot": [
     "ok",
@@ -3883,7 +4852,8 @@
     "verificado",
     "bien",
     "check",
-    "slot"
+    "slot",
+    "votar"
   ],
   "check": [
     "ok",
@@ -3894,26 +4864,32 @@
   ],
   "cheese-swiss": [
     "cheese",
-    "swiss"
+    "swiss",
+    "queso suizo"
   ],
   "cheese": [
-    "cheese"
+    "cheese",
+    "queso"
   ],
   "cherries": [
-    "cherries"
+    "cherries",
+    "cerezas"
   ],
   "chess-bishop-piece": [
     "chess",
     "bishop",
-    "piece"
+    "piece",
+    "alfil"
   ],
   "chess-bishop": [
     "chess",
-    "bishop"
+    "bishop",
+    "alfil"
   ],
   "chess-board": [
     "chess",
-    "board"
+    "board",
+    "tablero de ajedrez"
   ],
   "chess-clock-flip": [
     "reloj",
@@ -3921,7 +4897,8 @@
     "hora",
     "chess",
     "clock",
-    "flip"
+    "flip",
+    "reloj de ajedrez"
   ],
   "chess-clock": [
     "reloj",
@@ -3933,53 +4910,65 @@
   "chess-king-piece": [
     "chess",
     "king",
-    "piece"
+    "piece",
+    "rey"
   ],
   "chess-king": [
     "chess",
-    "king"
+    "king",
+    "rey"
   ],
   "chess-knight-piece": [
     "chess",
     "knight",
-    "piece"
+    "piece",
+    "caballo"
   ],
   "chess-knight": [
     "chess",
-    "knight"
+    "knight",
+    "caballo"
   ],
   "chess-pawn-piece": [
     "chess",
     "pawn",
-    "piece"
+    "piece",
+    "peon"
   ],
   "chess-pawn": [
     "chess",
-    "pawn"
+    "pawn",
+    "peon"
   ],
   "chess-queen-piece": [
     "chess",
     "queen",
-    "piece"
+    "piece",
+    "reina"
   ],
   "chess-queen": [
     "chess",
-    "queen"
+    "queen",
+    "reina"
   ],
   "chess-rook-piece": [
     "chess",
     "rook",
-    "piece"
+    "piece",
+    "torre"
   ],
   "chess-rook": [
     "chess",
-    "rook"
+    "rook",
+    "torre"
   ],
   "chess": [
-    "chess"
+    "chess",
+    "ajedrez"
   ],
   "chestnut": [
-    "chestnut"
+    "chestnut",
+    "castaña"
   ],
   "chevron-down": [
     "abajo",
@@ -4008,7 +4997,8 @@
     "abajo",
     "bajar",
     "chevrons",
-    "down"
+    "down",
+    "chevrones"
   ],
   "chevrons-left": [
     "izquierda",
@@ -4029,7 +5019,8 @@
   ],
   "chf-sign": [
     "chf",
-    "sign"
+    "sign",
+    "franco suizo"
   ],
   "child-combatant": [
     "child",
@@ -4044,52 +5035,68 @@
     "reaching"
   ],
   "child": [
-    "child"
+    "child",
+    "nino"
   ],
   "children": [
-    "children"
+    "children",
+    "ninos"
   ],
   "chimney": [
-    "chimney"
+    "chimney",
+    "chimenea"
   ],
   "chopsticks": [
-    "chopsticks"
+    "chopsticks",
+    "palillos"
   ],
   "church": [
-    "church"
+    "church",
+    "iglesia"
   ],
   "circle-0": [
-    "circle"
+    "circle",
+    "circulo cero"
   ],
   "circle-1": [
-    "circle"
+    "circle",
+    "circulo uno"
   ],
   "circle-2": [
-    "circle"
+    "circle",
+    "circulo dos"
   ],
   "circle-3": [
-    "circle"
+    "circle",
+    "circulo tres"
   ],
   "circle-4": [
-    "circle"
+    "circle",
+    "circulo cuatro"
   ],
   "circle-5": [
-    "circle"
+    "circle",
+    "circulo cinco"
   ],
   "circle-6": [
-    "circle"
+    "circle",
+    "circulo seis"
   ],
   "circle-7": [
-    "circle"
+    "circle",
+    "circulo siete"
   ],
   "circle-8": [
-    "circle"
+    "circle",
+    "circulo ocho"
   ],
   "circle-9": [
-    "circle"
+    "circle",
+    "circulo nueve"
   ],
   "circle-a": [
-    "circle"
+    "circle",
+    "circulo a"
   ],
   "circle-ampersand": [
     "circle",
@@ -4185,7 +5192,8 @@
     "arrow"
   ],
   "circle-b": [
-    "circle"
+    "circle",
+    "circulo b"
   ],
   "circle-bolt": [
     "rayo",
@@ -4204,7 +5212,8 @@
     "bookmark"
   ],
   "circle-c": [
-    "circle"
+    "circle",
+    "circulo c"
   ],
   "circle-calendar": [
     "calendario",
@@ -4283,7 +5292,8 @@
     "chevron"
   ],
   "circle-d": [
-    "circle"
+    "circle",
+    "circulo d"
   ],
   "circle-dashed": [
     "circle",
@@ -4337,7 +5347,8 @@
     "down"
   ],
   "circle-e": [
-    "circle"
+    "circle",
+    "circulo e"
   ],
   "circle-ellipsis-vertical": [
     "circle",
@@ -4376,16 +5387,19 @@
     "exclamation"
   ],
   "circle-f": [
-    "circle"
+    "circle",
+    "circulo f"
   ],
   "circle-g": [
-    "circle"
+    "circle",
+    "circulo g"
   ],
   "circle-gf": [
     "circle"
   ],
   "circle-h": [
-    "circle"
+    "circle",
+    "circulo h"
   ],
   "circle-half-stroke": [
     "circle",
@@ -4405,20 +5419,24 @@
     "heart"
   ],
   "circle-i": [
-    "circle"
+    "circle",
+    "circulo i"
   ],
   "circle-info": [
     "circle",
     "info"
   ],
   "circle-j": [
-    "circle"
+    "circle",
+    "circulo j"
   ],
   "circle-k": [
-    "circle"
+    "circle",
+    "circulo k"
   ],
   "circle-l": [
-    "circle"
+    "circle",
+    "circulo l"
   ],
   "circle-left": [
     "izquierda",
@@ -4439,7 +5457,8 @@
     "arrow"
   ],
   "circle-m": [
-    "circle"
+    "circle",
+    "circulo m"
   ],
   "circle-microphone-lines": [
     "circle",
@@ -4458,7 +5477,8 @@
     "minus"
   ],
   "circle-n": [
-    "circle"
+    "circle",
+    "circulo n"
   ],
   "circle-nodes": [
     "circle",
@@ -4469,10 +5489,12 @@
     "notch"
   ],
   "circle-o": [
-    "circle"
+    "circle",
+    "circulo o"
   ],
   "circle-p": [
-    "circle"
+    "circle",
+    "circulo p"
   ],
   "circle-parking": [
     "circle",
@@ -4523,7 +5545,8 @@
     "plus"
   ],
   "circle-q": [
-    "circle"
+    "circle",
+    "circulo q"
   ],
   "circle-quarter-stroke": [
     "circle",
@@ -4543,7 +5566,8 @@
     "question"
   ],
   "circle-r": [
-    "circle"
+    "circle",
+    "circulo r"
   ],
   "circle-radiation": [
     "circle",
@@ -4556,7 +5580,8 @@
     "right"
   ],
   "circle-s": [
-    "circle"
+    "circle",
+    "circulo s"
   ],
   "circle-small": [
     "circle",
@@ -4597,7 +5622,8 @@
     "stop"
   ],
   "circle-t": [
-    "circle"
+    "circle",
+    "circulo t"
   ],
   "circle-three-quarters-stroke": [
     "circle",
@@ -4619,7 +5645,8 @@
     "trash"
   ],
   "circle-u": [
-    "circle"
+    "circle",
+    "circulo u"
   ],
   "circle-up-left": [
     "arriba",
@@ -4651,7 +5678,8 @@
     "user"
   ],
   "circle-v": [
-    "circle"
+    "circle",
+    "circulo v"
   ],
   "circle-video": [
     "video",
@@ -4660,7 +5688,8 @@
     "circle"
   ],
   "circle-w": [
-    "circle"
+    "circle",
+    "circulo w"
   ],
   "circle-waveform-lines": [
     "circle",
@@ -4682,24 +5711,28 @@
     "wifi"
   ],
   "circle-x": [
-    "circle"
+    "circle",
+    "circulo x"
   ],
   "circle-xmark": [
     "circle",
     "xmark"
   ],
   "circle-y": [
-    "circle"
+    "circle",
+    "circulo y"
   ],
   "circle-yen": [
     "circle",
     "yen"
   ],
   "circle-z": [
-    "circle"
+    "circle",
+    "circulo z"
   ],
   "circle": [
-    "circle"
+    "circle",
+    "circulo"
   ],
   "circles-overlap-3": [
     "circles",
@@ -4714,10 +5747,12 @@
     "slice"
   ],
   "citrus": [
-    "citrus"
+    "citrus",
+    "citricos"
   ],
   "city": [
-    "city"
+    "city",
+    "ciudad"
   ],
   "clapperboard-play": [
     "reproducir",
@@ -4727,10 +5762,12 @@
     "play"
   ],
   "clapperboard": [
-    "clapperboard"
+    "clapperboard",
+    "claqueta"
   ],
   "clarinet": [
-    "clarinet"
+    "clarinet",
+    "clarinete"
   ],
   "claw-marks": [
     "claw",
@@ -4742,7 +5779,8 @@
     "verificado",
     "bien",
     "clipboard",
-    "check"
+    "check",
+    "portapapeles verificado"
   ],
   "clipboard-list-check": [
     "ok",
@@ -4755,7 +5793,8 @@
   ],
   "clipboard-list": [
     "clipboard",
-    "list"
+    "list",
+    "lista"
   ],
   "clipboard-medical": [
     "clipboard",
@@ -4778,14 +5817,16 @@
     "user"
   ],
   "clipboard": [
-    "clipboard"
+    "clipboard",
+    "portapapeles"
   ],
   "clock-desk": [
     "reloj",
     "tiempo",
     "hora",
     "clock",
-    "desk"
+    "desk",
+    "reloj de escritorio"
   ],
   "clock-eight-thirty": [
     "reloj",
@@ -4878,7 +5919,8 @@
     "hora",
     "clock",
     "rotate",
-    "left"
+    "left",
+    "historial"
   ],
   "clock-seven-thirty": [
     "reloj",
@@ -4977,7 +6019,9 @@
     "clock"
   ],
   "clone": [
-    "clone"
+    "clone",
+    "clonar",
+    "duplicar"
   ],
   "closed-captioning-slash": [
     "closed",
@@ -4986,11 +6030,13 @@
   ],
   "closed-captioning": [
     "closed",
-    "captioning"
+    "captioning",
+    "subtitulos"
   ],
   "clothes-hanger": [
     "clothes",
-    "hanger"
+    "hanger",
+    "percha"
   ],
   "cloud-arrow-down": [
     "flecha",
@@ -5002,7 +6048,8 @@
     "almacenamiento",
     "cloud",
     "arrow",
-    "down"
+    "down",
+    "descargar"
   ],
   "cloud-arrow-up": [
     "flecha",
@@ -5013,7 +6060,8 @@
     "nube",
     "almacenamiento",
     "cloud",
-    "arrow"
+    "arrow",
+    "subir a la nube"
   ],
   "cloud-binary": [
     "nube",
@@ -5064,13 +6112,15 @@
     "nube",
     "almacenamiento",
     "cloud",
-    "check"
+    "check",
+    "nube verificada"
   ],
   "cloud-drizzle": [
     "nube",
     "almacenamiento",
     "cloud",
-    "drizzle"
+    "drizzle",
+    "llovizna"
   ],
   "cloud-exclamation": [
     "nube",
@@ -5082,14 +6132,16 @@
     "nube",
     "almacenamiento",
     "cloud",
-    "fog"
+    "fog",
+    "niebla"
   ],
   "cloud-hail-mixed": [
     "nube",
     "almacenamiento",
     "cloud",
     "hail",
-    "mixed"
+    "mixed",
+    "granizo"
   ],
   "cloud-hail": [
     "nube",
@@ -5101,7 +6153,8 @@
     "nube",
     "almacenamiento",
     "cloud",
-    "meatball"
+    "meatball",
+    "albondiga"
   ],
   "cloud-minus": [
     "menos",
@@ -5120,7 +6173,8 @@
     "clima",
     "cloud",
     "moon",
-    "rain"
+    "rain",
+    "lluvia"
   ],
   "cloud-moon": [
     "nube",
@@ -5160,20 +6214,23 @@
     "nube",
     "almacenamiento",
     "cloud",
-    "rain"
+    "rain",
+    "lluvia"
   ],
   "cloud-rainbow": [
     "nube",
     "almacenamiento",
     "cloud",
-    "rainbow"
+    "rainbow",
+    "arcoiris"
   ],
   "cloud-showers-heavy": [
     "nube",
     "almacenamiento",
     "cloud",
     "showers",
-    "heavy"
+    "heavy",
+    "aguacero"
   ],
   "cloud-showers-water": [
     "nube",
@@ -5198,13 +6255,15 @@
     "nube",
     "almacenamiento",
     "cloud",
-    "sleet"
+    "sleet",
+    "aguanieve"
   ],
   "cloud-snow": [
     "nube",
     "almacenamiento",
     "cloud",
-    "snow"
+    "snow",
+    "nieve"
   ],
   "cloud-sun-rain": [
     "nube",
@@ -5257,20 +6316,25 @@
     "sun"
   ],
   "clouds": [
-    "clouds"
+    "clouds",
+    "nubes"
   ],
   "clover": [
-    "clover"
+    "clover",
+    "trebol"
   ],
   "club": [
-    "club"
+    "club",
+    "trebol"
   ],
   "coconut": [
-    "coconut"
+    "coconut",
+    "coco"
   ],
   "code-branch": [
     "code",
-    "branch"
+    "branch",
+    "ramificacion"
   ],
   "code-commit": [
     "code",
@@ -5278,15 +6342,18 @@
   ],
   "code-compare": [
     "code",
-    "compare"
+    "compare",
+    "comparar"
   ],
   "code-fork": [
     "code",
-    "fork"
+    "fork",
+    "bifurcacion"
   ],
   "code-merge": [
     "code",
-    "merge"
+    "merge",
+    "fusionar"
   ],
   "code-pull-request-closed": [
     "code",
@@ -5303,28 +6370,33 @@
   "code-pull-request": [
     "code",
     "pull",
-    "request"
+    "request",
+    "solicitud de cambios"
   ],
   "code-simple": [
     "code",
     "simple"
   ],
   "code": [
-    "code"
+    "code",
+    "codigo",
+    "programacion"
   ],
   "coffee-bean": [
     "cafe",
     "taza",
     "bebida",
     "coffee",
-    "bean"
+    "bean",
+    "grano"
   ],
   "coffee-beans": [
     "cafe",
     "taza",
     "bebida",
     "coffee",
-    "beans"
+    "beans",
+    "granos"
   ],
   "coffee-pot": [
     "cafe",
@@ -5338,7 +6410,8 @@
     "cross"
   ],
   "coffin": [
-    "coffin"
+    "coffin",
+    "ataud"
   ],
   "coin-blank": [
     "coin",
@@ -5353,29 +6426,36 @@
     "vertical"
   ],
   "coin": [
-    "coin"
+    "coin",
+    "moneda"
   ],
   "coins": [
-    "coins"
+    "coins",
+    "monedas"
   ],
   "colon-sign": [
     "colon",
     "sign"
   ],
   "colon": [
-    "colon"
+    "colon",
+    "dos puntos"
   ],
   "columns-3": [
-    "columns"
+    "columns",
+    "tres columnas"
   ],
   "comet": [
-    "comet"
+    "comet",
+    "cometa"
   ],
   "comma": [
-    "comma"
+    "comma",
+    "coma"
   ],
   "command": [
-    "command"
+    "command",
+    "comando"
   ],
   "comment-arrow-down": [
     "flecha",
@@ -5527,7 +6607,8 @@
     "xmark"
   ],
   "comment": [
-    "comment"
+    "comment",
+    "comentario"
   ],
   "comments-dollar": [
     "dolar",
@@ -5550,11 +6631,13 @@
     "question"
   ],
   "comments": [
-    "comments"
+    "comments",
+    "comentarios"
   ],
   "compact-disc": [
     "compact",
-    "disc"
+    "disc",
+    "cd"
   ],
   "compass-drafting": [
     "compass",
@@ -5565,14 +6648,16 @@
     "slash"
   ],
   "compass": [
-    "compass"
+    "compass",
+    "brujula"
   ],
   "compress-wide": [
     "compress",
     "wide"
   ],
   "compress": [
-    "compress"
+    "compress",
+    "comprimir"
   ],
   "computer-classic": [
     "computer",
@@ -5585,14 +6670,16 @@
   ],
   "computer-mouse": [
     "computer",
-    "mouse"
+    "mouse",
+    "raton"
   ],
   "computer-speaker": [
     "computer",
     "speaker"
   ],
   "computer": [
-    "computer"
+    "computer",
+    "computadora"
   ],
   "container-storage": [
     "container",
@@ -5622,7 +6709,8 @@
     "bite"
   ],
   "cookie": [
-    "cookie"
+    "cookie",
+    "galleta"
   ],
   "copy": [
     "copiar",
@@ -5630,23 +6718,27 @@
     "copy"
   ],
   "copyright": [
-    "copyright"
+    "copyright",
+    "derechos de autor"
   ],
   "corn": [
-    "corn"
+    "corn",
+    "maiz"
   ],
   "corner": [
     "corner"
   ],
   "couch": [
-    "couch"
+    "couch",
+    "sofa"
   ],
   "court-sport": [
     "court",
     "sport"
   ],
   "cow": [
-    "cow"
+    "cow",
+    "vaca"
   ],
   "cowbell-circle-plus": [
     "mas",
@@ -5661,7 +6753,8 @@
     "cowbell"
   ],
   "crab": [
-    "crab"
+    "crab",
+    "cangrejo"
   ],
   "crate-apple": [
     "manzana",
@@ -5703,36 +6796,45 @@
     "ball"
   ],
   "croissant": [
-    "croissant"
+    "croissant",
+    "pan"
   ],
   "crop-simple": [
     "crop",
-    "simple"
+    "simple",
+    "recortar"
   ],
   "crop": [
-    "crop"
+    "crop",
+    "recortar"
   ],
   "cross": [
-    "cross"
+    "cross",
+    "cruz"
   ],
   "crosshairs-simple": [
     "crosshairs",
     "simple"
   ],
   "crosshairs": [
-    "crosshairs"
+    "crosshairs",
+    "apuntar"
   ],
   "crow": [
-    "crow"
+    "crow",
+    "cuervo"
   ],
   "crown": [
-    "crown"
+    "crown",
+    "corona"
   ],
   "crutch": [
-    "crutch"
+    "crutch",
+    "muleta"
   ],
   "crutches": [
-    "crutches"
+    "crutches",
+    "muletas"
   ],
   "cruzeiro-sign": [
     "cruzeiro",
@@ -5740,20 +6842,24 @@
   ],
   "crystal-ball": [
     "crystal",
-    "ball"
+    "ball",
+    "bola de cristal"
   ],
   "cube": [
-    "cube"
+    "cube",
+    "cubo"
   ],
   "cubes-stacked": [
     "cubes",
     "stacked"
   ],
   "cubes": [
-    "cubes"
+    "cubes",
+    "cubos"
   ],
   "cucumber": [
-    "cucumber"
+    "cucumber",
+    "pepino"
   ],
   "cup-straw-swoosh": [
     "cup",
@@ -5762,43 +6868,51 @@
   ],
   "cup-straw": [
     "cup",
-    "straw"
+    "straw",
+    "vaso con pajita"
   ],
   "cup-togo": [
     "cup",
     "togo"
   ],
   "cupcake": [
-    "cupcake"
+    "cupcake",
+    "magdalena"
   ],
   "curling-stone": [
     "curling",
     "stone"
   ],
   "custard": [
-    "custard"
+    "custard",
+    "flan"
   ],
   "dagger": [
-    "dagger"
+    "dagger",
+    "daga"
   ],
   "dash": [
-    "dash"
+    "dash",
+    "guion"
   ],
   "database": [
-    "database"
+    "database",
+    "base de datos"
   ],
   "deer-rudolph": [
     "deer",
     "rudolph"
   ],
   "deer": [
-    "deer"
+    "deer",
+    "ciervo"
   ],
   "delete-left": [
     "izquierda",
     "atras",
     "delete",
-    "left"
+    "left",
+    "borrar"
   ],
   "delete-right": [
     "derecha",
@@ -5820,7 +6934,8 @@
     "down"
   ],
   "desktop": [
-    "desktop"
+    "desktop",
+    "escritorio"
   ],
   "dharmachakra": [
     "dharmachakra"
@@ -5923,7 +7038,8 @@
     "right"
   ],
   "diamond": [
-    "diamond"
+    "diamond",
+    "diamante"
   ],
   "diamonds-4": [
     "diamonds"
@@ -5974,10 +7090,12 @@
     "two"
   ],
   "dice": [
-    "dice"
+    "dice",
+    "dados"
   ],
   "dinosaur": [
-    "dinosaur"
+    "dinosaur",
+    "dinosaurio"
   ],
   "diploma": [
     "diploma"
@@ -5987,7 +7105,8 @@
     "drive"
   ],
   "disease": [
-    "disease"
+    "disease",
+    "enfermedad"
   ],
   "display-arrow-down": [
     "flecha",
@@ -6046,7 +7165,8 @@
     "slash"
   ],
   "display": [
-    "display"
+    "display",
+    "pantalla"
   ],
   "distribute-spacing-horizontal": [
     "distribute",
@@ -6062,10 +7182,12 @@
     "ditto"
   ],
   "divide": [
-    "divide"
+    "divide",
+    "dividir"
   ],
   "dna": [
-    "dna"
+    "dna",
+    "adn"
   ],
   "do-not-enter": [
     "not",
@@ -6076,7 +7198,8 @@
     "leashed"
   ],
   "dog": [
-    "dog"
+    "dog",
+    "perro"
   ],
   "dollar-sign": [
     "dolar",
@@ -6093,25 +7216,30 @@
     "dolly"
   ],
   "dolphin": [
-    "dolphin"
+    "dolphin",
+    "delfin"
   ],
   "dong-sign": [
     "dong",
     "sign"
   ],
   "donut": [
-    "donut"
+    "donut",
+    "dona"
   ],
   "door-closed": [
     "door",
-    "closed"
+    "closed",
+    "puerta cerrada"
   ],
   "door-open": [
     "door",
-    "open"
+    "open",
+    "puerta abierta"
   ],
   "dove": [
-    "dove"
+    "dove",
+    "paloma"
   ],
   "down-from-bracket": [
     "abajo",
@@ -6197,7 +7325,8 @@
     "down"
   ],
   "download": [
-    "download"
+    "download",
+    "descargar"
   ],
   "dragon": [
     "dragon"
@@ -6222,7 +7351,8 @@
     "front"
   ],
   "drone": [
-    "drone"
+    "drone",
+    "dron"
   ],
   "droplet-degree": [
     "droplet",
@@ -6237,14 +7367,16 @@
     "slash"
   ],
   "droplet": [
-    "droplet"
+    "droplet",
+    "gota"
   ],
   "drum-steelpan": [
     "drum",
     "steelpan"
   ],
   "drum": [
-    "drum"
+    "drum",
+    "tambor"
   ],
   "drumstick-bite": [
     "drumstick",
@@ -6261,10 +7393,12 @@
     "dryer"
   ],
   "duck": [
-    "duck"
+    "duck",
+    "pato"
   ],
   "dumbbell": [
-    "dumbbell"
+    "dumbbell",
+    "pesa"
   ],
   "dumpster-fire": [
     "fuego",
@@ -6292,7 +7426,8 @@
     "muffs"
   ],
   "ear": [
-    "ear"
+    "ear",
+    "oreja"
   ],
   "earth-africa": [
     "earth",
@@ -6322,19 +7457,24 @@
     "fried"
   ],
   "egg": [
-    "egg"
+    "egg",
+    "huevo"
   ],
   "eggplant": [
-    "eggplant"
+    "eggplant",
+    "berenjena"
   ],
   "eject": [
-    "eject"
+    "eject",
+    "expulsar"
   ],
   "elephant": [
-    "elephant"
+    "elephant",
+    "elefante"
   ],
   "elevator": [
-    "elevator"
+    "elevator",
+    "ascensor"
   ],
   "ellipsis-stroke-vertical": [
     "ellipsis",
@@ -6350,7 +7490,8 @@
     "vertical"
   ],
   "ellipsis": [
-    "ellipsis"
+    "ellipsis",
+    "puntos suspensivos"
   ],
   "empty-set": [
     "empty",
@@ -6428,10 +7569,12 @@
     "envelopes"
   ],
   "equals": [
-    "equals"
+    "equals",
+    "igual"
   ],
   "eraser": [
-    "eraser"
+    "eraser",
+    "borrar"
   ],
   "escalator": [
     "escalator"
@@ -6449,14 +7592,16 @@
     "excavator"
   ],
   "exclamation": [
-    "exclamation"
+    "exclamation",
+    "exclamacion"
   ],
   "expand-wide": [
     "expand",
     "wide"
   ],
   "expand": [
-    "expand"
+    "expand",
+    "expandir"
   ],
   "explosion": [
     "explosion"
@@ -6485,7 +7630,8 @@
     "vista",
     "visualizar",
     "eye",
-    "dropper"
+    "dropper",
+    "cuentagotas"
   ],
   "eye-evil": [
     "ojo",
@@ -6510,7 +7656,8 @@
     "vista",
     "visualizar",
     "eye",
-    "slash"
+    "slash",
+    "no visible"
   ],
   "eye": [
     "ojo",
@@ -6520,7 +7667,8 @@
     "eye"
   ],
   "eyes": [
-    "eyes"
+    "eyes",
+    "ojos"
   ],
   "face-angry-horns": [
     "face",
@@ -6529,7 +7677,8 @@
   ],
   "face-angry": [
     "face",
-    "angry"
+    "angry",
+    "enojado"
   ],
   "face-anguished": [
     "face",
@@ -6565,7 +7714,8 @@
   ],
   "face-confused": [
     "face",
-    "confused"
+    "confused",
+    "confundido"
   ],
   "face-cowboy-hat": [
     "face",
@@ -6639,7 +7789,8 @@
   ],
   "face-frown": [
     "face",
-    "frown"
+    "frown",
+    "ceño fruncido"
   ],
   "face-glasses": [
     "face",
@@ -6715,7 +7866,8 @@
   ],
   "face-grin": [
     "face",
-    "grin"
+    "grin",
+    "sonrisa"
   ],
   "face-hand-over-mouth": [
     "face",
@@ -6775,7 +7927,8 @@
   ],
   "face-kiss": [
     "face",
-    "kiss"
+    "kiss",
+    "beso"
   ],
   "face-laugh-beam": [
     "face",
@@ -6794,7 +7947,8 @@
   ],
   "face-laugh": [
     "face",
-    "laugh"
+    "laugh",
+    "risa"
   ],
   "face-lying": [
     "face",
@@ -6811,7 +7965,8 @@
   ],
   "face-meh": [
     "face",
-    "meh"
+    "meh",
+    "neutral"
   ],
   "face-melting": [
     "face",
@@ -6867,7 +8022,8 @@
   "face-sad-cry": [
     "face",
     "sad",
-    "cry"
+    "cry",
+    "llanto"
   ],
   "face-sad-sweat": [
     "face",
@@ -6885,7 +8041,8 @@
   ],
   "face-scream": [
     "face",
-    "scream"
+    "scream",
+    "grito"
   ],
   "face-shush": [
     "face",
@@ -6958,7 +8115,8 @@
   ],
   "face-smile": [
     "face",
-    "smile"
+    "smile",
+    "sonrisa"
   ],
   "face-smiling-hands": [
     "face",
@@ -6980,7 +8138,8 @@
   ],
   "face-surprise": [
     "face",
-    "surprise"
+    "surprise",
+    "sorpresa"
   ],
   "face-swear": [
     "face",
@@ -6992,11 +8151,13 @@
   ],
   "face-thinking": [
     "face",
-    "thinking"
+    "thinking",
+    "pensando"
   ],
   "face-tired": [
     "face",
-    "tired"
+    "tired",
+    "cansado"
   ],
   "face-tissue": [
     "face",
@@ -7059,24 +8220,28 @@
     "pants"
   ],
   "family": [
-    "family"
+    "family",
+    "familia"
   ],
   "fan-table": [
     "fan",
     "table"
   ],
   "fan": [
-    "fan"
+    "fan",
+    "ventilador"
   ],
   "farm": [
-    "farm"
+    "farm",
+    "granja"
   ],
   "faucet-drip": [
     "faucet",
     "drip"
   ],
   "faucet": [
-    "faucet"
+    "faucet",
+    "grifo"
   ],
   "fax": [
     "fax"
@@ -7086,14 +8251,17 @@
     "pointed"
   ],
   "feather": [
-    "feather"
+    "feather",
+    "pluma"
   ],
   "fence": [
-    "fence"
+    "fence",
+    "cerca"
   ],
   "ferris-wheel": [
     "ferris",
-    "wheel"
+    "wheel",
+    "rueda"
   ],
   "ferry": [
     "ferry"
@@ -7115,7 +8283,8 @@
     "hoja",
     "file",
     "arrow",
-    "down"
+    "down",
+    "descargar"
   ],
   "file-arrow-up": [
     "flecha",
@@ -7127,14 +8296,16 @@
     "documento",
     "hoja",
     "file",
-    "arrow"
+    "arrow",
+    "subir archivo"
   ],
   "file-audio": [
     "archivo",
     "documento",
     "hoja",
     "file",
-    "audio"
+    "audio",
+    "sonido"
   ],
   "file-binary": [
     "archivo",
@@ -7262,14 +8433,16 @@
     "documento",
     "hoja",
     "file",
-    "code"
+    "code",
+    "codigo"
   ],
   "file-contract": [
     "archivo",
     "documento",
     "hoja",
     "file",
-    "contract"
+    "contract",
+    "contrato"
   ],
   "file-csv": [
     "archivo",
@@ -7305,7 +8478,8 @@
     "documento",
     "hoja",
     "file",
-    "excel"
+    "excel",
+    "hoja de calculo"
   ],
   "file-exclamation": [
     "archivo",
@@ -7319,7 +8493,8 @@
     "documento",
     "hoja",
     "file",
-    "export"
+    "export",
+    "exportar"
   ],
   "file-fragment": [
     "archivo",
@@ -7359,14 +8534,16 @@
     "documento",
     "hoja",
     "file",
-    "image"
+    "image",
+    "imagen"
   ],
   "file-import": [
     "archivo",
     "documento",
     "hoja",
     "file",
-    "import"
+    "import",
+    "importar"
   ],
   "file-invoice-dollar": [
     "archivo",
@@ -7384,7 +8561,8 @@
     "documento",
     "hoja",
     "file",
-    "invoice"
+    "invoice",
+    "factura"
   ],
   "file-jpg": [
     "archivo",
@@ -7398,7 +8576,8 @@
     "documento",
     "hoja",
     "file",
-    "lines"
+    "lines",
+    "texto"
   ],
   "file-lock": [
     "archivo",
@@ -7408,7 +8587,8 @@
     "seguridad",
     "cerrar",
     "file",
-    "lock"
+    "lock",
+    "archivo bloqueado"
   ],
   "file-magnifying-glass": [
     "archivo",
@@ -7419,7 +8599,8 @@
     "bebida",
     "file",
     "magnifying",
-    "glass"
+    "glass",
+    "buscar archivo"
   ],
   "file-medical": [
     "archivo",
@@ -7662,14 +8843,16 @@
     "medical"
   ],
   "files": [
-    "files"
+    "files",
+    "archivos"
   ],
   "fill-drip": [
     "fill",
     "drip"
   ],
   "fill": [
-    "fill"
+    "fill",
+    "rellenar"
   ],
   "film-canister": [
     "film",
@@ -7684,10 +8867,12 @@
     "slash"
   ],
   "film": [
-    "film"
+    "film",
+    "pelicula"
   ],
   "films": [
-    "films"
+    "films",
+    "peliculas"
   ],
   "filter-circle-dollar": [
     "dolar",
@@ -7713,7 +8898,8 @@
     "embudo",
     "ordenar",
     "filter",
-    "list"
+    "list",
+    "lista filtrada"
   ],
   "filter-slash": [
     "filtro",
@@ -7729,10 +8915,12 @@
     "filter"
   ],
   "filters": [
-    "filters"
+    "filters",
+    "filtros"
   ],
   "fingerprint": [
-    "fingerprint"
+    "fingerprint",
+    "huella digital"
   ],
   "fire-burner": [
     "fuego",
@@ -7746,7 +8934,8 @@
     "calor",
     "quemar",
     "fire",
-    "extinguisher"
+    "extinguisher",
+    "extintor"
   ],
   "fire-flame-curved": [
     "fuego",
@@ -7776,14 +8965,16 @@
     "calor",
     "quemar",
     "fire",
-    "hydrant"
+    "hydrant",
+    "hidrante"
   ],
   "fire-smoke": [
     "fuego",
     "calor",
     "quemar",
     "fire",
-    "smoke"
+    "smoke",
+    "humo"
   ],
   "fire": [
     "fuego",
@@ -7792,7 +8983,8 @@
     "fire"
   ],
   "fireplace": [
-    "fireplace"
+    "fireplace",
+    "chimenea"
   ],
   "fish-bones": [
     "fish",
@@ -7807,11 +8999,13 @@
     "fins"
   ],
   "fish": [
-    "fish"
+    "fish",
+    "pez"
   ],
   "fishing-rod": [
     "fishing",
-    "rod"
+    "rod",
+    "caña de pescar"
   ],
   "flag-checkered": [
     "flag",
@@ -7830,10 +9024,12 @@
     "usa"
   ],
   "flag": [
-    "flag"
+    "flag",
+    "bandera"
   ],
   "flashlight": [
-    "flashlight"
+    "flashlight",
+    "linterna"
   ],
   "flask-gear": [
     "ajuste",
@@ -7858,7 +9054,8 @@
     "vial"
   ],
   "flask": [
-    "flask"
+    "flask",
+    "matraz"
   ],
   "flatbread-stuffed": [
     "flatbread",
@@ -7892,7 +9089,8 @@
   ],
   "floppy-disk": [
     "floppy",
-    "disk"
+    "disk",
+    "disquete"
   ],
   "floppy-disks": [
     "floppy",
@@ -7908,13 +9106,16 @@
   ],
   "flower-tulip": [
     "flower",
-    "tulip"
+    "tulip",
+    "tulipan"
   ],
   "flower": [
-    "flower"
+    "flower",
+    "flor"
   ],
   "flute": [
-    "flute"
+    "flute",
+    "flauta"
   ],
   "flux-capacitor": [
     "flux",
@@ -8011,7 +9212,8 @@
   ],
   "folder-open": [
     "folder",
-    "open"
+    "open",
+    "carpeta abierta"
   ],
   "folder-plus": [
     "mas",
@@ -8041,10 +9243,12 @@
     "xmark"
   ],
   "folder": [
-    "folder"
+    "folder",
+    "carpeta"
   ],
   "folders": [
-    "folders"
+    "folders",
+    "carpetas"
   ],
   "fondue-pot": [
     "fondue",
@@ -8059,21 +9263,24 @@
     "case"
   ],
   "font": [
-    "font"
+    "font",
+    "fuente"
   ],
   "football-helmet": [
     "football",
     "helmet"
   ],
   "football": [
-    "football"
+    "football",
+    "futbol americano"
   ],
   "fork-knife": [
     "fork",
     "knife"
   ],
   "fork": [
-    "fork"
+    "fork",
+    "tenedor"
   ],
   "forklift": [
     "forklift"
@@ -8090,10 +9297,12 @@
     "step"
   ],
   "forward": [
-    "forward"
+    "forward",
+    "avanzar"
   ],
   "frame": [
-    "frame"
+    "frame",
+    "marco"
   ],
   "franc-sign": [
     "franc",
@@ -8101,10 +9310,12 @@
   ],
   "french-fries": [
     "french",
-    "fries"
+    "fries",
+    "papas fritas"
   ],
   "frog": [
-    "frog"
+    "frog",
+    "rana"
   ],
   "function": [
     "function"
@@ -8113,7 +9324,8 @@
     "futbol"
   ],
   "galaxy": [
-    "galaxy"
+    "galaxy",
+    "galaxia"
   ],
   "gallery-thumbnails": [
     "gallery",
@@ -8144,7 +9356,8 @@
     "modern"
   ],
   "gamepad": [
-    "gamepad"
+    "gamepad",
+    "control"
   ],
   "garage-car": [
     "coche",
@@ -8161,7 +9374,8 @@
     "garage"
   ],
   "garlic": [
-    "garlic"
+    "garlic",
+    "ajo"
   ],
   "gas-pump-slash": [
     "gas",
@@ -8238,10 +9452,12 @@
     "simple"
   ],
   "gauge": [
-    "gauge"
+    "gauge",
+    "medidor"
   ],
   "gavel": [
-    "gavel"
+    "gavel",
+    "mazo"
   ],
   "gear-code": [
     "ajuste",
@@ -8276,10 +9492,12 @@
     "gear"
   ],
   "gears": [
-    "gears"
+    "gears",
+    "engranajes"
   ],
   "gem": [
-    "gem"
+    "gem",
+    "gema"
   ],
   "genderless": [
     "genderless"
@@ -8301,7 +9519,8 @@
     "sorpresa",
     "presente",
     "gift",
-    "card"
+    "card",
+    "tarjeta de regalo"
   ],
   "gift": [
     "regalo",
@@ -8310,7 +9529,8 @@
     "gift"
   ],
   "gifts": [
-    "gifts"
+    "gifts",
+    "regalos"
   ],
   "gingerbread-man": [
     "gingerbread",
@@ -8363,7 +9583,8 @@
     "round"
   ],
   "glasses": [
-    "glasses"
+    "glasses",
+    "gafas"
   ],
   "globe-pointer": [
     "globe",
@@ -8385,7 +9606,8 @@
     "wifi"
   ],
   "globe": [
-    "globe"
+    "globe",
+    "globo terraqueo"
   ],
   "goal-net": [
     "goal",
@@ -8410,13 +9632,15 @@
   ],
   "graduation-cap": [
     "graduation",
-    "cap"
+    "cap",
+    "birrete"
   ],
   "gramophone": [
     "gramophone"
   ],
   "grapes": [
-    "grapes"
+    "grapes",
+    "uvas"
   ],
   "grate-droplet": [
     "grate",
@@ -8485,7 +9709,8 @@
     "round"
   ],
   "grid": [
-    "grid"
+    "grid",
+    "cuadricula"
   ],
   "grill-fire": [
     "fuego",
@@ -8499,7 +9724,8 @@
     "hot"
   ],
   "grill": [
-    "grill"
+    "grill",
+    "parrilla"
   ],
   "grip-dots-vertical": [
     "grip",
@@ -8537,10 +9763,12 @@
   ],
   "guitar-electric": [
     "guitar",
-    "electric"
+    "electric",
+    "guitarra electrica"
   ],
   "guitar": [
-    "guitar"
+    "guitar",
+    "guitarra"
   ],
   "guitars": [
     "guitars"
@@ -8554,7 +9782,8 @@
     "squirt"
   ],
   "gun": [
-    "gun"
+    "gun",
+    "pistola"
   ],
   "hammer-brush": [
     "hammer",
@@ -8569,7 +9798,8 @@
     "war"
   ],
   "hammer": [
-    "hammer"
+    "hammer",
+    "martillo"
   ],
   "hamsa": [
     "hamsa"
@@ -8627,7 +9857,8 @@
   ],
   "hand-fist": [
     "hand",
-    "fist"
+    "fist",
+    "puño"
   ],
   "hand-heart": [
     "corazon",
@@ -8723,7 +9954,8 @@
   ],
   "hand-peace": [
     "hand",
-    "peace"
+    "peace",
+    "paz"
   ],
   "hand-point-down": [
     "abajo",
@@ -8778,10 +10010,12 @@
     "wave"
   ],
   "hand": [
-    "hand"
+    "hand",
+    "mano"
   ],
   "handcuffs": [
-    "handcuffs"
+    "handcuffs",
+    "esposas"
   ],
   "hands-asl-interpreting": [
     "hands",
@@ -8798,7 +10032,8 @@
   ],
   "hands-clapping": [
     "hands",
-    "clapping"
+    "clapping",
+    "aplausos"
   ],
   "hands-holding-child": [
     "hands",
@@ -8838,7 +10073,8 @@
   ],
   "hands-praying": [
     "hands",
-    "praying"
+    "praying",
+    "rezando"
   ],
   "hands": [
     "hands"
@@ -8861,14 +10097,16 @@
     "slash"
   ],
   "handshake": [
-    "handshake"
+    "handshake",
+    "apreton de manos"
   ],
   "hanukiah": [
     "hanukiah"
   ],
   "hard-drive": [
     "hard",
-    "drive"
+    "drive",
+    "disco duro"
   ],
   "hashtag-lock": [
     "candado",
@@ -8977,17 +10215,21 @@
     "side"
   ],
   "heading": [
-    "heading"
+    "heading",
+    "encabezado"
   ],
   "headphones-simple": [
     "headphones",
-    "simple"
+    "simple",
+    "auriculares"
   ],
   "headphones": [
-    "headphones"
+    "headphones",
+    "auriculares"
   ],
   "headset": [
-    "headset"
+    "headset",
+    "auriculares con microfono"
   ],
   "heart-circle-bolt": [
     "corazon",
@@ -9063,7 +10305,8 @@
     "amor",
     "favorito",
     "heart",
-    "crack"
+    "crack",
+    "corazon roto"
   ],
   "heart-half-stroke": [
     "corazon",
@@ -9088,7 +10331,8 @@
     "amor",
     "favorito",
     "heart",
-    "pulse"
+    "pulse",
+    "latido"
   ],
   "heart": [
     "corazon",
@@ -9098,14 +10342,16 @@
     "heart"
   ],
   "heat": [
-    "heat"
+    "heat",
+    "calor"
   ],
   "helicopter-symbol": [
     "helicopter",
     "symbol"
   ],
   "helicopter": [
-    "helicopter"
+    "helicopter",
+    "helicoptero"
   ],
   "helmet-battle": [
     "helmet",
@@ -9113,7 +10359,8 @@
   ],
   "helmet-safety": [
     "helmet",
-    "safety"
+    "safety",
+    "casco"
   ],
   "helmet-un": [
     "helmet"
@@ -9181,18 +10428,21 @@
     "xmark"
   ],
   "hexagon": [
-    "hexagon"
+    "hexagon",
+    "hexagono"
   ],
   "high-definition": [
     "high",
-    "definition"
+    "definition",
+    "alta definicion"
   ],
   "highlighter-line": [
     "highlighter",
     "line"
   ],
   "highlighter": [
-    "highlighter"
+    "highlighter",
+    "resaltador"
   ],
   "hill-avalanche": [
     "hill",
@@ -9203,7 +10453,8 @@
     "rockslide"
   ],
   "hippo": [
-    "hippo"
+    "hippo",
+    "hipopotamo"
   ],
   "hockey-mask": [
     "hockey",
@@ -9247,7 +10498,8 @@
     "saddle"
   ],
   "horse": [
-    "horse"
+    "horse",
+    "caballo"
   ],
   "hose-reel": [
     "hose",
@@ -9276,7 +10528,8 @@
     "person"
   ],
   "hotdog": [
-    "hotdog"
+    "hotdog",
+    "perro caliente"
   ],
   "hotel": [
     "hotel"
@@ -9301,7 +10554,8 @@
     "start"
   ],
   "hourglass": [
-    "hourglass"
+    "hourglass",
+    "reloj de arena"
   ],
   "house-blank": [
     "casa",
@@ -9674,24 +10928,28 @@
     "hydra"
   ],
   "hyphen": [
-    "hyphen"
+    "hyphen",
+    "guion"
   ],
   "i-cursor": [
     "cursor"
   ],
   "ice-cream": [
     "ice",
-    "cream"
+    "cream",
+    "helado"
   ],
   "ice-skate": [
     "ice",
     "skate"
   ],
   "icicles": [
-    "icicles"
+    "icicles",
+    "carámbanos"
   ],
   "icons": [
-    "icons"
+    "icons",
+    "iconos"
   ],
   "id-badge": [
     "badge"
@@ -9710,11 +10968,13 @@
     "card"
   ],
   "igloo": [
-    "igloo"
+    "igloo",
+    "iglú"
   ],
   "image-landscape": [
     "image",
-    "landscape"
+    "landscape",
+    "paisaje"
   ],
   "image-polaroid-user": [
     "usuario",
@@ -9731,7 +10991,8 @@
   ],
   "image-portrait": [
     "image",
-    "portrait"
+    "portrait",
+    "retrato"
   ],
   "image-slash": [
     "image",
@@ -9746,7 +11007,8 @@
     "user"
   ],
   "image": [
-    "image"
+    "image",
+    "imagen"
   ],
   "images-user": [
     "usuario",
@@ -9757,7 +11019,8 @@
     "user"
   ],
   "images": [
-    "images"
+    "images",
+    "imagenes"
   ],
   "inbox-full": [
     "inbox",
@@ -9771,13 +11034,15 @@
     "out"
   ],
   "inbox": [
-    "inbox"
+    "inbox",
+    "bandeja de entrada"
   ],
   "inboxes": [
     "inboxes"
   ],
   "indent": [
-    "indent"
+    "indent",
+    "sangria"
   ],
   "indian-rupee-sign": [
     "indian",
@@ -9792,10 +11057,12 @@
     "industry"
   ],
   "infinity": [
-    "infinity"
+    "infinity",
+    "infinito"
   ],
   "info": [
-    "info"
+    "info",
+    "informacion"
   ],
   "inhaler": [
     "inhaler"
@@ -9826,18 +11093,21 @@
     "tropical"
   ],
   "italic": [
-    "italic"
+    "italic",
+    "cursiva"
   ],
   "jack-o-lantern": [
     "jack",
-    "lantern"
+    "lantern",
+    "calabaza"
   ],
   "jar-wheat": [
     "jar",
     "wheat"
   ],
   "jar": [
-    "jar"
+    "jar",
+    "tarro"
   ],
   "jedi": [
     "jedi"
@@ -9850,7 +11120,8 @@
   ],
   "jet-fighter": [
     "jet",
-    "fighter"
+    "fighter",
+    "avion de combate"
   ],
   "joint": [
     "joint"
@@ -9893,7 +11164,8 @@
     "skeleton"
   ],
   "key": [
-    "key"
+    "key",
+    "llave"
   ],
   "keyboard-brightness-low": [
     "keyboard",
@@ -9917,7 +11189,8 @@
     "left"
   ],
   "keyboard": [
-    "keyboard"
+    "keyboard",
+    "teclado"
   ],
   "keynote": [
     "keynote"
@@ -9926,7 +11199,8 @@
     "khanda"
   ],
   "kidneys": [
-    "kidneys"
+    "kidneys",
+    "riñones"
   ],
   "kip-sign": [
     "kip",
@@ -9941,7 +11215,8 @@
     "set"
   ],
   "kite": [
-    "kite"
+    "kite",
+    "cometa"
   ],
   "kiwi-bird": [
     "kiwi",
@@ -9949,14 +11224,16 @@
   ],
   "kiwi-fruit": [
     "kiwi",
-    "fruit"
+    "fruit",
+    "kiwi"
   ],
   "knife-kitchen": [
     "knife",
     "kitchen"
   ],
   "knife": [
-    "knife"
+    "knife",
+    "cuchillo"
   ],
   "lacrosse-stick-ball": [
     "lacrosse",
@@ -9983,7 +11260,8 @@
     "street"
   ],
   "lamp": [
-    "lamp"
+    "lamp",
+    "lampara"
   ],
   "land-mine-on": [
     "land",
@@ -10009,7 +11287,8 @@
     "landmark"
   ],
   "language": [
-    "language"
+    "language",
+    "idioma"
   ],
   "laptop-arrow-down": [
     "flecha",
@@ -10027,7 +11306,8 @@
   ],
   "laptop-code": [
     "laptop",
-    "code"
+    "code",
+    "codigo"
   ],
   "laptop-file": [
     "archivo",
@@ -10049,7 +11329,8 @@
     "slash"
   ],
   "laptop": [
-    "laptop"
+    "laptop",
+    "portatil"
   ],
   "lari-sign": [
     "lari",
@@ -10169,7 +11450,8 @@
     "left"
   ],
   "lemon": [
-    "lemon"
+    "lemon",
+    "limon"
   ],
   "less-than-equal": [
     "less",
@@ -10252,7 +11534,8 @@
     "slash"
   ],
   "lightbulb": [
-    "lightbulb"
+    "lightbulb",
+    "bombilla"
   ],
   "lighthouse": [
     "lighthouse"
@@ -10308,7 +11591,8 @@
     "vinculo",
     "url",
     "link",
-    "slash"
+    "slash",
+    "desenlazar"
   ],
   "link": [
     "enlace",
@@ -10317,7 +11601,8 @@
     "link"
   ],
   "lips": [
-    "lips"
+    "lips",
+    "labios"
   ],
   "lira-sign": [
     "lira",
@@ -10329,7 +11614,8 @@
     "verificado",
     "bien",
     "list",
-    "check"
+    "check",
+    "lista de verificacion"
   ],
   "list-dropdown": [
     "list",
@@ -10340,10 +11626,12 @@
     "audio",
     "sonido",
     "list",
-    "music"
+    "music",
+    "lista de reproduccion"
   ],
   "list-ol": [
-    "list"
+    "list",
+    "lista numerada"
   ],
   "list-radio": [
     "list",
@@ -10361,7 +11649,8 @@
     "tree"
   ],
   "list-ul": [
-    "list"
+    "list",
+    "lista con viñetas"
   ],
   "list": [
     "list"
@@ -10371,10 +11660,12 @@
     "sign"
   ],
   "loader": [
-    "loader"
+    "loader",
+    "cargando"
   ],
   "lobster": [
-    "lobster"
+    "lobster",
+    "langosta"
   ],
   "location-arrow-up": [
     "flecha",
@@ -10571,7 +11862,8 @@
     "seguridad",
     "cerrar",
     "lock",
-    "open"
+    "open",
+    "abrir candado"
   ],
   "lock": [
     "candado",
@@ -10580,10 +11872,12 @@
     "lock"
   ],
   "locust": [
-    "locust"
+    "locust",
+    "langosta"
   ],
   "lollipop": [
-    "lollipop"
+    "lollipop",
+    "paleta"
   ],
   "loveseat": [
     "loveseat"
@@ -10597,13 +11891,15 @@
     "virus"
   ],
   "lungs": [
-    "lungs"
+    "lungs",
+    "pulmones"
   ],
   "mace": [
     "mace"
   ],
   "magnet": [
-    "magnet"
+    "magnet",
+    "iman"
   ],
   "magnifying-glass-arrow-right": [
     "flecha",
@@ -10671,7 +11967,8 @@
     "bebida",
     "magnifying",
     "glass",
-    "minus"
+    "minus",
+    "alejar"
   ],
   "magnifying-glass-music": [
     "musica",
@@ -10705,7 +12002,8 @@
     "bebida",
     "magnifying",
     "glass",
-    "plus"
+    "plus",
+    "acercar"
   ],
   "magnifying-glass-waveform": [
     "vaso",
@@ -10720,7 +12018,9 @@
     "copa",
     "bebida",
     "magnifying",
-    "glass"
+    "glass",
+    "lupa",
+    "buscar"
   ],
   "mailbox-flag-up": [
     "arriba",
@@ -10729,7 +12029,8 @@
     "flag"
   ],
   "mailbox": [
-    "mailbox"
+    "mailbox",
+    "buzon"
   ],
   "manat-sign": [
     "manat",
@@ -10766,10 +12067,12 @@
     "pin"
   ],
   "map": [
-    "map"
+    "map",
+    "mapa"
   ],
   "marker": [
-    "marker"
+    "marker",
+    "marcador"
   ],
   "mars-and-venus-burst": [
     "mars",
@@ -10842,7 +12145,8 @@
     "ventilator"
   ],
   "mask": [
-    "mask"
+    "mask",
+    "mascara"
   ],
   "masks-theater": [
     "masks",
@@ -10853,16 +12157,20 @@
     "pillow"
   ],
   "maximize": [
-    "maximize"
+    "maximize",
+    "maximizar"
   ],
   "meat": [
-    "meat"
+    "meat",
+    "carne"
   ],
   "medal": [
-    "medal"
+    "medal",
+    "medalla"
   ],
   "megaphone": [
-    "megaphone"
+    "megaphone",
+    "megafono"
   ],
   "melon-slice": [
     "melon",
@@ -10890,10 +12198,12 @@
     "pad"
   ],
   "memo": [
-    "memo"
+    "memo",
+    "memorandum"
   ],
   "memory": [
-    "memory"
+    "memory",
+    "memoria"
   ],
   "menorah": [
     "menorah"
@@ -11054,7 +12364,8 @@
     "xmark"
   ],
   "message": [
-    "message"
+    "message",
+    "mensaje"
   ],
   "messages-dollar": [
     "dolar",
@@ -11068,10 +12379,12 @@
     "question"
   ],
   "messages": [
-    "messages"
+    "messages",
+    "mensajes"
   ],
   "meteor": [
-    "meteor"
+    "meteor",
+    "meteoro"
   ],
   "meter-bolt": [
     "rayo",
@@ -11118,20 +12431,24 @@
     "stand"
   ],
   "microphone": [
-    "microphone"
+    "microphone",
+    "microfono"
   ],
   "microscope": [
-    "microscope"
+    "microscope",
+    "microscopio"
   ],
   "microwave": [
-    "microwave"
+    "microwave",
+    "microondas"
   ],
   "mill-sign": [
     "mill",
     "sign"
   ],
   "minimize": [
-    "minimize"
+    "minimize",
+    "minimizar"
   ],
   "minus": [
     "menos",
@@ -11176,7 +12493,8 @@
     "signal"
   ],
   "mobile": [
-    "mobile"
+    "mobile",
+    "movil"
   ],
   "money-bill-1-wave": [
     "dinero",
@@ -11340,7 +12658,8 @@
     "waveform"
   ],
   "monkey": [
-    "monkey"
+    "monkey",
+    "mono"
   ],
   "monument": [
     "monument"
@@ -11395,7 +12714,8 @@
     "mosquito"
   ],
   "motorcycle": [
-    "motorcycle"
+    "motorcycle",
+    "moto"
   ],
   "mound": [
     "mound"
@@ -11412,10 +12732,12 @@
     "sun"
   ],
   "mountain": [
-    "mountain"
+    "mountain",
+    "montaña"
   ],
   "mountains": [
-    "mountains"
+    "mountains",
+    "montañas"
   ],
   "mouse-field": [
     "mouse",
@@ -11423,7 +12745,8 @@
   ],
   "mp3-player": [
     "mp3",
-    "player"
+    "player",
+    "reproductor mp3"
   ],
   "mug-hot": [
     "mug",
@@ -11447,10 +12770,12 @@
     "tea"
   ],
   "mug": [
-    "mug"
+    "mug",
+    "taza"
   ],
   "mushroom": [
-    "mushroom"
+    "mushroom",
+    "hongo"
   ],
   "music-magnifying-glass": [
     "musica",
@@ -11492,7 +12817,8 @@
     "music"
   ],
   "mustache": [
-    "mustache"
+    "mustache",
+    "bigote"
   ],
   "naira-sign": [
     "naira",
@@ -11513,7 +12839,8 @@
     "neuter"
   ],
   "newspaper": [
-    "newspaper"
+    "newspaper",
+    "periodico"
   ],
   "nfc-lock": [
     "candado",
@@ -11558,7 +12885,8 @@
     "nfc"
   ],
   "nose": [
-    "nose"
+    "nose",
+    "nariz"
   ],
   "not-equal": [
     "not",
@@ -11576,17 +12904,20 @@
     "sticky"
   ],
   "note": [
-    "note"
+    "note",
+    "nota"
   ],
   "notebook": [
-    "notebook"
+    "notebook",
+    "cuaderno"
   ],
   "notes-medical": [
     "notes",
     "medical"
   ],
   "notes": [
-    "notes"
+    "notes",
+    "notas"
   ],
   "object-exclude": [
     "object",
@@ -11688,10 +13019,12 @@
     "xmark"
   ],
   "octagon": [
-    "octagon"
+    "octagon",
+    "octagono"
   ],
   "octopus": [
-    "octopus"
+    "octopus",
+    "pulpo"
   ],
   "oil-can-drip": [
     "oil",
@@ -11715,13 +13048,15 @@
     "branch"
   ],
   "olive": [
-    "olive"
+    "olive",
+    "aceituna"
   ],
   "omega": [
     "omega"
   ],
   "onion": [
-    "onion"
+    "onion",
+    "cebolla"
   ],
   "option": [
     "option"
@@ -11730,7 +13065,8 @@
     "ornament"
   ],
   "otter": [
-    "otter"
+    "otter",
+    "nutria"
   ],
   "outdent": [
     "outdent"
@@ -11758,7 +13094,8 @@
     "caret"
   ],
   "page": [
-    "page"
+    "page",
+    "pagina"
   ],
   "pager": [
     "pager"
@@ -11779,10 +13116,12 @@
     "pencil"
   ],
   "paintbrush": [
-    "paintbrush"
+    "paintbrush",
+    "pincel"
   ],
   "palette": [
-    "palette"
+    "palette",
+    "paleta"
   ],
   "pallet-box": [
     "pallet",
@@ -11804,7 +13143,8 @@
     "frying"
   ],
   "pancakes": [
-    "pancakes"
+    "pancakes",
+    "panqueques"
   ],
   "panel-ews": [
     "panel",
@@ -11840,7 +13180,8 @@
     "vertical"
   ],
   "paperclip": [
-    "paperclip"
+    "paperclip",
+    "clip"
   ],
   "parachute-box": [
     "parachute",
@@ -11853,7 +13194,8 @@
     "left"
   ],
   "paragraph": [
-    "paragraph"
+    "paragraph",
+    "parrafo"
   ],
   "party-bell": [
     "campana",
@@ -11867,7 +13209,8 @@
     "horn"
   ],
   "passport": [
-    "passport"
+    "passport",
+    "pasaporte"
   ],
   "paste": [
     "pegar",
@@ -11888,25 +13231,31 @@
     "simple"
   ],
   "paw": [
-    "paw"
+    "paw",
+    "pata"
   ],
   "peace": [
-    "peace"
+    "peace",
+    "paz"
   ],
   "peach": [
-    "peach"
+    "peach",
+    "durazno"
   ],
   "peanut": [
-    "peanut"
+    "peanut",
+    "mani"
   ],
   "peanuts": [
-    "peanuts"
+    "peanuts",
+    "manies"
   ],
   "peapod": [
     "peapod"
   ],
   "pear": [
-    "pear"
+    "pear",
+    "pera"
   ],
   "pedestal": [
     "pedestal"
@@ -11971,10 +13320,12 @@
   ],
   "pen-to-square": [
     "pen",
-    "square"
+    "square",
+    "editar"
   ],
   "pen": [
-    "pen"
+    "pen",
+    "pluma"
   ],
   "pencil-mechanical": [
     "editar",
@@ -12048,20 +13399,25 @@
     "simple"
   ],
   "people": [
-    "people"
+    "people",
+    "personas"
   ],
   "pepper-hot": [
     "pepper",
-    "hot"
+    "hot",
+    "chile"
   ],
   "pepper": [
-    "pepper"
+    "pepper",
+    "pimienta"
   ],
   "percent": [
-    "percent"
+    "percent",
+    "porcentaje"
   ],
   "period": [
-    "period"
+    "period",
+    "punto"
   ],
   "person-arrow-down-to-line": [
     "flecha",
@@ -12274,7 +13630,8 @@
   ],
   "person-running": [
     "person",
-    "running"
+    "running",
+    "corriendo"
   ],
   "person-seat-reclined": [
     "person",
@@ -12334,7 +13691,8 @@
   ],
   "person-swimming": [
     "person",
-    "swimming"
+    "swimming",
+    "nadando"
   ],
   "person-through-window": [
     "person",
@@ -12398,10 +13756,12 @@
   ],
   "person-walking": [
     "person",
-    "walking"
+    "walking",
+    "caminando"
   ],
   "person": [
-    "person"
+    "person",
+    "persona"
   ],
   "peseta-sign": [
     "peseta",
@@ -12549,29 +13909,35 @@
   ],
   "piano-keyboard": [
     "piano",
-    "keyboard"
+    "keyboard",
+    "teclado de piano"
   ],
   "piano": [
     "piano"
   ],
   "pickaxe": [
-    "pickaxe"
+    "pickaxe",
+    "pico"
   ],
   "pickleball": [
     "pickleball"
   ],
   "pie": [
-    "pie"
+    "pie",
+    "pastel"
   ],
   "pig": [
-    "pig"
+    "pig",
+    "cerdo"
   ],
   "piggy-bank": [
     "piggy",
-    "bank"
+    "bank",
+    "alcancia"
   ],
   "pills": [
-    "pills"
+    "pills",
+    "pastillas"
   ],
   "pinata": [
     "pinata"
@@ -12580,7 +13946,8 @@
     "pinball"
   ],
   "pineapple": [
-    "pineapple"
+    "pineapple",
+    "piña"
   ],
   "pipe-circle-check": [
     "ok",
@@ -12608,11 +13975,13 @@
     "valve"
   ],
   "pipe": [
-    "pipe"
+    "pipe",
+    "tuberia"
   ],
   "pizza-slice": [
     "pizza",
-    "slice"
+    "slice",
+    "rebanada de pizza"
   ],
   "pizza": [
     "pizza"
@@ -12626,7 +13995,8 @@
     "vuelo",
     "viaje",
     "plane",
-    "arrival"
+    "arrival",
+    "llegada"
   ],
   "plane-circle-check": [
     "ok",
@@ -12661,7 +14031,8 @@
     "vuelo",
     "viaje",
     "plane",
-    "departure"
+    "departure",
+    "salida"
   ],
   "plane-engines": [
     "avion",
@@ -12810,7 +14181,8 @@
     "xmark"
   ],
   "plug": [
-    "plug"
+    "plug",
+    "enchufe"
   ],
   "plus-large": [
     "mas",
@@ -12818,7 +14190,8 @@
     "agregar",
     "nuevo",
     "plus",
-    "large"
+    "large",
+    "grande"
   ],
   "plus-minus": [
     "mas",
@@ -12867,7 +14240,8 @@
     "storm"
   ],
   "poo": [
-    "poo"
+    "poo",
+    "caca"
   ],
   "pool-8-ball": [
     "pool",
@@ -12877,17 +14251,20 @@
     "poop"
   ],
   "popcorn": [
-    "popcorn"
+    "popcorn",
+    "palomitas"
   ],
   "popsicle": [
-    "popsicle"
+    "popsicle",
+    "paleta"
   ],
   "pot-food": [
     "pot",
     "food"
   ],
   "potato": [
-    "potato"
+    "potato",
+    "papa"
   ],
   "power-off": [
     "power",
@@ -12908,7 +14285,8 @@
     "bottle"
   ],
   "prescription": [
-    "prescription"
+    "prescription",
+    "receta"
   ],
   "presentation-screen": [
     "presentation",
@@ -12930,10 +14308,12 @@
     "slash"
   ],
   "print": [
-    "print"
+    "print",
+    "imprimir"
   ],
   "projector": [
-    "projector"
+    "projector",
+    "proyector"
   ],
   "pump-medical": [
     "pump",
@@ -12947,7 +14327,8 @@
     "pump"
   ],
   "pumpkin": [
-    "pumpkin"
+    "pumpkin",
+    "calabaza"
   ],
   "puzzle-piece-simple": [
     "puzzle",
@@ -12956,16 +14337,20 @@
   ],
   "puzzle-piece": [
     "puzzle",
-    "piece"
+    "piece",
+    "pieza de rompecabezas"
   ],
   "puzzle": [
-    "puzzle"
+    "puzzle",
+    "rompecabezas"
   ],
   "qrcode": [
-    "qrcode"
+    "qrcode",
+    "codigo qr"
   ],
   "question": [
-    "question"
+    "question",
+    "pregunta"
   ],
   "quote-left": [
     "izquierda",
@@ -12980,17 +14365,20 @@
     "right"
   ],
   "quotes": [
-    "quotes"
+    "quotes",
+    "comillas"
   ],
   "rabbit-running": [
     "rabbit",
     "running"
   ],
   "rabbit": [
-    "rabbit"
+    "rabbit",
+    "conejo"
   ],
   "raccoon": [
-    "raccoon"
+    "raccoon",
+    "mapache"
   ],
   "racquet": [
     "racquet"
@@ -13009,10 +14397,12 @@
     "radio"
   ],
   "rainbow": [
-    "rainbow"
+    "rainbow",
+    "arcoiris"
   ],
   "raindrops": [
-    "raindrops"
+    "raindrops",
+    "gotas de lluvia"
   ],
   "ram": [
     "ram"
@@ -13032,11 +14422,13 @@
     "raygun"
   ],
   "receipt": [
-    "receipt"
+    "receipt",
+    "recibo"
   ],
   "record-vinyl": [
     "record",
-    "vinyl"
+    "vinyl",
+    "vinilo"
   ],
   "rectangle-ad": [
     "rectangle"
@@ -13103,14 +14495,16 @@
     "xmark"
   ],
   "rectangle": [
-    "rectangle"
+    "rectangle",
+    "rectangulo"
   ],
   "rectangles-mixed": [
     "rectangles",
     "mixed"
   ],
   "recycle": [
-    "recycle"
+    "recycle",
+    "reciclar"
   ],
   "reel": [
     "reel"
@@ -13128,7 +14522,8 @@
     "vertical"
   ],
   "refrigerator": [
-    "refrigerator"
+    "refrigerator",
+    "refrigerador"
   ],
   "registered": [
     "registered"
@@ -13137,7 +14532,8 @@
     "repeat"
   ],
   "repeat": [
-    "repeat"
+    "repeat",
+    "repetir"
   ],
   "reply-all": [
     "reply",
@@ -13151,7 +14547,8 @@
     "clock"
   ],
   "reply": [
-    "reply"
+    "reply",
+    "responder"
   ],
   "republican": [
     "republican"
@@ -13176,7 +14573,8 @@
     "rhombus"
   ],
   "ribbon": [
-    "ribbon"
+    "ribbon",
+    "cinta"
   ],
   "right-from-bracket": [
     "derecha",
@@ -13244,7 +14642,8 @@
     "diamond"
   ],
   "ring": [
-    "ring"
+    "ring",
+    "anillo"
   ],
   "rings-wedding": [
     "rings",
@@ -13289,7 +14688,8 @@
     "spikes"
   ],
   "road": [
-    "road"
+    "road",
+    "carretera"
   ],
   "robot-astromech": [
     "robot",
@@ -13323,7 +14723,8 @@
     "izquierda",
     "atras",
     "rotate",
-    "left"
+    "left",
+    "deshacer"
   ],
   "rotate-reverse": [
     "rotate",
@@ -13336,7 +14737,8 @@
     "right"
   ],
   "rotate": [
-    "rotate"
+    "rotate",
+    "rotar"
   ],
   "route-highway": [
     "route",
@@ -13347,10 +14749,12 @@
     "interstate"
   ],
   "route": [
-    "route"
+    "route",
+    "ruta"
   ],
   "router": [
-    "router"
+    "router",
+    "enrutador"
   ],
   "rss": [
     "rss"
@@ -13368,7 +14772,8 @@
   ],
   "ruler-combined": [
     "ruler",
-    "combined"
+    "combined",
+    "regla combinada"
   ],
   "ruler-horizontal": [
     "ruler",
@@ -13383,7 +14788,8 @@
     "vertical"
   ],
   "ruler": [
-    "ruler"
+    "ruler",
+    "regla"
   ],
   "rupee-sign": [
     "rupee",
@@ -13408,10 +14814,12 @@
     "sack"
   ],
   "sailboat": [
-    "sailboat"
+    "sailboat",
+    "velero"
   ],
   "salad": [
-    "salad"
+    "salad",
+    "ensalada"
   ],
   "salt-shaker": [
     "salt",
@@ -13428,7 +14836,8 @@
     "satellite"
   ],
   "sausage": [
-    "sausage"
+    "sausage",
+    "salchicha"
   ],
   "saxophone-fire": [
     "fuego",
@@ -13438,7 +14847,8 @@
     "fire"
   ],
   "saxophone": [
-    "saxophone"
+    "saxophone",
+    "saxofon"
   ],
   "scale-balanced": [
     "scale",
@@ -13481,7 +14891,8 @@
     "scarecrow"
   ],
   "scarf": [
-    "scarf"
+    "scarf",
+    "bufanda"
   ],
   "school-circle-check": [
     "ok",
@@ -13514,10 +14925,12 @@
     "lock"
   ],
   "school": [
-    "school"
+    "school",
+    "escuela"
   ],
   "scissors": [
-    "scissors"
+    "scissors",
+    "tijeras"
   ],
   "screen-users": [
     "screen",
@@ -13531,7 +14944,8 @@
     "wrench"
   ],
   "screwdriver": [
-    "screwdriver"
+    "screwdriver",
+    "destornillador"
   ],
   "scribble": [
     "scribble"
@@ -13545,7 +14959,8 @@
     "torah"
   ],
   "scroll": [
-    "scroll"
+    "scroll",
+    "pergamino"
   ],
   "scrubber": [
     "scrubber"
@@ -13571,7 +14986,8 @@
     "question"
   ],
   "seal": [
-    "seal"
+    "seal",
+    "sello"
   ],
   "seat-airline": [
     "seat",
@@ -13581,10 +14997,12 @@
     "section"
   ],
   "seedling": [
-    "seedling"
+    "seedling",
+    "planta"
   ],
   "semicolon": [
-    "semicolon"
+    "semicolon",
+    "punto y coma"
   ],
   "send-back": [
     "send",
@@ -13619,10 +15037,12 @@
     "sensor"
   ],
   "server": [
-    "server"
+    "server",
+    "servidor"
   ],
   "shapes": [
-    "shapes"
+    "shapes",
+    "formas"
   ],
   "share-all": [
     "compartir",
@@ -13649,7 +15069,8 @@
     "share"
   ],
   "sheep": [
-    "sheep"
+    "sheep",
+    "oveja"
   ],
   "sheet-plastic": [
     "sheet",
@@ -13786,7 +15207,8 @@
     "shield"
   ],
   "ship": [
-    "ship"
+    "ship",
+    "barco"
   ],
   "shirt-long-sleeve": [
     "shirt",
@@ -13803,7 +15225,8 @@
     "top"
   ],
   "shirt": [
-    "shirt"
+    "shirt",
+    "camisa"
   ],
   "shish-kebab": [
     "shish",
@@ -13811,7 +15234,8 @@
   ],
   "shoe-prints": [
     "shoe",
-    "prints"
+    "prints",
+    "huellas"
   ],
   "shop-lock": [
     "candado",
@@ -13825,14 +15249,16 @@
     "slash"
   ],
   "shop": [
-    "shop"
+    "shop",
+    "tienda"
   ],
   "shovel-snow": [
     "shovel",
     "snow"
   ],
   "shovel": [
-    "shovel"
+    "shovel",
+    "pala"
   ],
   "shower-down": [
     "abajo",
@@ -13841,16 +15267,19 @@
     "down"
   ],
   "shower": [
-    "shower"
+    "shower",
+    "ducha"
   ],
   "shredder": [
     "shredder"
   ],
   "shrimp": [
-    "shrimp"
+    "shrimp",
+    "camaron"
   ],
   "shuffle": [
-    "shuffle"
+    "shuffle",
+    "aleatorio"
   ],
   "shutters": [
     "shutters"
@@ -13946,7 +15375,8 @@
     "weak"
   ],
   "signal": [
-    "signal"
+    "signal",
+    "señal"
   ],
   "signature-lock": [
     "candado",
@@ -13960,7 +15390,8 @@
     "slash"
   ],
   "signature": [
-    "signature"
+    "signature",
+    "firma"
   ],
   "signs-post": [
     "signs",
@@ -13987,7 +15418,8 @@
     "siren"
   ],
   "sitemap": [
-    "sitemap"
+    "sitemap",
+    "mapa del sitio"
   ],
   "skeleton-ribs": [
     "skeleton",
@@ -14033,7 +15465,8 @@
     "forward"
   ],
   "slash": [
-    "slash"
+    "slash",
+    "barra"
   ],
   "sleigh": [
     "sleigh"
@@ -14051,7 +15484,8 @@
     "sliders"
   ],
   "sliders": [
-    "sliders"
+    "sliders",
+    "controles deslizantes"
   ],
   "slot-machine": [
     "slot",
@@ -14061,16 +15495,20 @@
     "smog"
   ],
   "smoke": [
-    "smoke"
+    "smoke",
+    "humo"
   ],
   "smoking": [
-    "smoking"
+    "smoking",
+    "fumar"
   ],
   "snake": [
-    "snake"
+    "snake",
+    "serpiente"
   ],
   "snooze": [
-    "snooze"
+    "snooze",
+    "posponer"
   ],
   "snow-blowing": [
     "snow",
@@ -14090,23 +15528,27 @@
     "snowflake"
   ],
   "snowflakes": [
-    "snowflakes"
+    "snowflakes",
+    "copos de nieve"
   ],
   "snowman-head": [
     "snowman",
     "head"
   ],
   "snowman": [
-    "snowman"
+    "snowman",
+    "muñeco de nieve"
   ],
   "snowplow": [
     "snowplow"
   ],
   "soap": [
-    "soap"
+    "soap",
+    "jabon"
   ],
   "socks": [
-    "socks"
+    "socks",
+    "calcetines"
   ],
   "soft-serve": [
     "soft",
@@ -14132,7 +15574,8 @@
     "sort"
   ],
   "sort": [
-    "sort"
+    "sort",
+    "ordenar"
   ],
   "spa": [
     "spa"
@@ -14155,7 +15598,8 @@
     "moon"
   ],
   "spade": [
-    "spade"
+    "spade",
+    "pica"
   ],
   "spaghetti-monster-flying": [
     "spaghetti",
@@ -14192,7 +15636,8 @@
     "web"
   ],
   "spider": [
-    "spider"
+    "spider",
+    "araña"
   ],
   "spinner-scale": [
     "spinner",
@@ -14212,7 +15657,8 @@
     "splotch"
   ],
   "spoon": [
-    "spoon"
+    "spoon",
+    "cuchara"
   ],
   "sportsball": [
     "sportsball"
@@ -14234,34 +15680,44 @@
     "sprinkler"
   ],
   "square-0": [
-    "square"
+    "square",
+    "cuadrado cero"
   ],
   "square-1": [
-    "square"
+    "square",
+    "cuadrado uno"
   ],
   "square-2": [
-    "square"
+    "square",
+    "cuadrado dos"
   ],
   "square-3": [
-    "square"
+    "square",
+    "cuadrado tres"
   ],
   "square-4": [
-    "square"
+    "square",
+    "cuadrado cuatro"
   ],
   "square-5": [
-    "square"
+    "square",
+    "cuadrado cinco"
   ],
   "square-6": [
-    "square"
+    "square",
+    "cuadrado seis"
   ],
   "square-7": [
-    "square"
+    "square",
+    "cuadrado siete"
   ],
   "square-8": [
-    "square"
+    "square",
+    "cuadrado ocho"
   ],
   "square-9": [
-    "square"
+    "square",
+    "cuadrado nueve"
   ],
   "square-a-lock": [
     "candado",
@@ -14271,7 +15727,8 @@
     "lock"
   ],
   "square-a": [
-    "square"
+    "square",
+    "cuadrado a"
   ],
   "square-ampersand": [
     "square",
@@ -14367,7 +15824,8 @@
     "arrow"
   ],
   "square-b": [
-    "square"
+    "square",
+    "cuadrado b"
   ],
   "square-binary": [
     "square",
@@ -14381,7 +15839,8 @@
     "bolt"
   ],
   "square-c": [
-    "square"
+    "square",
+    "cuadrado c"
   ],
   "square-caret-down": [
     "abajo",
@@ -14450,7 +15909,8 @@
     "code"
   ],
   "square-d": [
-    "square"
+    "square",
+    "cuadrado d"
   ],
   "square-dashed-circle-plus": [
     "mas",
@@ -14502,7 +15962,8 @@
     "down"
   ],
   "square-e": [
-    "square"
+    "square",
+    "cuadrado e"
   ],
   "square-ellipsis-vertical": [
     "square",
@@ -14526,7 +15987,8 @@
     "exclamation"
   ],
   "square-f": [
-    "square"
+    "square",
+    "cuadrado f"
   ],
   "square-fragile": [
     "square",
@@ -14537,10 +15999,12 @@
     "full"
   ],
   "square-g": [
-    "square"
+    "square",
+    "cuadrado g"
   ],
   "square-h": [
-    "square"
+    "square",
+    "cuadrado h"
   ],
   "square-heart": [
     "corazon",
@@ -14551,24 +16015,28 @@
     "heart"
   ],
   "square-i": [
-    "square"
+    "square",
+    "cuadrado i"
   ],
   "square-info": [
     "square",
     "info"
   ],
   "square-j": [
-    "square"
+    "square",
+    "cuadrado j"
   ],
   "square-k": [
-    "square"
+    "square",
+    "cuadrado k"
   ],
   "square-kanban": [
     "square",
     "kanban"
   ],
   "square-l": [
-    "square"
+    "square",
+    "cuadrado l"
   ],
   "square-left": [
     "izquierda",
@@ -14581,7 +16049,8 @@
     "list"
   ],
   "square-m": [
-    "square"
+    "square",
+    "cuadrado m"
   ],
   "square-minus": [
     "menos",
@@ -14591,17 +16060,20 @@
     "minus"
   ],
   "square-n": [
-    "square"
+    "square",
+    "cuadrado n"
   ],
   "square-nfi": [
     "square",
     "nfi"
   ],
   "square-o": [
-    "square"
+    "square",
+    "cuadrado o"
   ],
   "square-p": [
-    "square"
+    "square",
+    "cuadrado p"
   ],
   "square-parking-slash": [
     "square",
@@ -14663,7 +16135,8 @@
     "vertical"
   ],
   "square-q": [
-    "square"
+    "square",
+    "cuadrado q"
   ],
   "square-quarters": [
     "square",
@@ -14678,7 +16151,8 @@
     "quote"
   ],
   "square-r": [
-    "square"
+    "square",
+    "cuadrado r"
   ],
   "square-right": [
     "derecha",
@@ -14704,7 +16178,8 @@
     "rss"
   ],
   "square-s": [
-    "square"
+    "square",
+    "cuadrado s"
   ],
   "square-share-nodes": [
     "compartir",
@@ -14734,7 +16209,8 @@
     "star"
   ],
   "square-t": [
-    "square"
+    "square",
+    "cuadrado t"
   ],
   "square-terminal": [
     "square",
@@ -14748,7 +16224,8 @@
     "way"
   ],
   "square-u": [
-    "square"
+    "square",
+    "cuadrado u"
   ],
   "square-up-left": [
     "arriba",
@@ -14780,36 +16257,44 @@
     "user"
   ],
   "square-v": [
-    "square"
+    "square",
+    "cuadrado v"
   ],
   "square-virus": [
     "square",
     "virus"
   ],
   "square-w": [
-    "square"
+    "square",
+    "cuadrado w"
   ],
   "square-x": [
-    "square"
+    "square",
+    "cuadrado x"
   ],
   "square-xmark": [
     "square",
     "xmark"
   ],
   "square-y": [
-    "square"
+    "square",
+    "cuadrado y"
   ],
   "square-z": [
-    "square"
+    "square",
+    "cuadrado z"
   ],
   "square": [
-    "square"
+    "square",
+    "cuadrado"
   ],
   "squid": [
-    "squid"
+    "squid",
+    "calamar"
   ],
   "squirrel": [
-    "squirrel"
+    "squirrel",
+    "ardilla"
   ],
   "staff-snake": [
     "staff",
@@ -14819,17 +16304,21 @@
     "staff"
   ],
   "stairs": [
-    "stairs"
+    "stairs",
+    "escaleras"
   ],
   "stamp": [
-    "stamp"
+    "stamp",
+    "sello"
   ],
   "standard-definition": [
     "standard",
-    "definition"
+    "definition",
+    "definicion estandar"
   ],
   "stapler": [
-    "stapler"
+    "stapler",
+    "grapadora"
   ],
   "star-and-crescent": [
     "estrella",
@@ -14936,7 +16425,8 @@
     "starfighter"
   ],
   "stars": [
-    "stars"
+    "stars",
+    "estrellas"
   ],
   "starship-freighter": [
     "starship",
@@ -14946,7 +16436,8 @@
     "starship"
   ],
   "steak": [
-    "steak"
+    "steak",
+    "bistec"
   ],
   "steering-wheel": [
     "steering",
@@ -14957,13 +16448,15 @@
     "sign"
   ],
   "stethoscope": [
-    "stethoscope"
+    "stethoscope",
+    "estetoscopio"
   ],
   "stocking": [
     "stocking"
   ],
   "stomach": [
-    "stomach"
+    "stomach",
+    "estomago"
   ],
   "stop": [
     "parar",
@@ -14974,7 +16467,8 @@
     "stopwatch"
   ],
   "stopwatch": [
-    "stopwatch"
+    "stopwatch",
+    "cronometro"
   ],
   "store-lock": [
     "candado",
@@ -14991,7 +16485,8 @@
     "store"
   ],
   "strawberry": [
-    "strawberry"
+    "strawberry",
+    "fresa"
   ],
   "street-view": [
     "street",
@@ -15014,7 +16509,8 @@
     "slash"
   ],
   "subtitles": [
-    "subtitles"
+    "subtitles",
+    "subtitulos"
   ],
   "suitcase-medical": [
     "suitcase",
@@ -15025,7 +16521,8 @@
     "rolling"
   ],
   "suitcase": [
-    "suitcase"
+    "suitcase",
+    "maleta"
   ],
   "sun-bright": [
     "sol",
@@ -15072,13 +16569,16 @@
     "sun"
   ],
   "sunglasses": [
-    "sunglasses"
+    "sunglasses",
+    "gafas de sol"
   ],
   "sunrise": [
-    "sunrise"
+    "sunrise",
+    "amanecer"
   ],
   "sunset": [
-    "sunset"
+    "sunset",
+    "atardecer"
   ],
   "superscript": [
     "superscript"
@@ -15095,7 +16595,8 @@
     "arrows"
   ],
   "swap": [
-    "swap"
+    "swap",
+    "intercambiar"
   ],
   "swatchbook": [
     "swatchbook"
@@ -15110,7 +16611,8 @@
     "laser"
   ],
   "sword": [
-    "sword"
+    "sword",
+    "espada"
   ],
   "swords-laser": [
     "swords",
@@ -15120,13 +16622,15 @@
     "swords"
   ],
   "symbols": [
-    "symbols"
+    "symbols",
+    "simbolos"
   ],
   "synagogue": [
     "synagogue"
   ],
   "syringe": [
-    "syringe"
+    "syringe",
+    "jeringa"
   ],
   "t-rex": [
     "rex"
@@ -15230,7 +16734,8 @@
     "tree"
   ],
   "table": [
-    "table"
+    "table",
+    "tabla"
   ],
   "tablet-button": [
     "tablet",
@@ -15250,7 +16755,8 @@
     "screen"
   ],
   "tablet": [
-    "tablet"
+    "tablet",
+    "tableta"
   ],
   "tablets": [
     "tablets"
@@ -15263,10 +16769,12 @@
     "taco"
   ],
   "tag": [
-    "tag"
+    "tag",
+    "etiqueta"
   ],
   "tags": [
-    "tags"
+    "tags",
+    "etiquetas"
   ],
   "tally-1": [
     "tally"
@@ -15291,7 +16799,8 @@
     "water"
   ],
   "tape": [
-    "tape"
+    "tape",
+    "cinta"
   ],
   "tarp-droplet": [
     "tarp",
@@ -15309,17 +16818,20 @@
   ],
   "teddy-bear": [
     "teddy",
-    "bear"
+    "bear",
+    "oso de peluche"
   ],
   "teeth-open": [
     "teeth",
     "open"
   ],
   "teeth": [
-    "teeth"
+    "teeth",
+    "dientes"
   ],
   "telescope": [
-    "telescope"
+    "telescope",
+    "telescopio"
   ],
   "temperature-arrow-down": [
     "flecha",
@@ -15440,7 +16952,8 @@
     "peak"
   ],
   "tent": [
-    "tent"
+    "tent",
+    "tienda de campaña"
   ],
   "tents": [
     "tents"
@@ -15465,10 +16978,12 @@
     "width"
   ],
   "text": [
-    "text"
+    "text",
+    "texto"
   ],
   "thermometer": [
-    "thermometer"
+    "thermometer",
+    "termometro"
   ],
   "theta": [
     "theta"
@@ -15481,19 +16996,22 @@
     "abajo",
     "bajar",
     "thumbs",
-    "down"
+    "down",
+    "no me gusta"
   ],
   "thumbs-up": [
     "arriba",
     "subir",
-    "thumbs"
+    "thumbs",
+    "me gusta"
   ],
   "thumbtack-slash": [
     "thumbtack",
     "slash"
   ],
   "thumbtack": [
-    "thumbtack"
+    "thumbtack",
+    "chincheta"
   ],
   "tick": [
     "tick"
@@ -15511,7 +17029,8 @@
     "simple"
   ],
   "ticket": [
-    "ticket"
+    "ticket",
+    "boleto"
   ],
   "tickets-airline": [
     "tickets",
@@ -15542,7 +17061,8 @@
     "timeline"
   ],
   "timer": [
-    "timer"
+    "timer",
+    "temporizador"
   ],
   "tire-flat": [
     "tire",
@@ -15558,7 +17078,8 @@
     "rugged"
   ],
   "tire": [
-    "tire"
+    "tire",
+    "llanta"
   ],
   "toggle-large-off": [
     "toggle",
@@ -15626,14 +17147,16 @@
     "portable"
   ],
   "toilet": [
-    "toilet"
+    "toilet",
+    "inodoro"
   ],
   "toilets-portable": [
     "toilets",
     "portable"
   ],
   "tomato": [
-    "tomato"
+    "tomato",
+    "tomate"
   ],
   "tombstone-blank": [
     "tombstone",
@@ -15643,13 +17166,16 @@
     "tombstone"
   ],
   "toolbox": [
-    "toolbox"
+    "toolbox",
+    "caja de herramientas"
   ],
   "tooth": [
-    "tooth"
+    "tooth",
+    "diente"
   ],
   "toothbrush": [
-    "toothbrush"
+    "toothbrush",
+    "cepillo de dientes"
   ],
   "torii-gate": [
     "torii",
@@ -15702,7 +17228,8 @@
   ],
   "traffic-light": [
     "traffic",
-    "light"
+    "light",
+    "semáforo"
   ],
   "trailer": [
     "trailer"
@@ -15729,7 +17256,8 @@
     "tunnel"
   ],
   "train": [
-    "train"
+    "train",
+    "tren"
   ],
   "transformer-bolt": [
     "rayo",
@@ -15780,7 +17308,8 @@
     "basura",
     "papelera",
     "trash",
-    "arrow"
+    "arrow",
+    "restaurar"
   ],
   "trash-can-arrow-up": [
     "flecha",
@@ -15794,7 +17323,8 @@
     "papelera",
     "trash",
     "can",
-    "arrow"
+    "arrow",
+    "restaurar"
   ],
   "trash-can-check": [
     "borrar",
@@ -16005,7 +17535,8 @@
     "tree"
   ],
   "trees": [
-    "trees"
+    "trees",
+    "arboles"
   ],
   "triangle-exclamation": [
     "triangle",
@@ -16021,14 +17552,16 @@
     "digging"
   ],
   "triangle": [
-    "triangle"
+    "triangle",
+    "triangulo"
   ],
   "tricycle-adult": [
     "tricycle",
     "adult"
   ],
   "tricycle": [
-    "tricycle"
+    "tricycle",
+    "triciclo"
   ],
   "trillium": [
     "trillium"
@@ -16041,7 +17574,8 @@
     "star"
   ],
   "trophy": [
-    "trophy"
+    "trophy",
+    "trofeo"
   ],
   "trowel-bricks": [
     "trowel",
@@ -16249,7 +17783,8 @@
     "truck"
   ],
   "trumpet": [
-    "trumpet"
+    "trumpet",
+    "trompeta"
   ],
   "tty-answer": [
     "tty",
@@ -16263,7 +17798,8 @@
     "sign"
   ],
   "turkey": [
-    "turkey"
+    "turkey",
+    "pavo"
   ],
   "turkish-lira-sign": [
     "turkish",
@@ -16332,7 +17868,8 @@
     "turntable"
   ],
   "turtle": [
-    "turtle"
+    "turtle",
+    "tortuga"
   ],
   "tv-music": [
     "musica",
@@ -16344,14 +17881,16 @@
     "retro"
   ],
   "typewriter": [
-    "typewriter"
+    "typewriter",
+    "maquina de escribir"
   ],
   "ufo-beam": [
     "ufo",
     "beam"
   ],
   "ufo": [
-    "ufo"
+    "ufo",
+    "ovni"
   ],
   "umbrella-beach": [
     "umbrella",
@@ -16362,13 +17901,16 @@
     "simple"
   ],
   "umbrella": [
-    "umbrella"
+    "umbrella",
+    "paraguas"
   ],
   "underline": [
-    "underline"
+    "underline",
+    "subrayado"
   ],
   "unicorn": [
-    "unicorn"
+    "unicorn",
+    "unicornio"
   ],
   "uniform-martial-arts": [
     "uniform",
@@ -16499,7 +18041,8 @@
     "subir"
   ],
   "upload": [
-    "upload"
+    "upload",
+    "subir"
   ],
   "usb-drive": [
     "usb",
@@ -16521,7 +18064,8 @@
     "perfil",
     "cliente",
     "user",
-    "astronaut"
+    "astronaut",
+    "astronauta"
   ],
   "user-beard-bolt": [
     "usuario",
@@ -16625,7 +18169,8 @@
     "perfil",
     "cliente",
     "user",
-    "doctor"
+    "doctor",
+    "medico"
   ],
   "user-gear": [
     "usuario",
@@ -16836,7 +18381,8 @@
     "perfil",
     "cliente",
     "user",
-    "nurse"
+    "nurse",
+    "enfermera"
   ],
   "user-pen": [
     "usuario",
@@ -16861,7 +18407,8 @@
     "perfil",
     "cliente",
     "user",
-    "pilot"
+    "pilot",
+    "piloto"
   ],
   "user-plus": [
     "usuario",
@@ -16890,7 +18437,8 @@
     "perfil",
     "cliente",
     "user",
-    "police"
+    "police",
+    "policia"
   ],
   "user-robot-xmarks": [
     "usuario",
@@ -16915,7 +18463,8 @@
     "perfil",
     "cliente",
     "user",
-    "secret"
+    "secret",
+    "secreto"
   ],
   "user-shakespeare": [
     "usuario",
@@ -16977,7 +18526,8 @@
     "perfil",
     "cliente",
     "user",
-    "tie"
+    "tie",
+    "corbata"
   ],
   "user-unlock": [
     "usuario",
@@ -17078,7 +18628,8 @@
     "viewfinder"
   ],
   "users": [
-    "users"
+    "users",
+    "usuarios"
   ],
   "utensils-slash": [
     "cubiertos",
@@ -17246,28 +18797,33 @@
     "virus"
   ],
   "viruses": [
-    "viruses"
+    "viruses",
+    "virus"
   ],
   "voicemail": [
     "voicemail"
   ],
   "volcano": [
-    "volcano"
+    "volcano",
+    "volcan"
   ],
   "volleyball": [
     "volleyball"
   ],
   "volume-high": [
     "volume",
-    "high"
+    "high",
+    "volumen alto"
   ],
   "volume-low": [
     "volume",
-    "low"
+    "low",
+    "volumen bajo"
   ],
   "volume-off": [
     "volume",
-    "off"
+    "off",
+    "volumen apagado"
   ],
   "volume-slash": [
     "volume",
@@ -17278,7 +18834,8 @@
     "xmark"
   ],
   "volume": [
-    "volume"
+    "volume",
+    "volumen"
   ],
   "vr-cardboard": [
     "cardboard"
@@ -17298,7 +18855,8 @@
     "talkie"
   ],
   "wallet": [
-    "wallet"
+    "wallet",
+    "cartera"
   ],
   "wand-magic-sparkles": [
     "wand",
@@ -17347,7 +18905,8 @@
     "smart"
   ],
   "watch": [
-    "watch"
+    "watch",
+    "reloj de pulsera"
   ],
   "water-arrow-down": [
     "flecha",
@@ -17373,7 +18932,8 @@
     "ladder"
   ],
   "water": [
-    "water"
+    "water",
+    "agua"
   ],
   "watermelon-slice": [
     "watermelon",
@@ -17425,7 +18985,8 @@
     "scale"
   ],
   "whale": [
-    "whale"
+    "whale",
+    "ballena"
   ],
   "wheat-awn-circle-exclamation": [
     "wheat",
@@ -17447,14 +19008,16 @@
     "slash"
   ],
   "wheat": [
-    "wheat"
+    "wheat",
+    "trigo"
   ],
   "wheelchair-move": [
     "wheelchair",
     "move"
   ],
   "wheelchair": [
-    "wheelchair"
+    "wheelchair",
+    "silla de ruedas"
   ],
   "whiskey-glass-ice": [
     "vaso",
@@ -17517,7 +19080,8 @@
     "warning"
   ],
   "wind": [
-    "wind"
+    "wind",
+    "viento"
   ],
   "window-flip": [
     "window",
@@ -17545,7 +19109,8 @@
     "restore"
   ],
   "window": [
-    "window"
+    "window",
+    "ventana"
   ],
   "windsock": [
     "windsock"
@@ -17582,7 +19147,8 @@
     "sign"
   ],
   "worm": [
-    "worm"
+    "worm",
+    "gusano"
   ],
   "wreath-laurel": [
     "wreath",
@@ -17596,10 +19162,12 @@
     "simple"
   ],
   "wrench": [
-    "wrench"
+    "wrench",
+    "llave inglesa"
   ],
   "x-ray": [
-    "ray"
+    "ray",
+    "rayos x"
   ],
   "xmark-large": [
     "xmark",
@@ -17610,7 +19178,8 @@
     "slot"
   ],
   "xmark": [
-    "xmark"
+    "xmark",
+    "equis"
   ],
   "xmarks-lines": [
     "xmarks",
@@ -19328,6 +20897,28 @@
     "comestibles",
     "tienda",
     "mercado",
-    "concentrados"
+    "concentrados",
+    "monisa"
+  ],
+  "pollo-rico": [
+    "comida",
+    "comestibles",
+    "tienda",
+    "mercado",
+    "concentrados",
+    "pollo",
+    "rico",
+    "monisa"
+  ],
+  "harinas-monisa": [
+    "comida",
+    "comestibles",
+    "tienda",
+    "mercado",
+    "concentrados",
+    "harinas",
+    "monisa"
   ]
+
+
 }
