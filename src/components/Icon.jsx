@@ -13,10 +13,8 @@ const variantFolderMap = {
   light:   'classics/light',
   regular: 'classics/regular',
   solid:   'classics/solid',
-  world:   'brands/world',
-  local:   'brands/local',
-  flat:    'brands/local/flat',
-  color:   'brands/local/color',
+  flat:    'brands/flat',
+  color:   'brands/color',
 }
 
 const preloadCache = new Map()
@@ -93,7 +91,7 @@ const Icon = forwardRef(
       className,
     )
 
-    const isMultiColor = ['world', 'color', 'flat'].includes(variant)
+    const isMultiColor = ['color', 'flat'].includes(variant)
     const svgClasses   = classNames('w-full h-full', { 'fill-current': !isMultiColor || forceColor })
 
     return (

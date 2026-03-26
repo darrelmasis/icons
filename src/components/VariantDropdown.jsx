@@ -32,7 +32,7 @@ const VariantDropdown = ({ variants, currentVariant, onChange, className = "" })
     <div ref={dropdownRef} className={`relative ${className}`}>
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 bg-[#f8fafc] hover:bg-[#f1f5f9] text-[#1e293b] text-sm font-bold py-2 px-4 rounded-full border border-[#e2e8f0] transition-colors cursor-pointer"
+        className="flex items-center gap-2 bg-surface hover:bg-surface-hover text-text text-sm font-bold py-2 px-4 rounded-full border border-border transition-colors cursor-pointer"
       >
         {selectedVariant?.label}
         <svg 
@@ -52,7 +52,7 @@ const VariantDropdown = ({ variants, currentVariant, onChange, className = "" })
       
       {isOpen && (
         <>
-          <div className="absolute left-0 lg:-left-12 top-full mt-2 w-48 bg-white rounded-2xl shadow-xl border border-border/50 overflow-hidden z-[110] py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="absolute left-0 lg:-left-12 top-full mt-2 w-48 bg-surface rounded-2xl shadow-xl border border-border/50 overflow-hidden z-[110] py-2 animate-in fade-in slide-in-from-top-2 duration-200">
             {/* Si existen grupos en la lista */}
             {variants.some(v => v.items) ? (
               variants.map((item, index) => {
@@ -68,7 +68,7 @@ const VariantDropdown = ({ variants, currentVariant, onChange, className = "" })
                         <button
                           key={variant.id}
                           className={`w-full text-left px-5 py-2.5 text-sm font-semibold transition-colors cursor-pointer ${
-                            currentVariant === variant.id ? 'bg-[#1e293b] text-white' : 'text-[#64748b] hover:bg-[#f8fafc] hover:text-[#1e293b]'
+                            currentVariant === variant.id ? 'bg-text text-surface' : 'text-text-muted hover:bg-surface-hover hover:text-text'
                           }`}
                           onClick={() => {
                             onChange(variant.id);
@@ -86,7 +86,7 @@ const VariantDropdown = ({ variants, currentVariant, onChange, className = "" })
                     <button
                       key={item.id}
                       className={`w-full text-left px-5 py-2.5 text-sm font-semibold transition-colors cursor-pointer ${
-                        currentVariant === item.id ? 'bg-[#1e293b] text-white' : 'text-[#64748b] hover:bg-[#f8fafc] hover:text-[#1e293b]'
+                        currentVariant === item.id ? 'bg-text text-surface' : 'text-text-muted hover:bg-surface-hover hover:text-text'
                       }`}
                       onClick={() => {
                         onChange(item.id);
@@ -104,7 +104,7 @@ const VariantDropdown = ({ variants, currentVariant, onChange, className = "" })
                 <button
                   key={variant.id}
                   className={`w-full text-left px-5 py-2.5 text-sm font-semibold transition-colors cursor-pointer ${
-                    currentVariant === variant.id ? 'bg-[#1e293b] text-white' : 'text-[#64748b] hover:bg-[#f8fafc] hover:text-[#1e293b]'
+                    currentVariant === variant.id ? 'bg-text text-surface' : 'text-text-muted hover:bg-surface-hover hover:text-text'
                   }`}
                   onClick={() => {
                     onChange(variant.id);

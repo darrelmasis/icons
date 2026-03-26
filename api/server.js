@@ -59,7 +59,7 @@ const serveSvg = async (req, res, iconName, variant, fill) => {
     
     // Default color to navy (#1e293b) if no fill is specified, but only for classic variants
     let color = fill ? resolveColor(fill) : null;
-    const multiColorVariants = ['world', 'local', 'color', 'flat'];
+    const multiColorVariants = ["color", "flat"];
     if (!color && !multiColorVariants.includes(variant)) {
       color = "#1e293b";
     }
@@ -96,7 +96,7 @@ const servePng = async (req, res, iconName, variant, fill, size = config.default
     if (!iconSvg) return res.status(404).send(`Icono "${iconName}" no encontrado`);
 
     let color = fill ? resolveColor(fill) : null;
-    const multiColorVariants = ['world', 'local', 'color', 'flat'];
+    const multiColorVariants = ["color", "flat"];
     if (!color && !multiColorVariants.includes(variant)) {
       color = "#1e293b";
     }

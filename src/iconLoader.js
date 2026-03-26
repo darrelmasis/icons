@@ -41,10 +41,8 @@ async function loadIcons() {
     
     // Identificar la variante basándose en la ruta completa
     let variant = path.basename(targetPath); // fallback default
-    if (targetPath.includes('flat')) variant = 'flat';
-    else if (targetPath.includes('color')) variant = 'color';
-    else if (targetPath.includes('world')) variant = 'world';
-    else if (targetPath.includes('local')) variant = 'local';
+    if (targetPath.includes("flat")) variant = "flat";
+    else if (targetPath.includes("color")) variant = "color";
     else if (targetPath.includes('thin')) variant = 'thin';
     else if (targetPath.includes('light')) variant = 'light';
     else if (targetPath.includes('regular')) variant = 'regular';

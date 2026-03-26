@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from "react";
-import Icon, { preloadIcon } from "./components/Icon";
-import VariantDropdown from "./components/VariantDropdown";
+import { preloadIcon } from "./components/Icon";
+import IconGrid from "./components/IconGrid";
+import IconModal from "./components/IconModal";
+import Toast from "./components/Toast";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Pagination from "./components/Pagination";
-import CopySection from "./components/CopySection";
 
 function App() {
+  const [theme, setTheme] = useState(() => {
+    const stored = window.localStorage.getItem("theme");
+    if (stored === "light" || stored === "dark") return stored;
+    return "dark"; // Default is now dark
+  }); 
   const [icons, setIcons] = useState([]);
   const [filteredIcons, setFilteredIcons] = useState([]);
   const [visibleIcons, setVisibleIcons] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [currentVariant, setCurrentVariant] = useState("regular");
+  const [currentVariant, setCurrentVariant] = useState(() => {
+    const stored = window.localStorage.getItem("svg-icon-category");
+    return stored || "all";
+  });
   const [selectedIcon, setSelectedIcon] = useState(null);
   const [loading, setLoading] = useState(true);
   const [toastVisible, setToastVisible] = useState(false);
@@ -21,10 +30,36 @@ function App() {
   const [hexInput, setHexInput] = useState("#1e293b");
   const [svgDownloading, setSvgDownloading] = useState(false);
   const [pngCopied, setPngCopied] = useState(false);
+  const [pngCopying, setPngCopying] = useState(false);
+  const [hexCopied, setHexCopied] = useState(false);
+  const [hexCopying, setHexCopying] = useState(false);
   const [modalPreviewLoading, setModalPreviewLoading] = useState(false);
   const [powerBiCopying, setPowerBiCopying] = useState(false);
   const [powerBiCopied, setPowerBiCopied] = useState(false);
+  const [nameCopied, setNameCopied] = useState(false);
+  const [svgContentCopying, setSvgContentCopying] = useState(false);
+  const [svgContentCopied, setSvgContentCopied] = useState(false);
   const ICONS_PER_PAGE = 48;
+
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "dark") root.classList.add("dark");
+    else root.classList.remove("dark");
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  useEffect(() => {
+    window.localStorage.setItem("svg-icon-category", currentVariant);
+  }, [currentVariant]);
+
+  useEffect(() => {
+    // Si no hay modal abierto, mantenemos el color por defecto coherente con el tema.
+    if (selectedIcon) return;
+    const defaultColor = theme === "dark" ? "#e2e8f0" : "#1e293b";
+    setModalColor(defaultColor);
+    setHexInput(defaultColor);
+  }, [theme, selectedIcon]);
 
   const variantGroups = [
     {
@@ -39,7 +74,6 @@ function App() {
     {
       title: "Brands",
       items: [
-        { id: "world", label: "Brands" },
         { id: "flat", label: "Flat" },
         { id: "color", label: "Color" },
       ],
@@ -53,7 +87,7 @@ function App() {
   ];
 
   const classicsVariants = ["thin", "light", "regular", "solid"];
-  const brandsVariants = ["world", "flat", "color"];
+  const brandsVariants = ["flat", "color"];
 
   // Devuelve las variantes disponibles para el icono del modal (sin la opción "Todos")
   const getModalVariants = (icon) => {
@@ -73,16 +107,15 @@ function App() {
     // Prioridad Classics
     if (v.includes("regular")) return "regular";
     if (v.includes("solid")) return "solid";
-    // Prioridad Brands
-    if (v.includes("world")) return "world";
-    if (v.includes("color")) return "color";
+    // Prioridad Brands (En TODOS, preferimos flat sobre color)
     if (v.includes("flat")) return "flat";
+    if (v.includes("color")) return "color";
     return v[0] || "regular";
   };
 
   const getDefaultModalVariant = (icon, currentV) => {
     const allowed = getModalVariants(icon).map((v) => v.id);
-    if (allowed.length === 0) return "world";
+    if (allowed.length === 0) return "color";
     return allowed.includes(currentV) ? currentV : allowed[0];
   };
 
@@ -95,7 +128,10 @@ function App() {
   }, [icons, searchTerm, currentVariant]);
 
   useEffect(() => {
-    const totalPages = Math.max(1, Math.ceil(filteredIcons.length / ICONS_PER_PAGE));
+    const totalPages = Math.max(
+      1,
+      Math.ceil(filteredIcons.length / ICONS_PER_PAGE),
+    );
     if (page > totalPages) setPage(totalPages);
     if (page < 1) setPage(1);
 
@@ -113,7 +149,10 @@ function App() {
     const start = (page - 1) * ICONS_PER_PAGE;
     const iconsToWarm = [
       ...visibleIcons,
-      ...filteredIcons.slice(start + ICONS_PER_PAGE, start + ICONS_PER_PAGE * 2),
+      ...filteredIcons.slice(
+        start + ICONS_PER_PAGE,
+        start + ICONS_PER_PAGE * 2,
+      ),
     ];
 
     const unique = new Map();
@@ -193,6 +232,9 @@ function App() {
       const expanded = [];
       matchedIcons.forEach((icon) => {
         icon.variants.forEach((v) => {
+          // No mostrar la variante color de brands en TODOS
+          if (v === "color") return;
+          
           expanded.push({
             ...icon,
             forcedVariant: v,
@@ -203,10 +245,14 @@ function App() {
       setFilteredIcons(expanded);
     } else {
       // Filtrado normal por variante seleccionada
-      const filtered = matchedIcons.filter(
-        (icon) =>
-          currentVariant === "all" || icon.variants.includes(currentVariant),
-      );
+      const filtered = matchedIcons.filter((icon) => {
+        if (currentVariant === "all") {
+          // En "todos", solo mostrar iconos que tengan algo más que solo la variante 'color'
+          // o si solo tienen 'color', los ocultamos según el requerimiento.
+          return icon.variants.some(v => v !== "color");
+        }
+        return icon.variants.includes(currentVariant);
+      });
       setFilteredIcons(
         filtered.map((icon) => ({ ...icon, uniqueKey: icon.name })),
       );
@@ -220,8 +266,9 @@ function App() {
     const variantToSet =
       forcedVariant || getDefaultModalVariant(icon, currentVariant);
     setModalVariant(variantToSet);
-    setModalColor("#1e293b");
-    setHexInput("#1e293b");
+    const defaultColor = theme === "dark" ? "#e2e8f0" : "#1e293b";
+    setModalColor(defaultColor);
+    setHexInput(defaultColor);
     setModalPreviewLoading(true);
     document.body.style.overflow = "hidden";
   };
@@ -245,27 +292,47 @@ function App() {
     };
   }, [selectedIcon, modalVariant]);
 
-  const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text);
-    setToastVisible(true);
-    setTimeout(() => setToastVisible(false), 2000);
+  const copyIconName = async (name) => {
+    const ok = await copyToClipboard(name);
+    if (ok) {
+      setNameCopied(true);
+      setTimeout(() => setNameCopied(false), 2000);
+    }
+  };
+
+  const copyToClipboard = async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setToastVisible(true);
+      setTimeout(() => setToastVisible(false), 2000);
+      return true;
+    } catch (err) {
+      console.error("Error al copiar al portapapeles:", err);
+      return false;
+    }
   };
 
   const copyPngToClipboard = async (url) => {
-    setPngCopied(true);
+    setPngCopying(true);
+    setPngCopied(false);
     try {
       const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const blob = await res.blob();
       await navigator.clipboard.write([
         new ClipboardItem({ "image/png": blob }),
       ]);
       setToastVisible(true);
       setTimeout(() => setToastVisible(false), 2000);
+      setPngCopied(true);
+      setTimeout(() => setPngCopied(false), 2000);
+      return true;
     } catch (err) {
       console.error("Error al copiar imagen:", err);
-      copyToClipboard(url);
+      // Fallback: si falla el PNG, intentamos copiar la URL como último recurso.
+      return await copyToClipboard(url);
     } finally {
-      setTimeout(() => setPngCopied(false), 2000);
+      setPngCopying(false);
     }
   };
 
@@ -288,6 +355,7 @@ function App() {
   const copyPowerBiMeasure = async () => {
     if (!selectedIcon) return;
     setPowerBiCopying(true);
+    setPowerBiCopied(false);
     try {
       const rawMeasureName = String(selectedIcon.name || "Icon");
       const sanitizedMeasureName = rawMeasureName
@@ -310,9 +378,11 @@ function App() {
       const daxString = (css + svg).replace(/"/g, '""');
       const measure = `${sanitizedMeasureName} =\n"${daxString}"`;
 
-      copyToClipboard(measure);
-      setPowerBiCopied(true);
-      setTimeout(() => setPowerBiCopied(false), 2000);
+      const ok = await copyToClipboard(measure);
+      if (ok) {
+        setPowerBiCopied(true);
+        setTimeout(() => setPowerBiCopied(false), 2000);
+      }
     } catch (err) {
       console.error("Error generando medida Power BI:", err);
     } finally {
@@ -321,6 +391,62 @@ function App() {
   };
 
   const baseUrl = window.location.origin;
+  const svgUrlValue =
+    selectedIcon &&
+    (modalVariant === "color"
+      ? `${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}`
+      : `${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}/${encodeURIComponent(modalColor.replace("#", ""))}`);
+
+  const downloadSvgCurrent = () => {
+    if (!selectedIcon) return;
+    const url =
+      modalVariant === "color"
+        ? `${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}`
+        : `${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}/${encodeURIComponent(modalColor.replace("#", ""))}`;
+    handleDownloadSvg(url, selectedIcon.name);
+  };
+
+  const copyPngCurrent = () => {
+    if (!selectedIcon) return;
+    const url =
+      modalVariant === "color"
+        ? `${baseUrl}/api/png/var/${modalVariant}/${selectedIcon.name}?size=256`
+        : `${baseUrl}/api/png/var/${modalVariant}/${selectedIcon.name}/${encodeURIComponent(modalColor.replace("#", ""))}?size=256`;
+    copyPngToClipboard(url);
+  };
+
+  const copyHexColor = async () => {
+    setHexCopying(true);
+    setHexCopied(false);
+    try {
+      const ok = await copyToClipboard(modalColor);
+      if (ok) {
+        setHexCopied(true);
+        setTimeout(() => setHexCopied(false), 2000);
+      }
+    } finally {
+      setHexCopying(false);
+    }
+  };
+
+  const copySvgContent = async () => {
+    if (!svgUrlValue) return;
+    setSvgContentCopying(true);
+    setSvgContentCopied(false);
+    try {
+      const res = await fetch(svgUrlValue);
+      const svg = await res.text();
+      const ok = await copyToClipboard(svg);
+      if (ok) {
+        setSvgContentCopied(true);
+        setTimeout(() => setSvgContentCopied(false), 2000);
+      }
+    } catch (err) {
+      console.error("Error al copiar SVG:", err);
+    } finally {
+      setSvgContentCopying(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-bg">
@@ -330,65 +456,19 @@ function App() {
         currentVariant={currentVariant}
         setCurrentVariant={setCurrentVariant}
         variantGroups={variantGroups}
+        theme={theme}
+        setTheme={setTheme}
       />
 
       <main className="max-w-[1200px] mx-auto">
-        {loading ? (
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-5 py-4">
-            {[...Array(48)].map((_, i) => (
-              <div
-                key={`init-skeleton-${i}`}
-                className="bg-surface rounded-xl border border-border/30 aspect-square p-4 flex flex-col items-center justify-center gap-4"
-              >
-                <div className="w-12 h-12 rounded-lg skeleton-shimmer opacity-40"></div>
-                <div className="w-20 h-2 rounded skeleton-shimmer opacity-30"></div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-5">
-            {visibleIcons.length > 0 ? (
-              <>
-                {visibleIcons.map((icon) => (
-                  <div
-                    key={icon.uniqueKey}
-                    className="bg-surface rounded-xl border border-border/50 aspect-square p-4 flex flex-col items-center justify-center gap-4 cursor-pointer transition-all hover:bg-[#facc15] hover:border-[#facc15] group"
-                    onClick={() => openModal(icon, icon.forcedVariant)}
-                  >
-                    <div className="flex-1 flex items-center justify-center w-full">
-                      <Icon
-                        name={icon.name}
-                        variant={
-                          icon.forcedVariant ||
-                          getIconDisplayVariant(icon, currentVariant)
-                        }
-                        size="3xl"
-                        color="text-[#1e293b]"
-                      />
-                    </div>
-                    <div className="text-[11px] font-medium text-text-muted group-hover:text-text transition-colors text-center w-full truncate px-1 flex flex-col items-center">
-                      <span className="font-bold">{icon.name}</span>
-                      {icon.forcedVariant && (
-                        <span className="text-[9px] opacity-60 uppercase tracking-wider">
-                          {
-                            variants.find((v) => v.id === icon.forcedVariant)
-                              ?.label
-                          }
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </>
-            ) : (
-              <div className="col-span-full py-24 text-center bg-surface rounded-2xl border border-border/50">
-                <p className="text-text-muted font-medium">
-                  No se encontraron iconos que coincidan con tu búsqueda.
-                </p>
-              </div>
-            )}
-          </div>
-        )}
+        <IconGrid
+          loading={loading}
+          visibleIcons={visibleIcons}
+          variants={variants}
+          currentVariant={currentVariant}
+          onOpenModal={openModal}
+          getIconDisplayVariant={getIconDisplayVariant}
+        />
 
         {!loading && filteredIcons.length > 0 && (
           <Pagination
@@ -408,226 +488,48 @@ function App() {
 
       {/* Modal */}
       {selectedIcon && (
-        <div
-          className="fixed inset-0 z-[1000] flex items-center justify-center bg-text/20 backdrop-blur-md p-4 animate-in fade-in duration-300"
-          onClick={closeModal}
-        >
-          <div
-            className="bg-surface w-full max-w-lg rounded-3xl relative shadow-modal animate-in zoom-in-95 duration-300 border border-white/50 overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Header del modal */}
-            <div className="flex items-center justify-between px-8 pt-7 pb-4">
-              <div className="inline-block relative group/title">
-                <h2 className="text-xl font-bold text-text">
-                  {selectedIcon.name}
-                </h2>
-                <button
-                  onClick={() => copyToClipboard(selectedIcon.name)}
-                  className="absolute left-full top-1/2 -translate-y-1/2 ml-2 p-1.5 bg-bg hover:bg-border/50 rounded-lg cursor-pointer flex items-center justify-center"
-                  title="Copiar nombre"
-                >
-                  <Icon
-                    name="copy"
-                    size="sm"
-                    color="text-[#1e293b]"
-                    className="opacity-70"
-                  />
-                </button>
-              </div>
-              <button
-                className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-bg transition-colors cursor-pointer"
-                onClick={closeModal}
-              >
-                <Icon
-                  name="xmark"
-                  size="md"
-                  color="text-[#1e293b]"
-                  className="opacity-50 hover:opacity-100 transition-opacity"
-                />
-              </button>
-            </div>
-
-            {/* Preview del icono */}
-            <div className="px-8 pb-5">
-              <div
-                className="w-full h-44 flex items-center justify-center rounded-2xl border-2 border-dashed border-border/40 transition-colors relative overflow-hidden"
-                style={{ backgroundColor: `${modalColor}10` }}
-              >
-                {modalPreviewLoading && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-28 h-28 rounded-2xl skeleton-shimmer opacity-60"></div>
-                  </div>
-                )}
-                <Icon
-                  name={selectedIcon.name}
-                  variant={modalVariant}
-                  size="xl"
-                  className={`!w-24 !h-24 transition-opacity duration-200 ${modalPreviewLoading ? "opacity-0" : "opacity-100"}`}
-                  style={
-                    modalVariant === "color"
-                      ? undefined
-                      : { color: modalColor }
-                  }
-                  forceColor={modalVariant !== "color"}
-                />
-              </div>
-            </div>
-
-            {/* Controles */}
-            <div className="px-8 pb-6 space-y-5">
-              {/* Selector de Variante + Color en la misma fila */}
-              <div className="flex gap-3">
-                {/* Selector de variante (solo si hay opciones) */}
-                {getModalVariants(selectedIcon).length > 0 && (
-                  <div className="flex-1">
-                    <label className="block text-[10px] font-black text-text-muted uppercase tracking-[0.2em] mb-1.5 ml-1">
-                      Variante
-                    </label>
-                    <VariantDropdown
-                      variants={getModalVariants(selectedIcon)}
-                      currentVariant={modalVariant}
-                      onChange={setModalVariant}
-                      className="w-full"
-                    />
-                  </div>
-                )}
-
-                {/* Selector de color - Oculto para variante 'color' */}
-                {modalVariant !== "color" && (
-                  <div className="flex-1">
-                    <label className="block text-[10px] font-black text-text-muted uppercase tracking-[0.2em] mb-1.5 ml-1">
-                      Color
-                    </label>
-                    <div className="flex items-center gap-2 bg-bg border border-border/50 rounded-xl px-3 py-1.5">
-                      <input
-                        type="text"
-                        value={hexInput}
-                        onChange={(e) => {
-                          setHexInput(e.target.value);
-                          if (/^#[0-9A-Fa-f]{6}$/.test(e.target.value))
-                            setModalColor(e.target.value);
-                        }}
-                        placeholder="#1e293b"
-                        className="flex-1 bg-transparent text-sm font-mono text-text outline-none min-w-0"
-                        maxLength={7}
-                      />
-                      <input
-                        type="color"
-                        value={modalColor}
-                        onChange={(e) => {
-                          setModalColor(e.target.value);
-                          setHexInput(e.target.value);
-                        }}
-                        className="w-7 h-7 rounded-lg border-0 cursor-pointer bg-transparent p-0 shrink-0"
-                      />
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Botones de acción: Descargar SVG, Copiar PNG y Copiar DAX */}
-              <div className="flex gap-3">
-                <button
-                  onClick={() =>
-                    handleDownloadSvg(
-                      modalVariant === "color"
-                        ? `${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}`
-                        : `${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}/${encodeURIComponent(modalColor.replace("#", ""))}`,
-                      selectedIcon.name,
-                    )
-                  }
-                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl border transition-all cursor-pointer text-sm font-bold ${
-                    svgDownloading
-                      ? "bg-[#facc15] border-[#facc15] text-[#1e293b]"
-                      : "bg-bg border-border/50 text-text hover:border-text/30 hover:bg-text/5"
-                  }`}
-                >
-                  <Icon
-                    name={svgDownloading ? "check" : "arrow-down-to-bracket"}
-                    size="sm"
-                    color="text-[#1e293b]"
-                  />
-                  {svgDownloading ? "¡Descargado!" : "Descargar SVG"}
-                </button>
-                <button
-                  onClick={() =>
-                    copyPngToClipboard(
-                      modalVariant === "color"
-                        ? `${baseUrl}/api/png/var/${modalVariant}/${selectedIcon.name}?size=64`
-                        : `${baseUrl}/api/png/var/${modalVariant}/${selectedIcon.name}/${encodeURIComponent(modalColor.replace("#", ""))}?size=64`,
-                    )
-                  }
-                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl border transition-all cursor-pointer text-sm font-bold ${
-                    pngCopied
-                      ? "bg-[#facc15] border-[#facc15] text-[#1e293b]"
-                      : "bg-bg border-border/50 text-text hover:border-text/30 hover:bg-text/5"
-                  }`}
-                >
-                  <Icon
-                    name={pngCopied ? "check" : "copy"}
-                    size="sm"
-                    color="text-[#1e293b]"
-                  />
-                  {pngCopied ? "¡Copiado!" : "Copiar PNG"}
-                </button>
-                <button
-                  type="button"
-                  onClick={copyPowerBiMeasure}
-                  className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl border transition-all cursor-pointer text-sm font-bold ${
-                    powerBiCopied || powerBiCopying
-                      ? "bg-[#facc15] border-[#facc15] text-[#1e293b]"
-                      : "bg-bg border-border/50 text-text hover:border-text/30 hover:bg-text/5"
-                  }`}
-                >
-                  {powerBiCopying ? (
-                    <div className="spinner" />
-                  ) : (
-                    <Icon name={powerBiCopied ? "check" : "copy"} size="sm" color="text-[#1e293b]" />
-                  )}
-                  {powerBiCopying ? "DAX..." : powerBiCopied ? "¡Copiado!" : "Copiar DAX"}
-                </button>
-              </div>
-
-              {/* URLs dinámicas */}
-              <CopySection
-                label="SVG URL"
-                value={
-                  modalVariant === "color"
-                    ? `${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}`
-                    : `${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}/${encodeURIComponent(modalColor.replace("#", ""))}`
-                }
-                onCopy={copyToClipboard}
-              />
-              <CopySection
-                label="Power BI (HTML Content)"
-                value={
-                  modalVariant === "color"
-                    ? `<img src="${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}" alt="${selectedIcon.name}" width="24" height="24" style="width:24px;height:24px;" />`
-                    : `<img src="${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}/${encodeURIComponent(modalColor.replace("#", ""))}" alt="${selectedIcon.name}" width="24" height="24" style="width:24px;height:24px;" />`
-                }
-                onCopy={copyToClipboard}
-              />
-
-            </div>
-          </div>
-        </div>
+        <IconModal
+          selectedIcon={selectedIcon}
+          onClose={closeModal}
+          modalVariant={modalVariant}
+          setModalVariant={setModalVariant}
+          modalVariants={getModalVariants(selectedIcon)}
+          modalColor={modalColor}
+          setModalColor={setModalColor}
+          hexInput={hexInput}
+          setHexInput={setHexInput}
+          modalPreviewLoading={modalPreviewLoading}
+          onCopyIconName={copyIconName}
+          nameCopied={nameCopied}
+          onDownloadSvg={downloadSvgCurrent}
+          onCopyPng={copyPngCurrent}
+          onCopyPowerBi={copyPowerBiMeasure}
+          svgDownloading={svgDownloading}
+          pngCopied={pngCopied}
+          pngCopying={pngCopying}
+          hexCopied={hexCopied}
+          hexCopying={hexCopying}
+          onCopyHexColor={copyHexColor}
+          powerBiCopying={powerBiCopying}
+          powerBiCopied={powerBiCopied}
+          svgUrlValue={svgUrlValue}
+          onCopySvg={copySvgContent}
+          svgContentCopying={svgContentCopying}
+          svgContentCopied={svgContentCopied}
+          powerBiHtmlValue={
+            selectedIcon &&
+            (modalVariant === "color"
+              ? `<img src="${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}" alt="${selectedIcon.name}" width="24" height="24" style="width:24px;height:24px;" />`
+              : `<img src="${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}/${encodeURIComponent(modalColor.replace("#", ""))}" alt="${selectedIcon.name}" width="24" height="24" style="width:24px;height:24px;" />`)
+          }
+          onCopy={copyToClipboard}
+        />
       )}
 
       {/* Toast Notification */}
-      <div
-        className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-[2000] bg-text text-surface px-6 py-3 text-sm font-bold transition-all duration-500 pointer-events-none rounded-full shadow-2xl ${
-          toastVisible
-            ? "opacity-100 translate-y-0 scale-100"
-            : "opacity-0 translate-y-4 scale-90"
-        }`}
-      >
-        ✓ ¡Copiado al portapapeles!
-      </div>
+      <Toast toastVisible={toastVisible}>✓ ¡Copiado al portapapeles!</Toast>
     </div>
   );
 }
-
-
 
 export default App;

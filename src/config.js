@@ -10,10 +10,8 @@ export default {
   port: process.env.PORT || DEFAULT_PORT,
   iconsDir: process.env.ICONS_DIR || "./src/assets/icons",
   targetPaths: [
-    "brands/world",
-    "brands/local",
-    "brands/local/flat",
-    "brands/local/color",
+    "brands/flat",
+    "brands/color",
     "classics/thin",
     "classics/light",
     "classics/regular",
