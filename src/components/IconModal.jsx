@@ -18,6 +18,7 @@ export default function IconModal({
   onCopyPng,
   onCopyPowerBi,
   svgDownloading,
+  pngDownloading,
   pngCopied,
   pngCopying,
   hexCopied,
@@ -27,6 +28,7 @@ export default function IconModal({
   onCopy,
   onCopyHexColor,
   onCopySvg,
+  onDownloadPng,
   svgContentCopying,
   svgContentCopied,
   modalPreviewLoading,
@@ -81,6 +83,23 @@ export default function IconModal({
                   size="sm"
                 />
               )}
+            </button>
+
+            {/* Nuevo: Descargar PNG */}
+            <button
+              onClick={onDownloadPng}
+              disabled={pngDownloading}
+              className={`absolute left-[calc(100%+5.1rem)] top-1/2 -translate-y-1/2 p-1.5 rounded-lg transition-all cursor-pointer flex items-center justify-center ${
+                pngDownloading
+                  ? "bg-[#facc15] text-[#1e293b]"
+                  : "bg-bg hover:bg-border/50 text-text opacity-70 hover:opacity-100"
+              }`}
+              title="Descargar PNG"
+            >
+              <Icon
+                name={pngDownloading ? "check" : "download"}
+                size="sm"
+              />
             </button>
           </div>
           <button
