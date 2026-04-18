@@ -39,6 +39,7 @@ function App() {
   const [nameCopied, setNameCopied] = useState(false);
   const [svgContentCopying, setSvgContentCopying] = useState(false);
   const [svgContentCopied, setSvgContentCopied] = useState(false);
+  const [pngDownloading, setPngDownloading] = useState(false);
   const ICONS_PER_PAGE = 48;
 
 
@@ -347,6 +348,17 @@ function App() {
     setTimeout(() => setSvgDownloading(false), 2000);
   };
 
+  const handleDownloadPng = (url, name) => {
+    setPngDownloading(true);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${name}.png`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => setPngDownloading(false), 2000);
+  };
+
   const totalPages = Math.max(
     1,
     Math.ceil(filteredIcons.length / ICONS_PER_PAGE),
@@ -404,6 +416,15 @@ function App() {
         ? `${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}`
         : `${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}/${encodeURIComponent(modalColor.replace("#", ""))}`;
     handleDownloadSvg(url, selectedIcon.name);
+  };
+
+  const downloadPngCurrent = () => {
+    if (!selectedIcon) return;
+    const url =
+      modalVariant === "color"
+        ? `${baseUrl}/api/png/var/${modalVariant}/${selectedIcon.name}?size=1024`
+        : `${baseUrl}/api/png/var/${modalVariant}/${selectedIcon.name}/${encodeURIComponent(modalColor.replace("#", ""))}?size=1024`;
+    handleDownloadPng(url, selectedIcon.name);
   };
 
   const copyPngCurrent = () => {
@@ -502,9 +523,11 @@ function App() {
           onCopyIconName={copyIconName}
           nameCopied={nameCopied}
           onDownloadSvg={downloadSvgCurrent}
+          onDownloadPng={downloadPngCurrent}
           onCopyPng={copyPngCurrent}
           onCopyPowerBi={copyPowerBiMeasure}
           svgDownloading={svgDownloading}
+          pngDownloading={pngDownloading}
           pngCopied={pngCopied}
           pngCopying={pngCopying}
           hexCopied={hexCopied}
