@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Icon from "./Icon";
 import VariantDropdown from "./VariantDropdown";
 import CopySection from "./CopySection";
@@ -35,12 +35,48 @@ export default function IconModal({
   powerBiCopying,
   powerBiCopied,
   nameCopied,
+  onNext,
+  onPrev,
 }) {
+  // Manejo de teclado para navegar entre iconos
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowRight" && onNext) onNext();
+      if (e.key === "ArrowLeft" && onPrev) onPrev();
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onNext, onPrev, onClose]);
+
   return (
     <div
       className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/40 dark:bg-black/60 backdrop-blur-md p-4 animate-in fade-in duration-300"
       onClick={onClose}
     >
+      {/* Botones de navegación (Desktop) */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onPrev();
+        }}
+        className="hidden md:flex absolute left-8 top-1/2 -translate-y-1/2 w-14 h-14 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-all cursor-pointer backdrop-blur-sm border border-white/10 group z-[1010]"
+        title="Anterior (←)"
+      >
+        <Icon name="chevron-left" className="group-hover:-translate-x-0.5 transition-transform" />
+      </button>
+
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onNext();
+        }}
+        className="hidden md:flex absolute right-8 top-1/2 -translate-y-1/2 w-14 h-14 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-all cursor-pointer backdrop-blur-sm border border-white/10 group z-[1010]"
+        title="Siguiente (→)"
+      >
+        <Icon name="chevron-right" className="group-hover:translate-x-0.5 transition-transform" />
+      </button>
+
       <div
         className="bg-surface w-full max-w-lg rounded-3xl relative shadow-modal animate-in zoom-in-95 duration-300 border border-border/60 "
         onClick={(e) => e.stopPropagation()}
@@ -121,6 +157,22 @@ export default function IconModal({
             className="w-full h-44 flex items-center justify-center rounded-2xl border-2 border-dashed border-border/40 transition-colors relative overflow-hidden"
             style={{ backgroundColor: `${modalColor}10` }}
           >
+            {/* Botones Navegación Mobile (Dentro del preview) */}
+            <div className="md:hidden absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-4 z-10">
+              <button
+                onClick={(e) => { e.stopPropagation(); onPrev(); }}
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-surface/80 border border-border shadow-sm text-text transition-all cursor-pointer"
+              >
+                <Icon name="chevron-left" size="sm" />
+              </button>
+              <button
+                onClick={(e) => { e.stopPropagation(); onNext(); }}
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-surface/80 border border-border shadow-sm text-text transition-all cursor-pointer"
+              >
+                <Icon name="chevron-right" size="sm" />
+              </button>
+            </div>
+
             {modalPreviewLoading && (
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-28 h-28 rounded-2xl skeleton-shimmer opacity-60"></div>

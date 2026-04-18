@@ -279,6 +279,24 @@ function App() {
     document.body.style.overflow = "auto";
   };
 
+  const navigateIcon = (direction) => {
+    if (!selectedIcon || filteredIcons.length <= 1) return;
+    
+    // El icono seleccionado en el modal puede venir de filteredIcons directamente (con uniqueKey)
+    const currentIndex = filteredIcons.findIndex(
+      (icon) => (icon.uniqueKey || icon.name) === (selectedIcon.uniqueKey || selectedIcon.name)
+    );
+    
+    if (currentIndex === -1) return;
+
+    let nextIndex = currentIndex + direction;
+    if (nextIndex < 0) nextIndex = filteredIcons.length - 1;
+    if (nextIndex >= filteredIcons.length) nextIndex = 0;
+
+    const nextIcon = filteredIcons[nextIndex];
+    openModal(nextIcon, nextIcon.forcedVariant);
+  };
+
   useEffect(() => {
     if (!selectedIcon) return;
     let cancelled = false;
@@ -546,6 +564,8 @@ function App() {
               : `<img src="${baseUrl}/api/svg/var/${modalVariant}/${selectedIcon.name}/${encodeURIComponent(modalColor.replace("#", ""))}" alt="${selectedIcon.name}" width="24" height="24" style="width:24px;height:24px;" />`)
           }
           onCopy={copyToClipboard}
+          onNext={navigateIcon.bind(null, 1)}
+          onPrev={navigateIcon.bind(null, -1)}
         />
       )}
 
